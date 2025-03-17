@@ -1,0 +1,50 @@
+﻿<Window x:Class="MelodiasDelMundo_Client.Views.RegisterEmployee.EmployeeForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Registro de Empleado" Height="650" Width="800" Background="#F3F4F6">
+
+    <Grid>
+        <Border Width="600" Padding="20" Background="White">
+            <StackPanel>
+                <TextBlock Text="Registro de Empleado" FontSize="20" FontWeight="Bold" Foreground="#333" Margin="0,0,0,20" HorizontalAlignment="Center"/>
+
+                <StackPanel Orientation="Vertical" >
+                    <TextBlock Text="Nombre:" FontWeight="Bold" Foreground="#555"/>
+                    <TextBox  x:Name="tbName" Height="30" BorderBrush="#ccc" BorderThickness="1"/>
+
+                    <TextBlock Text="Apellidos:" FontWeight="Bold" Foreground="#555"/>
+                    <TextBox x:Name="tbSurnames" Height="30" BorderBrush="#ccc" BorderThickness="1"/>
+
+                    <TextBlock Text="Teléfono:" FontWeight="Bold" Foreground="#555"/>
+                    <TextBox x:Name="tbPhoneNumber" Height="30" BorderBrush="#ccc" BorderThickness="1"/>
+
+                    <TextBlock Text="Correo Electrónico:" FontWeight="Bold" Foreground="#555"/>
+                    <TextBox x:Name="tbMail" Height="30" BorderBrush="#ccc" BorderThickness="1"/>
+
+                    <TextBlock Text="Dirección (Calle y Número):" FontWeight="Bold" Foreground="#555"/>
+                    <TextBox x:Name="tbAddress" Height="30" BorderBrush="#ccc" BorderThickness="1"/>
+
+                    <TextBlock Text="Código Postal:" FontWeight="Bold" Foreground="#555"/>
+                    <TextBox x:Name="tbPostalCode" Height="30" BorderBrush="#ccc" BorderThickness="1"/>
+
+                    <TextBlock Text="Ciudad:" FontWeight="Bold" Foreground="#555"/>
+                    <TextBox x:Name="tbCity" Height="30" BorderBrush="#ccc" BorderThickness="1"/>
+
+                    <TextBlock Text="Nombre de Usuario:" FontWeight="Bold" Foreground="#555"/>
+                    <TextBox x:Name="tbUserName" Height="30" BorderBrush="#ccc" BorderThickness="1"/>
+
+                    <TextBlock Text="Contraseña:" FontWeight="Bold" Foreground="#555"/>
+                    <PasswordBox x:Name="pbPassword" Height="30" BorderBrush="#ccc" BorderThickness="1"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0" >
+                    <Button x:Name="btnCancel" Content="Cancelar" Width="100" Background="#E53E3E" Foreground="White" Click="BtnCancel"/>
+                    <Button x:Name="btnAcept" Content="Registrar" Width="100" Background="#38A169" Foreground="White" Click="Btnaccept"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

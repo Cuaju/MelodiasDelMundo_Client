@@ -9,7 +9,182 @@
 //------------------------------------------------------------------------------
 
 namespace MelodiasDelMundo_Client.ServiceReference1 {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EmployeeDataContract", Namespace="http://schemas.datacontract.org/2004/07/MelodiasService")]
+    [System.SerializableAttribute()]
+    public partial class EmployeeDataContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string addressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string cityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string passwordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int phoneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string surnamesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string userNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string zipCodeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string address {
+            get {
+                return this.addressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.addressField, value) != true)) {
+                    this.addressField = value;
+                    this.RaisePropertyChanged("address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string city {
+            get {
+                return this.cityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.cityField, value) != true)) {
+                    this.cityField = value;
+                    this.RaisePropertyChanged("city");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string mail {
+            get {
+                return this.mailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mailField, value) != true)) {
+                    this.mailField = value;
+                    this.RaisePropertyChanged("mail");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nameField, value) != true)) {
+                    this.nameField = value;
+                    this.RaisePropertyChanged("name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string password {
+            get {
+                return this.passwordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.passwordField, value) != true)) {
+                    this.passwordField = value;
+                    this.RaisePropertyChanged("password");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int phone {
+            get {
+                return this.phoneField;
+            }
+            set {
+                if ((this.phoneField.Equals(value) != true)) {
+                    this.phoneField = value;
+                    this.RaisePropertyChanged("phone");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string surnames {
+            get {
+                return this.surnamesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.surnamesField, value) != true)) {
+                    this.surnamesField = value;
+                    this.RaisePropertyChanged("surnames");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string userName {
+            get {
+                return this.userNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.userNameField, value) != true)) {
+                    this.userNameField = value;
+                    this.RaisePropertyChanged("userName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string zipCode {
+            get {
+                return this.zipCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.zipCodeField, value) != true)) {
+                    this.zipCodeField = value;
+                    this.RaisePropertyChanged("zipCode");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IUsersManager")]
@@ -20,6 +195,24 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/LogIn", ReplyAction="http://tempuri.org/IUsersManager/LogInResponse")]
         System.Threading.Tasks.Task<bool> LogInAsync(string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/AddEmployee", ReplyAction="http://tempuri.org/IUsersManager/AddEmployeeResponse")]
+        bool AddEmployee(MelodiasDelMundo_Client.ServiceReference1.EmployeeDataContract employee);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/AddEmployee", ReplyAction="http://tempuri.org/IUsersManager/AddEmployeeResponse")]
+        System.Threading.Tasks.Task<bool> AddEmployeeAsync(MelodiasDelMundo_Client.ServiceReference1.EmployeeDataContract employee);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/DeleteEmployee", ReplyAction="http://tempuri.org/IUsersManager/DeleteEmployeeResponse")]
+        bool DeleteEmployee(int idEmployee);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/DeleteEmployee", ReplyAction="http://tempuri.org/IUsersManager/DeleteEmployeeResponse")]
+        System.Threading.Tasks.Task<bool> DeleteEmployeeAsync(int idEmployee);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/GetIdEmployeeByUserName", ReplyAction="http://tempuri.org/IUsersManager/GetIdEmployeeByUserNameResponse")]
+        int GetIdEmployeeByUserName(string userName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/GetIdEmployeeByUserName", ReplyAction="http://tempuri.org/IUsersManager/GetIdEmployeeByUserNameResponse")]
+        System.Threading.Tasks.Task<int> GetIdEmployeeByUserNameAsync(string userName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,6 +248,30 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> LogInAsync(string username, string password) {
             return base.Channel.LogInAsync(username, password);
+        }
+        
+        public bool AddEmployee(MelodiasDelMundo_Client.ServiceReference1.EmployeeDataContract employee) {
+            return base.Channel.AddEmployee(employee);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddEmployeeAsync(MelodiasDelMundo_Client.ServiceReference1.EmployeeDataContract employee) {
+            return base.Channel.AddEmployeeAsync(employee);
+        }
+        
+        public bool DeleteEmployee(int idEmployee) {
+            return base.Channel.DeleteEmployee(idEmployee);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteEmployeeAsync(int idEmployee) {
+            return base.Channel.DeleteEmployeeAsync(idEmployee);
+        }
+        
+        public int GetIdEmployeeByUserName(string userName) {
+            return base.Channel.GetIdEmployeeByUserName(userName);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetIdEmployeeByUserNameAsync(string userName) {
+            return base.Channel.GetIdEmployeeByUserNameAsync(userName);
         }
     }
 }
