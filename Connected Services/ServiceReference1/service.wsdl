@@ -20,6 +20,7 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/MelodiasService" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IUsersManager_LogIn_InputMessage">
@@ -28,10 +29,40 @@
   <wsdl:message name="IUsersManager_LogIn_OutputMessage">
     <wsdl:part name="parameters" element="tns:LogInResponse" />
   </wsdl:message>
+  <wsdl:message name="IUsersManager_AddEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddEmployee" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_AddEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_DeleteEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEmployee" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_DeleteEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_GetIdEmployeeByUserName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdEmployeeByUserName" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_GetIdEmployeeByUserName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdEmployeeByUserNameResponse" />
+  </wsdl:message>
   <wsdl:portType name="IUsersManager">
     <wsdl:operation name="LogIn">
       <wsdl:input wsaw:Action="http://tempuri.org/IUsersManager/LogIn" message="tns:IUsersManager_LogIn_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUsersManager/LogInResponse" message="tns:IUsersManager_LogIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsersManager/AddEmployee" message="tns:IUsersManager_AddEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsersManager/AddEmployeeResponse" message="tns:IUsersManager_AddEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsersManager/DeleteEmployee" message="tns:IUsersManager_DeleteEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsersManager/DeleteEmployeeResponse" message="tns:IUsersManager_DeleteEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIdEmployeeByUserName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsersManager/GetIdEmployeeByUserName" message="tns:IUsersManager_GetIdEmployeeByUserName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsersManager/GetIdEmployeeByUserNameResponse" message="tns:IUsersManager_GetIdEmployeeByUserName_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IUsersManager" type="tns:IUsersManager">
@@ -40,6 +71,33 @@
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
     <wsdl:operation name="LogIn">
       <soap12:operation soapAction="http://tempuri.org/IUsersManager/LogIn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployee">
+      <soap12:operation soapAction="http://tempuri.org/IUsersManager/AddEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmployee">
+      <soap12:operation soapAction="http://tempuri.org/IUsersManager/DeleteEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIdEmployeeByUserName">
+      <soap12:operation soapAction="http://tempuri.org/IUsersManager/GetIdEmployeeByUserName" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
