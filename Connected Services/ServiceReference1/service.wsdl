@@ -32,11 +32,28 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_ISuppliersManager_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="60000">
+          </wsrm:InactivityTimeout>
+          <wsrm:AcknowledgementInterval Milliseconds="200">
+          </wsrm:AcknowledgementInterval>
+        </wsrm:RMAssertion>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/MelodiasService" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/MelodiasService.DTOs" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IUsersManager_LogIn_InputMessage">
@@ -63,6 +80,54 @@
   <wsdl:message name="IUsersManager_GetIdEmployeeByUserName_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetIdEmployeeByUserNameResponse" />
   </wsdl:message>
+  <wsdl:message name="IProductsManager_RegisterProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterProduct" />
+  </wsdl:message>
+  <wsdl:message name="IProductsManager_RegisterProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductsManager_GetProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProducts" />
+  </wsdl:message>
+  <wsdl:message name="IProductsManager_GetProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductsManager_EditProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditProduct" />
+  </wsdl:message>
+  <wsdl:message name="IProductsManager_EditProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuppliersManager_RegisterSupplier_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterSupplier" />
+  </wsdl:message>
+  <wsdl:message name="ISuppliersManager_RegisterSupplier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuppliersManager_EditSupplier_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditSupplier" />
+  </wsdl:message>
+  <wsdl:message name="ISuppliersManager_EditSupplier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuppliersManager_GetSuppliers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSuppliers" />
+  </wsdl:message>
+  <wsdl:message name="ISuppliersManager_GetSuppliers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSuppliersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuppliersManager_IsSupplierNameTaken_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsSupplierNameTaken" />
+  </wsdl:message>
+  <wsdl:message name="ISuppliersManager_IsSupplierNameTaken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsSupplierNameTakenResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuppliersManager_IsSupplierEmailTaken_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsSupplierEmailTaken" />
+  </wsdl:message>
+  <wsdl:message name="ISuppliersManager_IsSupplierEmailTaken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsSupplierEmailTakenResponse" />
+  </wsdl:message>
   <wsdl:portType name="IUsersManager">
     <wsdl:operation name="LogIn">
       <wsdl:input wsaw:Action="http://tempuri.org/IUsersManager/LogIn" message="tns:IUsersManager_LogIn_InputMessage" />
@@ -79,6 +144,42 @@
     <wsdl:operation name="GetIdEmployeeByUserName">
       <wsdl:input wsaw:Action="http://tempuri.org/IUsersManager/GetIdEmployeeByUserName" message="tns:IUsersManager_GetIdEmployeeByUserName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUsersManager/GetIdEmployeeByUserNameResponse" message="tns:IUsersManager_GetIdEmployeeByUserName_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IProductsManager">
+    <wsdl:operation name="RegisterProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductsManager/RegisterProduct" message="tns:IProductsManager_RegisterProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductsManager/RegisterProductResponse" message="tns:IProductsManager_RegisterProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductsManager/GetProducts" message="tns:IProductsManager_GetProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductsManager/GetProductsResponse" message="tns:IProductsManager_GetProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductsManager/EditProduct" message="tns:IProductsManager_EditProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductsManager/EditProductResponse" message="tns:IProductsManager_EditProduct_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ISuppliersManager">
+    <wsdl:operation name="RegisterSupplier">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuppliersManager/RegisterSupplier" message="tns:ISuppliersManager_RegisterSupplier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuppliersManager/RegisterSupplierResponse" message="tns:ISuppliersManager_RegisterSupplier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditSupplier">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuppliersManager/EditSupplier" message="tns:ISuppliersManager_EditSupplier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuppliersManager/EditSupplierResponse" message="tns:ISuppliersManager_EditSupplier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSuppliers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuppliersManager/GetSuppliers" message="tns:ISuppliersManager_GetSuppliers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuppliersManager/GetSuppliersResponse" message="tns:ISuppliersManager_GetSuppliers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsSupplierNameTaken">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuppliersManager/IsSupplierNameTaken" message="tns:ISuppliersManager_IsSupplierNameTaken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuppliersManager/IsSupplierNameTakenResponse" message="tns:ISuppliersManager_IsSupplierNameTaken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsSupplierEmailTaken">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuppliersManager/IsSupplierEmailTaken" message="tns:ISuppliersManager_IsSupplierEmailTaken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuppliersManager/IsSupplierEmailTakenResponse" message="tns:ISuppliersManager_IsSupplierEmailTaken_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IUsersManager" type="tns:IUsersManager">
@@ -122,6 +223,88 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IProductsManager" type="tns:IProductsManager">
+    <wsp:PolicyReference URI="#NetTcpBinding_IProductsManager_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="RegisterProduct">
+      <soap12:operation soapAction="http://tempuri.org/IProductsManager/RegisterProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <soap12:operation soapAction="http://tempuri.org/IProductsManager/GetProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditProduct">
+      <soap12:operation soapAction="http://tempuri.org/IProductsManager/EditProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_ISuppliersManager" type="tns:ISuppliersManager">
+    <wsp:PolicyReference URI="#NetTcpBinding_ISuppliersManager_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="RegisterSupplier">
+      <soap12:operation soapAction="http://tempuri.org/ISuppliersManager/RegisterSupplier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditSupplier">
+      <soap12:operation soapAction="http://tempuri.org/ISuppliersManager/EditSupplier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSuppliers">
+      <soap12:operation soapAction="http://tempuri.org/ISuppliersManager/GetSuppliers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSupplierNameTaken">
+      <soap12:operation soapAction="http://tempuri.org/ISuppliersManager/IsSupplierNameTaken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSupplierEmailTaken">
+      <soap12:operation soapAction="http://tempuri.org/ISuppliersManager/IsSupplierEmailTaken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="ServiceImplementation">
     <wsdl:port name="NetTcpBinding_IUsersManager" binding="tns:NetTcpBinding_IUsersManager">
       <soap12:address location="net.tcp://localhost:8001/ServiceImplementation/Service" />
@@ -130,6 +313,12 @@
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IProductsManager" binding="tns:NetTcpBinding_IProductsManager">
+      <soap12:address location="net.tcp://localhost:8001/ServiceImplementation/Service" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8001/ServiceImplementation/Service</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_ISuppliersManager" binding="tns:NetTcpBinding_ISuppliersManager">
       <soap12:address location="net.tcp://localhost:8001/ServiceImplementation/Service" />
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8001/ServiceImplementation/Service</wsa10:Address>

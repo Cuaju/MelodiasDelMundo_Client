@@ -1,18 +1,29 @@
-﻿using System;
+﻿using MelodiasDelMundo_Client.ServiceReference1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using MelodiasDelMundo_Client.ServiceReference1;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
-namespace MelodiasDelMundo_Client
+namespace MelodiasDelMundo_Client.Views.Product
 {
-    public partial class GUI_SeleccionarProducto : Window
+    /// <summary>
+    /// Lógica de interacción para Gui_SelectProduct.xaml
+    /// </summary>
+    public partial class GUI_SelectProduct : Window
     {
         private ProductsManagerClient _service;
         private List<ProductDataContract> _productos;
 
-        public GUI_SeleccionarProducto()
+        public GUI_SelectProduct()
         {
             InitializeComponent();
             _service = new ProductsManagerClient();
@@ -32,7 +43,7 @@ namespace MelodiasDelMundo_Client
 
             if (productoSeleccionado != null)
             {
-                GUI_EditarProducto ventanaEdicion = new GUI_EditarProducto(productoSeleccionado);
+                GUI_EditProduct ventanaEdicion = new GUI_EditProduct(productoSeleccionado);
                 ventanaEdicion.ShowDialog();
             }
             else

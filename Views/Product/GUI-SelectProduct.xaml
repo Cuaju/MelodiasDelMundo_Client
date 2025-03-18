@@ -1,0 +1,41 @@
+﻿<Window x:Class="MelodiasDelMundo_Client.Views.Product.GUI_SelectProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MelodiasDelMundo_Client.Views.Product"
+        mc:Ignorable="d"
+        Title="Gui_SelectProduct" Height="500" Width="700">
+    <Grid>
+        <!-- Campo de búsqueda -->
+        <TextBox x:Name="txtBuscar" Width="300" Height="25" Margin="10,10,0,0" HorizontalAlignment="Left"/>
+        <Button x:Name="btnBuscar" Content="Buscar" Width="100" Height="25" Margin="320,10,0,0" HorizontalAlignment="Left"/>
+
+        <!-- Filtros -->
+        <Label Content="Código:" Margin="10,50,0,0" HorizontalAlignment="Left"/>
+        <TextBox x:Name="txtCodigo" Width="100" Height="25" Margin="70,50,0,0" HorizontalAlignment="Left"/>
+
+        <Label Content="Categoría:" Margin="180,50,0,0" HorizontalAlignment="Left"/>
+        <ComboBox x:Name="cmbCategoria" Width="150" Height="25" Margin="250,50,0,0" HorizontalAlignment="Left"/>
+
+        <Label Content="Marca:" Margin="420,50,0,0" HorizontalAlignment="Left"/>
+        <ComboBox x:Name="cmbMarca" Width="150" Height="25" Margin="470,50,0,0" HorizontalAlignment="Left"/>
+
+        <!-- Tabla de productos -->
+        <DataGrid x:Name="dgProductos" AutoGenerateColumns="False" Margin="10,90,10,50" Height="300" SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Header="Seleccionar" />
+                <DataGridTextColumn Header="Código" Binding="{Binding ProductCode}"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding ProductName}"/>
+                <DataGridTextColumn Header="Categoría" Binding="{Binding Category}"/>
+                <DataGridTextColumn Header="Marca" Binding="{Binding Brand}"/>
+                <DataGridTextColumn Header="Precio Venta" Binding="{Binding SalePrice}"/>
+                <DataGridTextColumn Header="Stock" Binding="{Binding Stock}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Botones -->
+        <Button x:Name="btnEditar" Content="Editar" Width="100" Height="30" Margin="500,410,0,0" HorizontalAlignment="Left" Click="btnEditar_Click"/>
+        <Button x:Name="btnRegresar" Content="Regresar" Width="100" Height="30" Margin="610,410,0,0" HorizontalAlignment="Left" Click="btnRegresar_Click"/>
+    </Grid>
+</Window>

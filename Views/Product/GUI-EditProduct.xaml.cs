@@ -1,24 +1,33 @@
-﻿using System;
-using System.Windows;
+﻿using MelodiasDelMundo_Client.ServiceReference1;
 using Microsoft.Win32;
-using System.Windows.Media.Imaging;
-using MelodiasDelMundo_Client.ServiceReference1;
-using System.ServiceModel;
+using System;
+using System.Collections.Generic;
 using System.Globalization;
-using System.Text.RegularExpressions;
-using System.Windows.Controls;
-using System.Windows.Input;
 using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
-namespace MelodiasDelMundo_Client
+namespace MelodiasDelMundo_Client.Views.Product
 {
-    public partial class GUI_EditarProducto : Window
+    /// <summary>
+    /// Lógica de interacción para GUI_EditProduct.xaml
+    /// </summary>
+    public partial class GUI_EditProduct : Window
     {
         private ProductsManagerClient _service;
         private ProductDataContract _producto;
         private string rutaImagen = "";
 
-        public GUI_EditarProducto(ProductDataContract producto)
+        public GUI_EditProduct(ProductDataContract producto)
         {
             InitializeComponent();
             _service = new ProductsManagerClient();

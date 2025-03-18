@@ -59,6 +59,12 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="ToastNotifications, Version=2.5.1.0, Culture=neutral, PublicKeyToken=e89d9d7314a7c797, processorArchitecture=MSIL">
+      <HintPath>packages\ToastNotifications.2.5.1\lib\net40\ToastNotifications.dll</HintPath>
+    </Reference>
+    <Reference Include="ToastNotifications.Messages, Version=2.5.1.0, Culture=neutral, PublicKeyToken=e89d9d7314a7c797, processorArchitecture=MSIL">
+      <HintPath>packages\ToastNotifications.Messages.2.5.1\lib\net40\ToastNotifications.Messages.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -68,6 +74,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Utils\NotificationDialog.cs" />
+    <Compile Include="Views\Product\GUI-EditProduct.xaml.cs">
+      <DependentUpon>GUI-EditProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Product\GUI-RegisterProduct.xaml.cs">
+      <DependentUpon>GUI-RegisterProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Product\GUI-SelectProduct.xaml.cs">
+      <DependentUpon>GUI-SelectProduct.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -80,15 +96,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="GUI-EditProduct.xaml.cs">
-      <DependentUpon>GUI-EditProduct.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GUI-RegisterProduct.xaml.cs">
-      <DependentUpon>GUI-RegisterProduct.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GUI-SelectProduct.xaml.cs">
-      <DependentUpon>GUI-SelectProduct.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -103,6 +110,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainMenu\MainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Product\GUI-EditProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Product\GUI-RegisterProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Product\GUI-SelectProduct.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -129,7 +148,19 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Connected Services\ServiceReference1\MelodiasDelMundo_Client.ServiceReference1.ProductDataContract1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\MelodiasDelMundo_Client.ServiceReference1.SupplierDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\MelodiasService.DTOs.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServiceReference1\MelodiasService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\MelodiasService1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServiceReference1\service.wsdl" />

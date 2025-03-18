@@ -1,22 +1,33 @@
-﻿using System;
+﻿using MelodiasDelMundo_Client.ServiceReference1;
+using Microsoft.Win32;
+using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
+using System.ServiceModel;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
 using System.Windows.Input;
-using Microsoft.Win32;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using MelodiasDelMundo_Client.ServiceReference1;
-using System.ServiceModel;
-using System.Text.RegularExpressions;
+using System.Windows.Shapes;
 
-namespace MelodiasDelMundo_Client
+namespace MelodiasDelMundo_Client.Views.Product
 {
-    public partial class GUI_RegistrarProducto : Window
+    /// <summary>
+    /// Lógica de interacción para GUI_RegisterProduct.xaml
+    /// </summary>
+    public partial class GUI_RegisterProduct : Window
     {
         private ProductsManagerClient _service;
         private string rutaImagen = "";
 
-        public GUI_RegistrarProducto()
+        public GUI_RegisterProduct()
         {
             InitializeComponent();
             _service = new ProductsManagerClient();
@@ -120,3 +131,4 @@ namespace MelodiasDelMundo_Client
         }
     }
 }
+
