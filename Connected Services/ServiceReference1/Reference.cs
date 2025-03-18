@@ -9,7 +9,403 @@
 //------------------------------------------------------------------------------
 
 namespace MelodiasDelMundo_Client.ServiceReference1 {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EmployeeDataContract", Namespace="http://schemas.datacontract.org/2004/07/MelodiasService")]
+    [System.SerializableAttribute()]
+    public partial class EmployeeDataContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string addressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string cityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string passwordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int phoneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string surnamesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string userNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string zipCodeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string address {
+            get {
+                return this.addressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.addressField, value) != true)) {
+                    this.addressField = value;
+                    this.RaisePropertyChanged("address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string city {
+            get {
+                return this.cityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.cityField, value) != true)) {
+                    this.cityField = value;
+                    this.RaisePropertyChanged("city");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string mail {
+            get {
+                return this.mailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mailField, value) != true)) {
+                    this.mailField = value;
+                    this.RaisePropertyChanged("mail");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nameField, value) != true)) {
+                    this.nameField = value;
+                    this.RaisePropertyChanged("name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string password {
+            get {
+                return this.passwordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.passwordField, value) != true)) {
+                    this.passwordField = value;
+                    this.RaisePropertyChanged("password");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int phone {
+            get {
+                return this.phoneField;
+            }
+            set {
+                if ((this.phoneField.Equals(value) != true)) {
+                    this.phoneField = value;
+                    this.RaisePropertyChanged("phone");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string surnames {
+            get {
+                return this.surnamesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.surnamesField, value) != true)) {
+                    this.surnamesField = value;
+                    this.RaisePropertyChanged("surnames");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string userName {
+            get {
+                return this.userNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.userNameField, value) != true)) {
+                    this.userNameField = value;
+                    this.RaisePropertyChanged("userName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string zipCode {
+            get {
+                return this.zipCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.zipCodeField, value) != true)) {
+                    this.zipCodeField = value;
+                    this.RaisePropertyChanged("zipCode");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductDataContract", Namespace="http://schemas.datacontract.org/2004/07/MelodiasService")]
+    [System.SerializableAttribute()]
+    public partial class ProductDataContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BrandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CategoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ModelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PhotoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal PurchasePriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal SalePriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int StockField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Brand {
+            get {
+                return this.BrandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BrandField, value) != true)) {
+                    this.BrandField = value;
+                    this.RaisePropertyChanged("Brand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Category {
+            get {
+                return this.CategoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CategoryField, value) != true)) {
+                    this.CategoryField = value;
+                    this.RaisePropertyChanged("Category");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Model {
+            get {
+                return this.ModelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ModelField, value) != true)) {
+                    this.ModelField = value;
+                    this.RaisePropertyChanged("Model");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Photo {
+            get {
+                return this.PhotoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PhotoField, value) != true)) {
+                    this.PhotoField = value;
+                    this.RaisePropertyChanged("Photo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductCode {
+            get {
+                return this.ProductCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductCodeField, value) != true)) {
+                    this.ProductCodeField = value;
+                    this.RaisePropertyChanged("ProductCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductId {
+            get {
+                return this.ProductIdField;
+            }
+            set {
+                if ((this.ProductIdField.Equals(value) != true)) {
+                    this.ProductIdField = value;
+                    this.RaisePropertyChanged("ProductId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductName {
+            get {
+                return this.ProductNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductNameField, value) != true)) {
+                    this.ProductNameField = value;
+                    this.RaisePropertyChanged("ProductName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal PurchasePrice {
+            get {
+                return this.PurchasePriceField;
+            }
+            set {
+                if ((this.PurchasePriceField.Equals(value) != true)) {
+                    this.PurchasePriceField = value;
+                    this.RaisePropertyChanged("PurchasePrice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal SalePrice {
+            get {
+                return this.SalePriceField;
+            }
+            set {
+                if ((this.SalePriceField.Equals(value) != true)) {
+                    this.SalePriceField = value;
+                    this.RaisePropertyChanged("SalePrice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((this.StatusField.Equals(value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Stock {
+            get {
+                return this.StockField;
+            }
+            set {
+                if ((this.StockField.Equals(value) != true)) {
+                    this.StockField = value;
+                    this.RaisePropertyChanged("Stock");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IUsersManager")]
@@ -20,6 +416,24 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/LogIn", ReplyAction="http://tempuri.org/IUsersManager/LogInResponse")]
         System.Threading.Tasks.Task<bool> LogInAsync(string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/AddEmployee", ReplyAction="http://tempuri.org/IUsersManager/AddEmployeeResponse")]
+        bool AddEmployee(MelodiasDelMundo_Client.ServiceReference1.EmployeeDataContract employee);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/AddEmployee", ReplyAction="http://tempuri.org/IUsersManager/AddEmployeeResponse")]
+        System.Threading.Tasks.Task<bool> AddEmployeeAsync(MelodiasDelMundo_Client.ServiceReference1.EmployeeDataContract employee);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/DeleteEmployee", ReplyAction="http://tempuri.org/IUsersManager/DeleteEmployeeResponse")]
+        bool DeleteEmployee(int idEmployee);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/DeleteEmployee", ReplyAction="http://tempuri.org/IUsersManager/DeleteEmployeeResponse")]
+        System.Threading.Tasks.Task<bool> DeleteEmployeeAsync(int idEmployee);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/GetIdEmployeeByUserName", ReplyAction="http://tempuri.org/IUsersManager/GetIdEmployeeByUserNameResponse")]
+        int GetIdEmployeeByUserName(string userName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/GetIdEmployeeByUserName", ReplyAction="http://tempuri.org/IUsersManager/GetIdEmployeeByUserNameResponse")]
+        System.Threading.Tasks.Task<int> GetIdEmployeeByUserNameAsync(string userName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,6 +469,105 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> LogInAsync(string username, string password) {
             return base.Channel.LogInAsync(username, password);
+        }
+        
+        public bool AddEmployee(MelodiasDelMundo_Client.ServiceReference1.EmployeeDataContract employee) {
+            return base.Channel.AddEmployee(employee);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddEmployeeAsync(MelodiasDelMundo_Client.ServiceReference1.EmployeeDataContract employee) {
+            return base.Channel.AddEmployeeAsync(employee);
+        }
+        
+        public bool DeleteEmployee(int idEmployee) {
+            return base.Channel.DeleteEmployee(idEmployee);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteEmployeeAsync(int idEmployee) {
+            return base.Channel.DeleteEmployeeAsync(idEmployee);
+        }
+        
+        public int GetIdEmployeeByUserName(string userName) {
+            return base.Channel.GetIdEmployeeByUserName(userName);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetIdEmployeeByUserNameAsync(string userName) {
+            return base.Channel.GetIdEmployeeByUserNameAsync(userName);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IProductsManager")]
+    public interface IProductsManager {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductsManager/RegisterProduct", ReplyAction="http://tempuri.org/IProductsManager/RegisterProductResponse")]
+        bool RegisterProduct(MelodiasDelMundo_Client.ServiceReference1.ProductDataContract product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductsManager/RegisterProduct", ReplyAction="http://tempuri.org/IProductsManager/RegisterProductResponse")]
+        System.Threading.Tasks.Task<bool> RegisterProductAsync(MelodiasDelMundo_Client.ServiceReference1.ProductDataContract product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductsManager/GetProducts", ReplyAction="http://tempuri.org/IProductsManager/GetProductsResponse")]
+        MelodiasDelMundo_Client.ServiceReference1.ProductDataContract[] GetProducts();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductsManager/GetProducts", ReplyAction="http://tempuri.org/IProductsManager/GetProductsResponse")]
+        System.Threading.Tasks.Task<MelodiasDelMundo_Client.ServiceReference1.ProductDataContract[]> GetProductsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductsManager/EditProduct", ReplyAction="http://tempuri.org/IProductsManager/EditProductResponse")]
+        bool EditProduct(MelodiasDelMundo_Client.ServiceReference1.ProductDataContract product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductsManager/EditProduct", ReplyAction="http://tempuri.org/IProductsManager/EditProductResponse")]
+        System.Threading.Tasks.Task<bool> EditProductAsync(MelodiasDelMundo_Client.ServiceReference1.ProductDataContract product);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IProductsManagerChannel : MelodiasDelMundo_Client.ServiceReference1.IProductsManager, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ProductsManagerClient : System.ServiceModel.ClientBase<MelodiasDelMundo_Client.ServiceReference1.IProductsManager>, MelodiasDelMundo_Client.ServiceReference1.IProductsManager {
+        
+        public ProductsManagerClient() {
+        }
+        
+        public ProductsManagerClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public ProductsManagerClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ProductsManagerClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ProductsManagerClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public bool RegisterProduct(MelodiasDelMundo_Client.ServiceReference1.ProductDataContract product) {
+            return base.Channel.RegisterProduct(product);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RegisterProductAsync(MelodiasDelMundo_Client.ServiceReference1.ProductDataContract product) {
+            return base.Channel.RegisterProductAsync(product);
+        }
+        
+        public MelodiasDelMundo_Client.ServiceReference1.ProductDataContract[] GetProducts() {
+            return base.Channel.GetProducts();
+        }
+        
+        public System.Threading.Tasks.Task<MelodiasDelMundo_Client.ServiceReference1.ProductDataContract[]> GetProductsAsync() {
+            return base.Channel.GetProductsAsync();
+        }
+        
+        public bool EditProduct(MelodiasDelMundo_Client.ServiceReference1.ProductDataContract product) {
+            return base.Channel.EditProduct(product);
+        }
+        
+        public System.Threading.Tasks.Task<bool> EditProductAsync(MelodiasDelMundo_Client.ServiceReference1.ProductDataContract product) {
+            return base.Channel.EditProductAsync(product);
         }
     }
 }

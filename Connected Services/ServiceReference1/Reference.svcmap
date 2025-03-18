@@ -25,6 +25,7 @@
     <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="d563ed42-66f6-4012-bf27-7af039f9780a" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
     <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="edf19278-2710-45d2-8c34-6eb2540f9763" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="d784e081-c8f3-437a-89f0-0ea4dfa8a440" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
+    <MetadataFile FileName="MelodiasService.xsd" MetadataType="Schema" ID="83e27a46-a3b0-40c1-861f-4c3e3434525a" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
