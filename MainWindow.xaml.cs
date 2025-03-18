@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MelodiasDelMundo_Client.ServiceReference1;
+using MelodiasDelMundo_Client.Views;
+using MelodiasDelMundo_Client.Views.RegisterEmployee;
 
 namespace MelodiasDelMundo_Client
 {
@@ -35,11 +37,15 @@ namespace MelodiasDelMundo_Client
 
             if (_service.LogIn(username, password))
             {
-                Console.WriteLine("Logged in nigga");
+                EmployeeForm mainMenu = new EmployeeForm();
+                mainMenu.Show();  
+                this.Close();
+
+
             }
             else 
             {
-                Console.WriteLine("nigga you dumb");
+                MessageBox.Show("tas menso wey");
             }
         }
     }

@@ -63,24 +63,6 @@
   <wsdl:message name="IUsersManager_GetIdEmployeeByUserName_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetIdEmployeeByUserNameResponse" />
   </wsdl:message>
-  <wsdl:message name="IProductsManager_RegisterProduct_InputMessage">
-    <wsdl:part name="parameters" element="tns:RegisterProduct" />
-  </wsdl:message>
-  <wsdl:message name="IProductsManager_RegisterProduct_OutputMessage">
-    <wsdl:part name="parameters" element="tns:RegisterProductResponse" />
-  </wsdl:message>
-  <wsdl:message name="IProductsManager_GetProducts_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetProducts" />
-  </wsdl:message>
-  <wsdl:message name="IProductsManager_GetProducts_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetProductsResponse" />
-  </wsdl:message>
-  <wsdl:message name="IProductsManager_EditProduct_InputMessage">
-    <wsdl:part name="parameters" element="tns:EditProduct" />
-  </wsdl:message>
-  <wsdl:message name="IProductsManager_EditProduct_OutputMessage">
-    <wsdl:part name="parameters" element="tns:EditProductResponse" />
-  </wsdl:message>
   <wsdl:portType name="IUsersManager">
     <wsdl:operation name="LogIn">
       <wsdl:input wsaw:Action="http://tempuri.org/IUsersManager/LogIn" message="tns:IUsersManager_LogIn_InputMessage" />
@@ -97,20 +79,6 @@
     <wsdl:operation name="GetIdEmployeeByUserName">
       <wsdl:input wsaw:Action="http://tempuri.org/IUsersManager/GetIdEmployeeByUserName" message="tns:IUsersManager_GetIdEmployeeByUserName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUsersManager/GetIdEmployeeByUserNameResponse" message="tns:IUsersManager_GetIdEmployeeByUserName_OutputMessage" />
-    </wsdl:operation>
-  </wsdl:portType>
-  <wsdl:portType name="IProductsManager">
-    <wsdl:operation name="RegisterProduct">
-      <wsdl:input wsaw:Action="http://tempuri.org/IProductsManager/RegisterProduct" message="tns:IProductsManager_RegisterProduct_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IProductsManager/RegisterProductResponse" message="tns:IProductsManager_RegisterProduct_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetProducts">
-      <wsdl:input wsaw:Action="http://tempuri.org/IProductsManager/GetProducts" message="tns:IProductsManager_GetProducts_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IProductsManager/GetProductsResponse" message="tns:IProductsManager_GetProducts_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="EditProduct">
-      <wsdl:input wsaw:Action="http://tempuri.org/IProductsManager/EditProduct" message="tns:IProductsManager_EditProduct_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IProductsManager/EditProductResponse" message="tns:IProductsManager_EditProduct_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IUsersManager" type="tns:IUsersManager">
@@ -146,38 +114,6 @@
     </wsdl:operation>
     <wsdl:operation name="GetIdEmployeeByUserName">
       <soap12:operation soapAction="http://tempuri.org/IUsersManager/GetIdEmployeeByUserName" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-  </wsdl:binding>
-  <wsdl:binding name="NetTcpBinding_IProductsManager" type="tns:IProductsManager">
-    <wsp:PolicyReference URI="#NetTcpBinding_IProductsManager_policy">
-    </wsp:PolicyReference>
-    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
-    <wsdl:operation name="RegisterProduct">
-      <soap12:operation soapAction="http://tempuri.org/IProductsManager/RegisterProduct" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetProducts">
-      <soap12:operation soapAction="http://tempuri.org/IProductsManager/GetProducts" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="EditProduct">
-      <soap12:operation soapAction="http://tempuri.org/IProductsManager/EditProduct" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
