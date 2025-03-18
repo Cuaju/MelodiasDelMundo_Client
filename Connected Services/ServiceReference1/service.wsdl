@@ -16,6 +16,22 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IProductsManager_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="60000">
+          </wsrm:InactivityTimeout>
+          <wsrm:AcknowledgementInterval Milliseconds="200">
+          </wsrm:AcknowledgementInterval>
+        </wsrm:RMAssertion>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import namespace="http://tempuri.org/" />
@@ -108,6 +124,12 @@
   </wsdl:binding>
   <wsdl:service name="ServiceImplementation">
     <wsdl:port name="NetTcpBinding_IUsersManager" binding="tns:NetTcpBinding_IUsersManager">
+      <soap12:address location="net.tcp://localhost:8001/ServiceImplementation/Service" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8001/ServiceImplementation/Service</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IProductsManager" binding="tns:NetTcpBinding_IProductsManager">
       <soap12:address location="net.tcp://localhost:8001/ServiceImplementation/Service" />
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8001/ServiceImplementation/Service</wsa10:Address>

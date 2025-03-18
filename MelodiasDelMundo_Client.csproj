@@ -68,18 +68,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Views\DeleteEmployee\DeleteEmployee.xaml.cs">
-      <DependentUpon>DeleteEmployee.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\DeleteEmployee\EmployeeDetails.xaml.cs">
-      <DependentUpon>EmployeeDetails.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\MainMenu\MainMenu.xaml.cs">
-      <DependentUpon>MainMenu.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\RegisterEmployee\EmployeeForm.xaml.cs">
-      <DependentUpon>EmployeeForm.xaml</DependentUpon>
-    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -92,6 +80,15 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="GUI-EditProduct.xaml.cs">
+      <DependentUpon>GUI-EditProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI-RegisterProduct.xaml.cs">
+      <DependentUpon>GUI-RegisterProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI-SelectProduct.xaml.cs">
+      <DependentUpon>GUI-SelectProduct.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

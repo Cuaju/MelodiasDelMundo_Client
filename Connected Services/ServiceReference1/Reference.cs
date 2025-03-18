@@ -186,6 +186,7 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
         }
     }
     
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IUsersManager")]
     public interface IUsersManager {
