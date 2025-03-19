@@ -98,6 +98,18 @@
   <wsdl:message name="IProductsManager_EditProduct_OutputMessage">
     <wsdl:part name="parameters" element="tns:EditProductResponse" />
   </wsdl:message>
+  <wsdl:message name="IProductsManager_ExistsProductByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExistsProductByName" />
+  </wsdl:message>
+  <wsdl:message name="IProductsManager_ExistsProductByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExistsProductByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductsManager_DeleteProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProduct" />
+  </wsdl:message>
+  <wsdl:message name="IProductsManager_DeleteProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProductResponse" />
+  </wsdl:message>
   <wsdl:message name="ISuppliersManager_RegisterSupplier_InputMessage">
     <wsdl:part name="parameters" element="tns:RegisterSupplier" />
   </wsdl:message>
@@ -158,6 +170,14 @@
     <wsdl:operation name="EditProduct">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductsManager/EditProduct" message="tns:IProductsManager_EditProduct_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductsManager/EditProductResponse" message="tns:IProductsManager_EditProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExistsProductByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductsManager/ExistsProductByName" message="tns:IProductsManager_ExistsProductByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductsManager/ExistsProductByNameResponse" message="tns:IProductsManager_ExistsProductByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductsManager/DeleteProduct" message="tns:IProductsManager_DeleteProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductsManager/DeleteProductResponse" message="tns:IProductsManager_DeleteProduct_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ISuppliersManager">
@@ -247,6 +267,24 @@
     </wsdl:operation>
     <wsdl:operation name="EditProduct">
       <soap12:operation soapAction="http://tempuri.org/IProductsManager/EditProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExistsProductByName">
+      <soap12:operation soapAction="http://tempuri.org/IProductsManager/ExistsProductByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <soap12:operation soapAction="http://tempuri.org/IProductsManager/DeleteProduct" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

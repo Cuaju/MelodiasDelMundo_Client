@@ -1,9 +1,12 @@
 ﻿using MelodiasDelMundo_Client.ServiceReference1;
+using MelodiasDelMundo_Client.Utils;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography;
+using System.ServiceModel;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -18,14 +21,12 @@ using System.Windows.Shapes;
 
 namespace MelodiasDelMundo_Client.Views.Product
 {
-    /// <summary>
-    /// Lógica de interacción para GUI_EditProduct.xaml
-    /// </summary>
     public partial class GUI_EditProduct : Window
     {
         private ProductsManagerClient _service;
         private ProductDataContract _producto;
         private string rutaImagen = "";
+        private NotificationDialog _notificationDialog;
 
         public GUI_EditProduct(ProductDataContract producto)
         {
@@ -33,6 +34,7 @@ namespace MelodiasDelMundo_Client.Views.Product
             _service = new ProductsManagerClient();
             _producto = producto;
             CargarDatos();
+            _notificationDialog = new NotificationDialog();
         }
 
         private void CargarDatos()
@@ -43,6 +45,7 @@ namespace MelodiasDelMundo_Client.Views.Product
             txtPrecioCompra.Text = _producto.PurchasePrice.ToString("C");
             txtPrecioVenta.Text = _producto.SalePrice.ToString("C");
             txtCantidad.Text = _producto.Stock.ToString();
+
             for (int i = 0; i < cmbCategoria.Items.Count; i++)
             {
                 if (((ComboBoxItem)cmbCategoria.Items[i]).Content.ToString() == _producto.Category)
@@ -52,7 +55,6 @@ namespace MelodiasDelMundo_Client.Views.Product
                 }
             }
 
-            // Buscar el índice del ComboBoxItem que coincida con la marca recuperada
             for (int i = 0; i < cmbMarca.Items.Count; i++)
             {
                 if (((ComboBoxItem)cmbMarca.Items[i]).Content.ToString() == _producto.Brand)
@@ -75,6 +77,28 @@ namespace MelodiasDelMundo_Client.Views.Product
         {
             try
             {
+                 if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                    string.IsNullOrWhiteSpace(txtPrecioCompra.Text) ||
+                    string.IsNullOrWhiteSpace(txtPrecioVenta.Text) ||
+                    string.IsNullOrWhiteSpace(txtCantidad.Text) ||
+                    cmbCategoria.SelectedIndex == 0 ||
+                    cmbMarca.SelectedIndex == 0 ||
+                    string.IsNullOrWhiteSpace(rutaImagen) ||
+                    string.IsNullOrWhiteSpace(txtModelo.Text) ||
+                    string.IsNullOrWhiteSpace(txtDescripcion.Text))
+                 {
+                    _notificationDialog.ShowWarningNotification("Por favor llene todos los campos.");
+                    return;
+                 }
+
+                bool nombreExiste = _service.ExistsProductByName(txtNombre.Text, _producto.ProductId);
+
+                if (nombreExiste)
+                {
+                    _notificationDialog.ShowErrorNotification("El nombre del producto ya está registrado en la base de datos.");
+                    return;
+                }
+
                 _producto.ProductName = txtNombre.Text;
                 _producto.Description = txtDescripcion.Text;
                 _producto.PurchasePrice = decimal.Parse(txtPrecioCompra.Text, System.Globalization.NumberStyles.Currency);
@@ -84,19 +108,43 @@ namespace MelodiasDelMundo_Client.Views.Product
                 _producto.Brand = ((ComboBoxItem)cmbMarca.SelectedItem).Content.ToString();
                 _producto.Model = txtModelo.Text;
                 _producto.Photo = rutaImagen;
+                
+                bool resultado = _service.EditProduct(_producto);
 
-                _service.EditProduct(_producto);
-                MessageBox.Show("Producto actualizado correctamente.");
-                this.Close();
+                if (resultado)
+                {
+                    _notificationDialog.ShowSuccessNotification("La información del pruducto se modificó correctamente.");
+                    GUI_SelectProduct vSelectProduct = new GUI_SelectProduct();
+                    vSelectProduct.Show();
+                    this.Close();
+                }
+                else
+                {
+                    _notificationDialog.ShowErrorNotification("No fue posible modificar el producto porque ya existe en la base de datos.");
+                }
+            }
+            catch (FaultException ex)
+            {
+                _notificationDialog.ShowErrorNotification("Error de servicio: " + ex.Message);
+            }
+            catch (CommunicationException ex)
+            {
+                _notificationDialog.ShowErrorNotification("Error de comunicación con el servidor: " + ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                _notificationDialog.ShowErrorNotification("Tiempo de espera agotado al intentar conectar con el servidor: " + ex.Message);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al actualizar el producto: " + ex.Message);
+                _notificationDialog.ShowErrorNotification("Error inesperado: " + ex.Message);
             }
         }
 
         private void Cancelar_Click(object sender, RoutedEventArgs e)
         {
+            GUI_SelectProduct vSelectProduct = new GUI_SelectProduct();
+            vSelectProduct.Show();
             this.Close();
         }
 

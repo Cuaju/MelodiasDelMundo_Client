@@ -205,6 +205,9 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
         private string DescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool HasSalesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ModelField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -276,6 +279,19 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
                 if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
                     this.DescriptionField = value;
                     this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool HasSales {
+            get {
+                return this.HasSalesField;
+            }
+            set {
+                if ((this.HasSalesField.Equals(value) != true)) {
+                    this.HasSalesField = value;
+                    this.RaisePropertyChanged("HasSales");
                 }
             }
         }
@@ -674,6 +690,18 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductsManager/EditProduct", ReplyAction="http://tempuri.org/IProductsManager/EditProductResponse")]
         System.Threading.Tasks.Task<bool> EditProductAsync(MelodiasDelMundo_Client.ServiceReference1.ProductDataContract product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductsManager/ExistsProductByName", ReplyAction="http://tempuri.org/IProductsManager/ExistsProductByNameResponse")]
+        bool ExistsProductByName(string productName, int productId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductsManager/ExistsProductByName", ReplyAction="http://tempuri.org/IProductsManager/ExistsProductByNameResponse")]
+        System.Threading.Tasks.Task<bool> ExistsProductByNameAsync(string productName, int productId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductsManager/DeleteProduct", ReplyAction="http://tempuri.org/IProductsManager/DeleteProductResponse")]
+        bool DeleteProduct(int productId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductsManager/DeleteProduct", ReplyAction="http://tempuri.org/IProductsManager/DeleteProductResponse")]
+        System.Threading.Tasks.Task<bool> DeleteProductAsync(int productId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -725,6 +753,22 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> EditProductAsync(MelodiasDelMundo_Client.ServiceReference1.ProductDataContract product) {
             return base.Channel.EditProductAsync(product);
+        }
+        
+        public bool ExistsProductByName(string productName, int productId) {
+            return base.Channel.ExistsProductByName(productName, productId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ExistsProductByNameAsync(string productName, int productId) {
+            return base.Channel.ExistsProductByNameAsync(productName, productId);
+        }
+        
+        public bool DeleteProduct(int productId) {
+            return base.Channel.DeleteProduct(productId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteProductAsync(int productId) {
+            return base.Channel.DeleteProductAsync(productId);
         }
     }
     
