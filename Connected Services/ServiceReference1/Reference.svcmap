@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="10089f0c-f68b-4844-8b9a-3eb9ab8a089c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="3bf37412-b8c2-4e8a-9694-04d832db5cad" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="net.tcp://localhost:8001/ServiceImplementation/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="d563ed42-66f6-4012-bf27-7af039f9780a" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="edf19278-2710-45d2-8c34-6eb2540f9763" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="d784e081-c8f3-437a-89f0-0ea4dfa8a440" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
-    <MetadataFile FileName="MelodiasService1.xsd" MetadataType="Schema" ID="e967e598-568a-46d0-a6f6-df331b8860a0" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
-    <MetadataFile FileName="MelodiasService.DTOs.xsd" MetadataType="Schema" ID="771fe75d-21f5-4066-8545-a54d24695a64" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="eedefb63-bdce-4ab9-829f-5ab0a9304543" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="93038da2-fd33-4fd5-af8d-659ae7f86dba" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="ac5d52c1-ea35-47f0-a6fd-d418c7225639" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
+    <MetadataFile FileName="MelodiasService.xsd" MetadataType="Schema" ID="12681150-0e2c-4836-b283-30b77c146558" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
+    <MetadataFile FileName="MelodiasService.DTOs.xsd" MetadataType="Schema" ID="3908cd77-c4f0-407c-bb56-ebce669c2c09" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

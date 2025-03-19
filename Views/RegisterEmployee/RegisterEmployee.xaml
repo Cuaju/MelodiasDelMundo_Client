@@ -41,10 +41,12 @@
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0" >
-                    <Button x:Name="btnCancel" Content="Cancelar" Width="100" Background="#E53E3E" Foreground="White" />
-                    <Button x:Name="btnAcept" Content="Registrar" Width="100" Background="#38A169" Foreground="White" />
+                    <Button x:Name="btnCancel" Content="Cancelar" Width="100" Background="#E53E3E" Foreground="White" Click="BtnCancel_Click" />
+                    <Button x:Name="btnAcept" Content="Registrar" Width="100" Background="#38A169" Foreground="White" Click="BtnAcept_Click" />
                 </StackPanel>
             </StackPanel>
         </Border>
     </Grid>
 </Window>
+
+

@@ -33,6 +33,6 @@
         <Label Grid.Row="4" Content="Contraseña" FontSize="20" HorizontalAlignment="Left" Margin="20 0 0 0"/>
         <TextBox x:Name="tbPassword" Grid.Row="5" Width="350" Height="50" HorizontalAlignment="Left" Margin="20 0 0 0"/>
 
-        <Button x:Name="btLogin" Grid.Row="6" Content="Iniciar Sesión" FontSize="30" Foreground="AliceBlue" Width="250" Height="60" HorizontalAlignment="Right" Margin="0 0 20 0" Click="btLogin_Click"/>
+        <Button x:Name="btLogin" Grid.Row="6" Content="Iniciar Sesión" FontSize="30" Foreground="AliceBlue" Width="250" Height="60" HorizontalAlignment="Right" Margin="0 0 20 0" Click="BtLogin_Click"/>
     </Grid>
 </Window>
