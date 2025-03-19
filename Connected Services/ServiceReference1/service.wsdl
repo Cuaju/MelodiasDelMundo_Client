@@ -140,6 +140,12 @@
   <wsdl:message name="ISuppliersManager_IsSupplierEmailTaken_OutputMessage">
     <wsdl:part name="parameters" element="tns:IsSupplierEmailTakenResponse" />
   </wsdl:message>
+  <wsdl:message name="ISuppliersManager_DeleteSupplier_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSupplier" />
+  </wsdl:message>
+  <wsdl:message name="ISuppliersManager_DeleteSupplier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSupplierResponse" />
+  </wsdl:message>
   <wsdl:portType name="IUsersManager">
     <wsdl:operation name="LogIn">
       <wsdl:input wsaw:Action="http://tempuri.org/IUsersManager/LogIn" message="tns:IUsersManager_LogIn_InputMessage" />
@@ -200,6 +206,10 @@
     <wsdl:operation name="IsSupplierEmailTaken">
       <wsdl:input wsaw:Action="http://tempuri.org/ISuppliersManager/IsSupplierEmailTaken" message="tns:ISuppliersManager_IsSupplierEmailTaken_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISuppliersManager/IsSupplierEmailTakenResponse" message="tns:ISuppliersManager_IsSupplierEmailTaken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSupplier">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuppliersManager/DeleteSupplier" message="tns:ISuppliersManager_DeleteSupplier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuppliersManager/DeleteSupplierResponse" message="tns:ISuppliersManager_DeleteSupplier_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IUsersManager" type="tns:IUsersManager">
@@ -335,6 +345,15 @@
     </wsdl:operation>
     <wsdl:operation name="IsSupplierEmailTaken">
       <soap12:operation soapAction="http://tempuri.org/ISuppliersManager/IsSupplierEmailTaken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSupplier">
+      <soap12:operation soapAction="http://tempuri.org/ISuppliersManager/DeleteSupplier" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
