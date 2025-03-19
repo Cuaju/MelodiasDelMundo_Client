@@ -7,11 +7,9 @@
         mc:Ignorable="d"
         Title="Gui_SelectProduct" Height="500" Width="700">
     <Grid>
-        <!-- Campo de búsqueda -->
         <TextBox x:Name="txtBuscar" Width="300" Height="25" Margin="10,10,0,0" HorizontalAlignment="Left"/>
         <Button x:Name="btnBuscar" Content="Buscar" Width="100" Height="25" Margin="320,10,0,0" HorizontalAlignment="Left"/>
 
-        <!-- Filtros -->
         <Label Content="Código:" Margin="10,50,0,0" HorizontalAlignment="Left"/>
         <TextBox x:Name="txtCodigo" Width="100" Height="25" Margin="70,50,0,0" HorizontalAlignment="Left"/>
 
@@ -21,10 +19,11 @@
         <Label Content="Marca:" Margin="420,50,0,0" HorizontalAlignment="Left"/>
         <ComboBox x:Name="cmbMarca" Width="150" Height="25" Margin="470,50,0,0" HorizontalAlignment="Left"/>
 
-        <!-- Tabla de productos -->
-        <DataGrid x:Name="dgProductos" AutoGenerateColumns="False" Margin="10,90,10,50" Height="300" SelectionMode="Single">
+        <DataGrid x:Name="dgProductos" AutoGenerateColumns="False" Margin="10,90,10,50" Height="300"
+                  SelectionMode="Single" SelectionUnit="FullRow" IsReadOnly="True"
+                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                  ColumnWidth="*" GridLinesVisibility="None">
             <DataGrid.Columns>
-                <DataGridCheckBoxColumn Header="Seleccionar" />
                 <DataGridTextColumn Header="Código" Binding="{Binding ProductCode}"/>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding ProductName}"/>
                 <DataGridTextColumn Header="Categoría" Binding="{Binding Category}"/>
@@ -34,7 +33,7 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <!-- Botones -->
+        <Button x:Name="btnEliminar" Content="Eliminar" Width="100" Height="30" Margin="390,410,0,0" HorizontalAlignment="Left" Click="btnEliminar_Click"/>
         <Button x:Name="btnEditar" Content="Editar" Width="100" Height="30" Margin="500,410,0,0" HorizontalAlignment="Left" Click="btnEditar_Click"/>
         <Button x:Name="btnRegresar" Content="Regresar" Width="100" Height="30" Margin="610,410,0,0" HorizontalAlignment="Left" Click="btnRegresar_Click"/>
     </Grid>

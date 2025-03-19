@@ -47,10 +47,10 @@
             <TextBox x:Name="txtCodigo" Grid.Column="1" Grid.Row="1" Margin="5" Width="250" IsReadOnly="True"/>
 
             <TextBlock Text="Precio compra:" Grid.Column="0" Grid.Row="2" Margin="5"/>
-            <TextBox x:Name="txtPrecioCompra" Grid.Column="1" Grid.Row="2" Margin="5" Width="250" TextChanged="PrecioTextBox_TextChanged" MaxLength="20"/>
+            <TextBox x:Name="txtPrecioCompra" Grid.Column="1" Grid.Row="2" Margin="5" Width="250" TextChanged="PrecioTextBox_TextChanged" MaxLength="20" PreviewTextInput="StockValidationTextBox"/>
 
             <TextBlock Text="Precio venta:" Grid.Column="0" Grid.Row="3" Margin="5"/>
-            <TextBox x:Name="txtPrecioVenta" Grid.Column="1" Grid.Row="3" Margin="5" Width="250" TextChanged="PrecioTextBox_TextChanged" MaxLength="20"/>
+            <TextBox x:Name="txtPrecioVenta" Grid.Column="1" Grid.Row="3" Margin="5" Width="250" TextChanged="PrecioTextBox_TextChanged" MaxLength="20" PreviewTextInput="StockValidationTextBox"/>
 
             <TextBlock Text="Categoría:" Grid.Column="0" Grid.Row="4" Margin="5"/>
             <ComboBox x:Name="cmbCategoria" Grid.Column="1" Grid.Row="4" Margin="5" Width="250">
@@ -84,8 +84,8 @@
             <StackPanel Grid.Column="2" Grid.Row="0" Grid.RowSpan="7" HorizontalAlignment="Center" Margin="10">
                 <TextBlock Text="Foto:" HorizontalAlignment="Center" Margin="5"/>
                 <Button x:Name="btnSeleccionarFoto" Content="Seleccionar"
-                         Click="SeleccionarFoto_Click" Background="Red" Foreground="White"
-                         Width="150" Height="40"/>
+                         Click="SeleccionarFoto_Click" Background="Gray" Foreground="White"
+                         Width="150" Height="40" BorderBrush="Gray"/>
                 <Image x:Name="imgVistaPrevia" Width="160" Height="140" Stretch="Uniform"
                         HorizontalAlignment="Center" Margin="5"/>
                 <TextBlock Text="(Vista previa)" FontSize="10" HorizontalAlignment="Center"/>
@@ -94,9 +94,9 @@
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
             <Button x:Name="btnGuardarCambios" Content="Guardar Cambios" Width="150" Margin="10"
-                     Click="GuardarCambios_Click" Background="Red" Foreground="White" Height="40"/>
+                     Click="GuardarCambios_Click" Background="LightBlue" Foreground="White" Height="40" BorderBrush="LightBlue"/>
             <Button x:Name="btnCancelar" Content="Cancelar" Width="150" Margin="10"
-                     Click="Cancelar_Click" Background="Red" Foreground="White" Height="40"/>
+                     Click="Cancelar_Click" Background="Gray" Foreground="White" Height="40" BorderBrush="Gray"/>
         </StackPanel>
     </Grid>
 </Window>

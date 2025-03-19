@@ -1,4 +1,5 @@
 ﻿using MelodiasDelMundo_Client.ServiceReference1;
+using MelodiasDelMundo_Client.Utils;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -19,18 +20,17 @@ using System.Windows.Shapes;
 
 namespace MelodiasDelMundo_Client.Views.Product
 {
-    /// <summary>
-    /// Lógica de interacción para GUI_RegisterProduct.xaml
-    /// </summary>
     public partial class GUI_RegisterProduct : Window
     {
         private ProductsManagerClient _service;
         private string rutaImagen = "";
+        private NotificationDialog _notificationDialog;
 
         public GUI_RegisterProduct()
         {
             InitializeComponent();
             _service = new ProductsManagerClient();
+            _notificationDialog = new NotificationDialog();
         }
 
         private void Registrar_Click(object sender, RoutedEventArgs e)
@@ -38,21 +38,30 @@ namespace MelodiasDelMundo_Client.Views.Product
             try
             {
                 if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
-                    string.IsNullOrWhiteSpace(txtCodigo.Text) ||
                     string.IsNullOrWhiteSpace(txtPrecioCompra.Text) ||
                     string.IsNullOrWhiteSpace(txtPrecioVenta.Text) ||
                     string.IsNullOrWhiteSpace(txtCantidad.Text) ||
                     cmbCategoria.SelectedIndex == 0 ||
-                    cmbMarca.SelectedIndex == 0)
+                    cmbMarca.SelectedIndex == 0 ||
+                    string.IsNullOrWhiteSpace(rutaImagen) ||
+                    string.IsNullOrWhiteSpace(txtModelo.Text) ||
+                    string.IsNullOrWhiteSpace(txtDescripcion.Text))
                 {
-                    MessageBox.Show("Por favor llene todos los campos.");
+                    _notificationDialog.ShowWarningNotification("Por favor llene todos los campos.");
+                    return;
+                }
+
+                bool nombreExiste = _service.ExistsProductByName(txtNombre.Text, 0);
+
+                if (nombreExiste)
+                {
+                    _notificationDialog.ShowErrorNotification("El nombre del producto ya está registrado en la base de datos.");
                     return;
                 }
 
                 var producto = new ProductDataContract
                 {
                     ProductName = txtNombre.Text,
-                    ProductCode = txtCodigo.Text,
                     Description = txtDescripcion.Text,
                     PurchasePrice = decimal.Parse(txtPrecioCompra.Text, NumberStyles.Currency),
                     SalePrice = decimal.Parse(txtPrecioVenta.Text, NumberStyles.Currency),
@@ -61,31 +70,37 @@ namespace MelodiasDelMundo_Client.Views.Product
                     Model = txtModelo.Text,
                     Stock = int.Parse(txtCantidad.Text),
                     Photo = rutaImagen,
-                    Status = true
+                    Status = true,
+                    HasSales = false
                 };
 
                 bool resultado = _service.RegisterProduct(producto);
 
                 if (resultado)
-                    MessageBox.Show("El producto se ha registrado correctamente.");
+                {
+                    _notificationDialog.ShowSuccessNotification("El producto se ha registrado correctamente.");
+                    LimpiarCampos();
+                }
                 else
-                    MessageBox.Show("El producto ya existe en la base de datos.");
+                {
+                    _notificationDialog.ShowErrorNotification("No fue posible registrar el producto porque ya existe en la base de datos.");
+                }
             }
             catch (FaultException ex)
             {
-                MessageBox.Show("Error de servicio: " + ex.Message);
+                _notificationDialog.ShowErrorNotification("Error de servicio: " + ex.Message);
             }
             catch (CommunicationException ex)
             {
-                MessageBox.Show("Error de comunicación con el servidor: " + ex.Message);
+                _notificationDialog.ShowErrorNotification("Error de comunicación con el servidor: " + ex.Message);
             }
             catch (TimeoutException ex)
             {
-                MessageBox.Show("Tiempo de espera agotado al intentar conectar con el servidor: " + ex.Message);
+                _notificationDialog.ShowErrorNotification("Tiempo de espera agotado al intentar conectar con el servidor: " + ex.Message);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error inesperado: " + ex.Message);
+                _notificationDialog.ShowErrorNotification("Error inesperado: " + ex.Message);
             }
         }
 
@@ -129,6 +144,19 @@ namespace MelodiasDelMundo_Client.Views.Product
             Regex regex = new Regex("^[0-9]+$");
             e.Handled = !regex.IsMatch(e.Text);
         }
+
+        private void LimpiarCampos()
+        {
+            txtNombre.Text = "";
+            txtDescripcion.Text = "";
+            txtPrecioCompra.Text = "";
+            txtPrecioVenta.Text = "";
+            txtCantidad.Text = "";
+            txtModelo.Text = "";
+            cmbCategoria.SelectedIndex = 0;
+            cmbMarca.SelectedIndex = 0;
+            imgVistaPrevia.Source = null;
+            rutaImagen = "";
+        }
     }
 }
-

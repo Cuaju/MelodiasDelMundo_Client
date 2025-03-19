@@ -1,4 +1,5 @@
 ﻿using MelodiasDelMundo_Client.ServiceReference1;
+using MelodiasDelMundo_Client.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,19 +16,18 @@ using System.Windows.Shapes;
 
 namespace MelodiasDelMundo_Client.Views.Product
 {
-    /// <summary>
-    /// Lógica de interacción para Gui_SelectProduct.xaml
-    /// </summary>
     public partial class GUI_SelectProduct : Window
     {
         private ProductsManagerClient _service;
         private List<ProductDataContract> _productos;
+        private NotificationDialog _notificationDialog;
 
         public GUI_SelectProduct()
         {
             InitializeComponent();
             _service = new ProductsManagerClient();
             CargarProductos();
+            _notificationDialog = new NotificationDialog();
         }
 
         private void CargarProductos()
@@ -36,7 +36,6 @@ namespace MelodiasDelMundo_Client.Views.Product
             dgProductos.ItemsSource = _productos;
         }
 
-
         private void btnEditar_Click(object sender, RoutedEventArgs e)
         {
             ProductDataContract productoSeleccionado = dgProductos.SelectedItem as ProductDataContract;
@@ -44,11 +43,28 @@ namespace MelodiasDelMundo_Client.Views.Product
             if (productoSeleccionado != null)
             {
                 GUI_EditProduct ventanaEdicion = new GUI_EditProduct(productoSeleccionado);
-                ventanaEdicion.ShowDialog();
+                ventanaEdicion.Show();
+                this.Close();
             }
             else
             {
-                MessageBox.Show("Por favor seleccione un producto para editar.");
+                _notificationDialog.ShowWarningNotification("Por favor seleccione un producto para editar.");
+            }
+        }
+
+        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            ProductDataContract selectedProduct = dgProductos.SelectedItem as ProductDataContract;
+
+            if (selectedProduct != null)
+            {
+                GUI_DeleteProduct deleteWindow = new GUI_DeleteProduct(selectedProduct);
+                deleteWindow.Show();
+                this.Close();
+            }
+            else
+            {
+                _notificationDialog.ShowWarningNotification("Por favor seleccione un producto para eliminar.");
             }
         }
 
