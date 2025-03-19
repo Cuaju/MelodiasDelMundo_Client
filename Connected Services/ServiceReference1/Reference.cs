@@ -805,6 +805,12 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISuppliersManager/IsSupplierEmailTaken", ReplyAction="http://tempuri.org/ISuppliersManager/IsSupplierEmailTakenResponse")]
         System.Threading.Tasks.Task<bool> IsSupplierEmailTakenAsync(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISuppliersManager/DeleteSupplier", ReplyAction="http://tempuri.org/ISuppliersManager/DeleteSupplierResponse")]
+        bool DeleteSupplier(int supplierId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISuppliersManager/DeleteSupplier", ReplyAction="http://tempuri.org/ISuppliersManager/DeleteSupplierResponse")]
+        System.Threading.Tasks.Task<bool> DeleteSupplierAsync(int supplierId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -872,6 +878,14 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> IsSupplierEmailTakenAsync(string email) {
             return base.Channel.IsSupplierEmailTakenAsync(email);
+        }
+        
+        public bool DeleteSupplier(int supplierId) {
+            return base.Channel.DeleteSupplier(supplierId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteSupplierAsync(int supplierId) {
+            return base.Channel.DeleteSupplierAsync(supplierId);
         }
     }
 }

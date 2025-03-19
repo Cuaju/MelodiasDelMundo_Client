@@ -96,11 +96,13 @@ namespace MelodiasDelMundo_Client.Views.Suppliers
                         SuppliersFound.Remove(e);
                         var notificationDialog = new NotificationDialog();
                         notificationDialog.ShowSuccessNotification(editedInfoSupplier.Name + " information succesfully edited");
+                        return;
                     }
                     else
                     {
                         var notificationDialog = new NotificationDialog();
                         notificationDialog.ShowErrorNotification("An error ocurred while editing the user try again later");
+                        return ;
                     }
                 }
                 catch (EndpointNotFoundException ex)
@@ -137,6 +139,56 @@ namespace MelodiasDelMundo_Client.Views.Suppliers
 
         private async void OnDeleteSupplier(object sender, SupplierFound e)
         {
+            if (e != null)
+            {
+                try
+                {
+                    bool result = _service.DeleteSupplier(e.SupplierId);
+
+                    if (result)
+                    {
+                        var notificationDialog = new NotificationDialog();
+                        notificationDialog.ShowSuccessNotification("Supplier " + e.Name + " deleted succesfully");
+                        SuppliersFound.Remove(e);
+                        return;
+                    }
+                    else
+                    {
+                        var notificationDialog = new NotificationDialog();
+                        notificationDialog.ShowErrorNotification("An error ocurred while editing the user try again later");
+                        return;
+                    }
+                }
+                catch (EndpointNotFoundException ex)
+                {
+                    var notificationDialog = new NotificationDialog();
+                    notificationDialog.ShowErrorNotification("Cannot conect to the server");
+                    Console.WriteLine("----" + ex.Message + "----");
+                    Console.WriteLine(ex.StackTrace);
+                    return;
+                }
+                catch (CommunicationException ex)
+                {
+                    var notificationDialog = new NotificationDialog();
+                    notificationDialog.ShowErrorNotification("Cannot establish conecciont to the server");
+                    return;
+                }
+                catch (TimeoutException ex)
+                {
+                    var notificationDialog = new NotificationDialog();
+                    notificationDialog.ShowErrorNotification("Server took too long to respond try again lates");
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    var notificationDialog = new NotificationDialog();
+                    notificationDialog.ShowErrorNotification("Unknown error, try again later");
+                    return;
+                }
+
+            }
+            var dialog = new NotificationDialog();
+            dialog.ShowErrorNotification("Unknown error");
 
         }
 
