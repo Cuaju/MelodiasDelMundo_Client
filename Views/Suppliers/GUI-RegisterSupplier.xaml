@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="MelodiasDelMundo_Client.Views.Suppliers.GUI_RegisterSupplier"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MelodiasDelMundo_Client.Views.Suppliers"
+             mc:Ignorable="d" 
+             d:DesignHeight="950" d:DesignWidth="800" Background="White">
+    <Grid Height="950 " Width="800">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Register Supplier" FontSize="45" HorizontalAlignment="Left" Margin="30 0 0 0"/>
+
+        <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Left" Margin="30 0 0 0">
+            <Label Content="Name: " FontSize="20" />
+            <TextBox x:Name="tbName" Width="250" Height="80" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Left" Margin="30 0 0 0">
+            <Label Content="Adress: " FontSize="20" />
+            <TextBox x:Name="tbAdrress" Width="250" Height="80" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Orientation="Vertical" HorizontalAlignment="Left" Margin="30 0 0 0">
+            <Label Content="Postal code: " FontSize="20" />
+            <TextBox x:Name="tbPostalCode" Width="250" Height="80" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Orientation="Vertical" HorizontalAlignment="Left" Margin="30 0 0 0">
+            <Label Content="City: " FontSize="20" />
+            <TextBox x:Name="tbCity" Width="250" Height="80" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="5" Orientation="Vertical" HorizontalAlignment="Left" Margin="30 0 0 0">
+            <Label Content="Country: " FontSize="20" />
+            <TextBox x:Name="tbCountry" Width="250" Height="80" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="6" Orientation="Vertical" HorizontalAlignment="Left" Margin="30 0 0 0">
+            <Label Content="Phone number: " FontSize="20" />
+            <TextBox x:Name="tbPhone" Width="250" Height="80" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="7" Orientation="Vertical" HorizontalAlignment="Left" Margin="30 0 0 0">
+            <Label Content="Email: " FontSize="20" />
+            <TextBox x:Name="tbEmail" Width="250" Height="80" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Left" Margin="30 0 0 0">
+            <Button x:Name="btRegister" Content="Register" FontSize="25" Width="250" Height="70" HorizontalAlignment="Left" Background="Lime" Click="btRegister_Click" />
+            <Button x:Name="btCancel" Content="Cancel" FontSize="25" Width="250" Height="70" HorizontalAlignment="Left" Margin="50 0 0 0" Click="btCancel_Click" />
+        </StackPanel>
+    </Grid>
+</UserControl>
