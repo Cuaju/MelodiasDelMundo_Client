@@ -23,30 +23,25 @@ namespace MelodiasDelMundo_Client.Views.Product
 
         private void LoadProductData()
         {
-            txtNombre.Text = _product.ProductName;
-            txtCodigo.Text = _product.ProductCode;
-            txtDescripcion.Text = _product.Description;
-            txtPrecioCompra.Text = _product.PurchasePrice.ToString("C");
-            txtPrecioVenta.Text = _product.SalePrice.ToString("C");
-            txtCategoria.Text = _product.Category;
-            txtMarca.Text = _product.Brand;
-            txtModelo.Text = _product.Model;
-            txtCantidad.Text = _product.Stock.ToString();
+            tbName.Text = _product.ProductName;
+            tbCode.Text = _product.ProductCode;
+            tbDescription.Text = _product.Description;
+            tbPurchasePrice.Text = _product.PurchasePrice.ToString("C");
+            tbSalePrice.Text = _product.SalePrice.ToString("C");
+            tbCategory.Text = _product.Category;
+            tbBrand.Text = _product.Brand;
+            tbModel.Text = _product.Model;
+            tbStock.Text = _product.Stock.ToString();
 
             if (!string.IsNullOrEmpty(_product.Photo))
             {
-                imgVistaPrevia.Source = new System.Windows.Media.Imaging.BitmapImage(new Uri(_product.Photo));
+                imgPreview.Source = new System.Windows.Media.Imaging.BitmapImage(new Uri(_product.Photo));
             }
         }
 
-        private void Eliminar_Click(object sender, RoutedEventArgs e)
+        private void BtDeleteProduct_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show(
-                "¿Estás seguro de que deseas eliminar este producto?",
-                "Confirmar Eliminación",
-                MessageBoxButton.YesNo,
-                MessageBoxImage.Warning
-            );
+            MessageBoxResult result = MessageBox.Show("¿Estás seguro de que deseas eliminar este producto?", "Confirmar eliminación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
             if (result == MessageBoxResult.Yes)
             {
@@ -62,8 +57,8 @@ namespace MelodiasDelMundo_Client.Views.Product
                     if (success)
                     {
                         _notificationDialog.ShowSuccessNotification("El producto se ha eliminado correctamente.");
-                        GUI_SelectProduct vSelectProduct = new GUI_SelectProduct();
-                        vSelectProduct.Show();
+                        GUI_SelectProduct selectProductWindow = new GUI_SelectProduct();
+                        selectProductWindow.Show();
                         this.Close();
                     }
                     else
@@ -90,7 +85,7 @@ namespace MelodiasDelMundo_Client.Views.Product
             }
         }
 
-        private void Cancelar_Click(object sender, RoutedEventArgs e)
+        private void BtCancel_Click(object sender, RoutedEventArgs e)
         {
             GUI_SelectProduct vSelectProduct = new GUI_SelectProduct();
             vSelectProduct.Show();

@@ -18,104 +18,106 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace MelodiasDelMundo_Client.Views.Product
 {
     public partial class GUI_EditProduct : Window
     {
         private ProductsManagerClient _service;
-        private ProductDataContract _producto;
-        private string rutaImagen = "";
+        private ProductDataContract _product;
+        private string _imagePath;
         private NotificationDialog _notificationDialog;
 
-        public GUI_EditProduct(ProductDataContract producto)
+        public GUI_EditProduct(ProductDataContract product)
         {
             InitializeComponent();
             _service = new ProductsManagerClient();
-            _producto = producto;
-            CargarDatos();
+            _product = product;
+            _imagePath = "";
+            LoadData();
             _notificationDialog = new NotificationDialog();
         }
 
-        private void CargarDatos()
+        private void LoadData()
         {
-            txtNombre.Text = _producto.ProductName;
-            txtCodigo.Text = _producto.ProductCode;
-            txtDescripcion.Text = _producto.Description;
-            txtPrecioCompra.Text = _producto.PurchasePrice.ToString("C");
-            txtPrecioVenta.Text = _producto.SalePrice.ToString("C");
-            txtCantidad.Text = _producto.Stock.ToString();
+            tbName.Text = _product.ProductName;
+            tbCode.Text = _product.ProductCode;
+            tbDescription.Text = _product.Description;
+            tbPurchasePrice.Text = _product.PurchasePrice.ToString("C");
+            tbSalePrice.Text = _product.SalePrice.ToString("C");
+            tbStock.Text = _product.Stock.ToString();
 
-            for (int i = 0; i < cmbCategoria.Items.Count; i++)
+            for (int i = 0; i < cbCategory.Items.Count; i++)
             {
-                if (((ComboBoxItem)cmbCategoria.Items[i]).Content.ToString() == _producto.Category)
+                if (((ComboBoxItem)cbCategory.Items[i]).Content.ToString() == _product.Category)
                 {
-                    cmbCategoria.SelectedIndex = i;
+                    cbCategory.SelectedIndex = i;
                     break;
                 }
             }
 
-            for (int i = 0; i < cmbMarca.Items.Count; i++)
+            for (int i = 0; i < cbBrand.Items.Count; i++)
             {
-                if (((ComboBoxItem)cmbMarca.Items[i]).Content.ToString() == _producto.Brand)
+                if (((ComboBoxItem)cbBrand.Items[i]).Content.ToString() == _product.Brand)
                 {
-                    cmbMarca.SelectedIndex = i;
+                    cbBrand.SelectedIndex = i;
                     break;
                 }
             }
 
-            txtModelo.Text = _producto.Model;
-            rutaImagen = _producto.Photo;
+            tbModel.Text = _product.Model;
+            _imagePath = _product.Photo;
 
-            if (!string.IsNullOrEmpty(rutaImagen))
+            if (!string.IsNullOrEmpty(_imagePath))
             {
-                imgVistaPrevia.Source = new BitmapImage(new Uri(rutaImagen));
+                imgPreview.Source = new BitmapImage(new Uri(_imagePath));
             }
         }
 
-        private void GuardarCambios_Click(object sender, RoutedEventArgs e)
+        private void BtSaveChanges_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                 if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
-                    string.IsNullOrWhiteSpace(txtPrecioCompra.Text) ||
-                    string.IsNullOrWhiteSpace(txtPrecioVenta.Text) ||
-                    string.IsNullOrWhiteSpace(txtCantidad.Text) ||
-                    cmbCategoria.SelectedIndex == 0 ||
-                    cmbMarca.SelectedIndex == 0 ||
-                    string.IsNullOrWhiteSpace(rutaImagen) ||
-                    string.IsNullOrWhiteSpace(txtModelo.Text) ||
-                    string.IsNullOrWhiteSpace(txtDescripcion.Text))
+                 if (string.IsNullOrWhiteSpace(tbName.Text) ||
+                    string.IsNullOrWhiteSpace(tbPurchasePrice.Text) ||
+                    string.IsNullOrWhiteSpace(tbSalePrice.Text) ||
+                    string.IsNullOrWhiteSpace(tbStock.Text) ||
+                    cbCategory.SelectedIndex == 0 ||
+                    cbBrand.SelectedIndex == 0 ||
+                    string.IsNullOrWhiteSpace(_imagePath) ||
+                    string.IsNullOrWhiteSpace(tbModel.Text) ||
+                    string.IsNullOrWhiteSpace(tbDescription.Text))
                  {
                     _notificationDialog.ShowWarningNotification("Por favor llene todos los campos.");
                     return;
                  }
 
-                bool nombreExiste = _service.ExistsProductByName(txtNombre.Text, _producto.ProductId);
+                bool nameExists = _service.ExistsProductByName(tbName.Text, _product.ProductId);
 
-                if (nombreExiste)
+                if (nameExists)
                 {
                     _notificationDialog.ShowErrorNotification("El nombre del producto ya está registrado en la base de datos.");
                     return;
                 }
 
-                _producto.ProductName = txtNombre.Text;
-                _producto.Description = txtDescripcion.Text;
-                _producto.PurchasePrice = decimal.Parse(txtPrecioCompra.Text, System.Globalization.NumberStyles.Currency);
-                _producto.SalePrice = decimal.Parse(txtPrecioVenta.Text, System.Globalization.NumberStyles.Currency);
-                _producto.Stock = int.Parse(txtCantidad.Text);
-                _producto.Category = ((ComboBoxItem)cmbCategoria.SelectedItem).Content.ToString();
-                _producto.Brand = ((ComboBoxItem)cmbMarca.SelectedItem).Content.ToString();
-                _producto.Model = txtModelo.Text;
-                _producto.Photo = rutaImagen;
+                _product.ProductName = tbName.Text;
+                _product.Description = tbDescription.Text;
+                _product.PurchasePrice = decimal.Parse(tbPurchasePrice.Text, System.Globalization.NumberStyles.Currency);
+                _product.SalePrice = decimal.Parse(tbSalePrice.Text, System.Globalization.NumberStyles.Currency);
+                _product.Stock = int.Parse(tbStock.Text);
+                _product.Category = ((ComboBoxItem)cbCategory.SelectedItem).Content.ToString();
+                _product.Brand = ((ComboBoxItem)cbBrand.SelectedItem).Content.ToString();
+                _product.Model = tbModel.Text;
+                _product.Photo = _imagePath;
                 
-                bool resultado = _service.EditProduct(_producto);
+                bool resultado = _service.EditProduct(_product);
 
                 if (resultado)
                 {
                     _notificationDialog.ShowSuccessNotification("La información del pruducto se modificó correctamente.");
-                    GUI_SelectProduct vSelectProduct = new GUI_SelectProduct();
-                    vSelectProduct.Show();
+                    GUI_SelectProduct selectProductWindow = new GUI_SelectProduct();
+                    selectProductWindow.Show();
                     this.Close();
                 }
                 else
@@ -141,26 +143,26 @@ namespace MelodiasDelMundo_Client.Views.Product
             }
         }
 
-        private void Cancelar_Click(object sender, RoutedEventArgs e)
+        private void BtCancel_Click(object sender, RoutedEventArgs e)
         {
             GUI_SelectProduct vSelectProduct = new GUI_SelectProduct();
             vSelectProduct.Show();
             this.Close();
         }
 
-        private void PrecioTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void TbPrice_TextChanged(object sender, TextChangedEventArgs e)
         {
             TextBox textBox = sender as TextBox;
             if (textBox == null) return;
 
-            string textoSinFormato = textBox.Text.Replace("$", "").Replace(",", "").Trim();
+            string unformattedText = textBox.Text.Replace("$", "").Replace(",", "").Trim();
 
-            if (decimal.TryParse(textoSinFormato, out decimal valor))
+            if (decimal.TryParse(unformattedText, out decimal valor))
             {
                 textBox.Text = valor.ToString("C2", CultureInfo.CurrentCulture);
                 textBox.CaretIndex = textBox.Text.Length;
             }
-            else if (string.IsNullOrWhiteSpace(textoSinFormato))
+            else if (string.IsNullOrWhiteSpace(unformattedText))
             {
                 textBox.Text = "";
             }
@@ -172,7 +174,7 @@ namespace MelodiasDelMundo_Client.Views.Product
             e.Handled = !regex.IsMatch(e.Text);
         }
 
-        private void SeleccionarFoto_Click(object sender, RoutedEventArgs e)
+        private void BtSelectPhoto_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
@@ -181,8 +183,8 @@ namespace MelodiasDelMundo_Client.Views.Product
 
             if (openFileDialog.ShowDialog() == true)
             {
-                rutaImagen = openFileDialog.FileName;
-                imgVistaPrevia.Source = new BitmapImage(new Uri(rutaImagen));
+                _imagePath = openFileDialog.FileName;
+                imgPreview.Source = new BitmapImage(new Uri(_imagePath));
             }
         }
     }
