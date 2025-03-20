@@ -38,7 +38,7 @@ namespace MelodiasDelMundo_Client
         private void BtLogin_Click(object sender, RoutedEventArgs e)
         {
             string username = tbUsername.Text;
-            string password = tbPassword.Text;
+            string password = tbPassword.Password;
 
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {

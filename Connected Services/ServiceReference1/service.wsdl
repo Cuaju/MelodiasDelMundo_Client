@@ -80,6 +80,24 @@
   <wsdl:message name="IUsersManager_GetIdEmployeeByUserName_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetIdEmployeeByUserNameResponse" />
   </wsdl:message>
+  <wsdl:message name="IUsersManager_UserNameExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserNameExist" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_UserNameExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserNameExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_MailAlreadyExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:MailAlreadyExist" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_MailAlreadyExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MailAlreadyExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_PhoneNumberExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:PhoneNumberExists" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_PhoneNumberExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PhoneNumberExistsResponse" />
+  </wsdl:message>
   <wsdl:message name="IProductsManager_RegisterProduct_InputMessage">
     <wsdl:part name="parameters" element="tns:RegisterProduct" />
   </wsdl:message>
@@ -163,6 +181,18 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IUsersManager/GetIdEmployeeByUserName" message="tns:IUsersManager_GetIdEmployeeByUserName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUsersManager/GetIdEmployeeByUserNameResponse" message="tns:IUsersManager_GetIdEmployeeByUserName_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="UserNameExist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsersManager/UserNameExist" message="tns:IUsersManager_UserNameExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsersManager/UserNameExistResponse" message="tns:IUsersManager_UserNameExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MailAlreadyExist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsersManager/MailAlreadyExist" message="tns:IUsersManager_MailAlreadyExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsersManager/MailAlreadyExistResponse" message="tns:IUsersManager_MailAlreadyExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PhoneNumberExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsersManager/PhoneNumberExists" message="tns:IUsersManager_PhoneNumberExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsersManager/PhoneNumberExistsResponse" message="tns:IUsersManager_PhoneNumberExists_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IProductsManager">
     <wsdl:operation name="RegisterProduct">
@@ -245,6 +275,33 @@
     </wsdl:operation>
     <wsdl:operation name="GetIdEmployeeByUserName">
       <soap12:operation soapAction="http://tempuri.org/IUsersManager/GetIdEmployeeByUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserNameExist">
+      <soap12:operation soapAction="http://tempuri.org/IUsersManager/UserNameExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MailAlreadyExist">
+      <soap12:operation soapAction="http://tempuri.org/IUsersManager/MailAlreadyExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PhoneNumberExists">
+      <soap12:operation soapAction="http://tempuri.org/IUsersManager/PhoneNumberExists" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

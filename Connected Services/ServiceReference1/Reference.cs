@@ -607,6 +607,24 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/GetIdEmployeeByUserName", ReplyAction="http://tempuri.org/IUsersManager/GetIdEmployeeByUserNameResponse")]
         System.Threading.Tasks.Task<int> GetIdEmployeeByUserNameAsync(string userName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/UserNameExist", ReplyAction="http://tempuri.org/IUsersManager/UserNameExistResponse")]
+        bool UserNameExist(string userName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/UserNameExist", ReplyAction="http://tempuri.org/IUsersManager/UserNameExistResponse")]
+        System.Threading.Tasks.Task<bool> UserNameExistAsync(string userName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/MailAlreadyExist", ReplyAction="http://tempuri.org/IUsersManager/MailAlreadyExistResponse")]
+        bool MailAlreadyExist(string mail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/MailAlreadyExist", ReplyAction="http://tempuri.org/IUsersManager/MailAlreadyExistResponse")]
+        System.Threading.Tasks.Task<bool> MailAlreadyExistAsync(string mail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/PhoneNumberExists", ReplyAction="http://tempuri.org/IUsersManager/PhoneNumberExistsResponse")]
+        bool PhoneNumberExists(int number);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/PhoneNumberExists", ReplyAction="http://tempuri.org/IUsersManager/PhoneNumberExistsResponse")]
+        System.Threading.Tasks.Task<bool> PhoneNumberExistsAsync(int number);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -666,6 +684,30 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
         
         public System.Threading.Tasks.Task<int> GetIdEmployeeByUserNameAsync(string userName) {
             return base.Channel.GetIdEmployeeByUserNameAsync(userName);
+        }
+        
+        public bool UserNameExist(string userName) {
+            return base.Channel.UserNameExist(userName);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UserNameExistAsync(string userName) {
+            return base.Channel.UserNameExistAsync(userName);
+        }
+        
+        public bool MailAlreadyExist(string mail) {
+            return base.Channel.MailAlreadyExist(mail);
+        }
+        
+        public System.Threading.Tasks.Task<bool> MailAlreadyExistAsync(string mail) {
+            return base.Channel.MailAlreadyExistAsync(mail);
+        }
+        
+        public bool PhoneNumberExists(int number) {
+            return base.Channel.PhoneNumberExists(number);
+        }
+        
+        public System.Threading.Tasks.Task<bool> PhoneNumberExistsAsync(int number) {
+            return base.Channel.PhoneNumberExistsAsync(number);
         }
     }
     
