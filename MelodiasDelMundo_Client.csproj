@@ -80,6 +80,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="UserControllers\DeleteSupplierDialog.xaml.cs">
+      <DependentUpon>DeleteSupplierDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControllers\EditSupplierDialog.xaml.cs">
       <DependentUpon>EditSupplierDialog.xaml</DependentUpon>
     </Compile>
@@ -120,6 +123,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UserControllers\DeleteSupplierDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControllers\EditSupplierDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

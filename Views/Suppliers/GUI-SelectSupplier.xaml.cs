@@ -102,6 +102,7 @@ namespace MelodiasDelMundo_Client.Views.Suppliers
                     {
                         var notificationDialog = new NotificationDialog();
                         notificationDialog.ShowErrorNotification("An error ocurred while editing the user try again later");
+
                         return ;
                     }
                 }
@@ -141,6 +142,18 @@ namespace MelodiasDelMundo_Client.Views.Suppliers
         {
             if (e != null)
             {
+                var editDialog = new DeleteSupplierDialog(e)
+                {
+                    Owner = Window.GetWindow(this)
+                };
+
+                bool? dialogResult = editDialog.ShowDialog();
+
+                if (dialogResult != true)
+                {
+                    return;
+                }
+
                 try
                 {
                     bool result = _service.DeleteSupplier(e.SupplierId);
@@ -240,7 +253,6 @@ namespace MelodiasDelMundo_Client.Views.Suppliers
 
             }
             tbSearchSupplier.Text = "";
-            
         }
     }
 }
