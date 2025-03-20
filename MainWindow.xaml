@@ -5,34 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MelodiasDelMundo_Client"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="800">
-    <Grid>
+        Title="Melodías del Mundo" Height="650" Width="800" WindowStartupLocation="CenterScreen" Background="MintCream">
 
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20*"/>
-            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
-        <Label Content="Melodias del mundo" FontSize="35" HorizontalAlignment="Center"/>
-        <Label Grid.Row="1" Content="Iniciar sesion" FontSize="25" HorizontalAlignment="Center" />
-
-        <Label Grid.Row="2" Content="Nombre de usuario" FontSize="20" HorizontalAlignment="Left" Margin="20 0 0 0"/>
-        <TextBox x:Name="tbUsername" Grid.Row="3" Width="350" Height="50" HorizontalAlignment="Left" Margin="20 0 0 0" />
-
-        <Label Grid.Row="4" Content="Contraseña" FontSize="20" HorizontalAlignment="Left" Margin="20 0 0 0"/>
-        <TextBox x:Name="tbPassword" Grid.Row="5" Width="350" Height="50" HorizontalAlignment="Left" Margin="20 0 0 0"/>
-
-        <Button x:Name="btLogin" Grid.Row="6" Content="Iniciar Sesión" FontSize="30" Foreground="AliceBlue" Width="250" Height="60" HorizontalAlignment="Right" Margin="0 0 20 0" Click="BtLogin_Click"/>
+        <Label Content="Melodías del Mundo" FontSize="36" FontWeight="Bold" Foreground="Black"
+               HorizontalAlignment="Center" Margin="0,20,0,10"/>
+        <Label Grid.Row="1" Content="Iniciar Sesión" FontSize="24" Foreground="black"
+               HorizontalAlignment="Center" Margin="0,0,0,20"/>
+        <Label Grid.Row="2" Content="Nombre de usuario" FontSize="18" Foreground="Black"
+               HorizontalAlignment="Left" Margin="30,0,0,5"/>
+        <TextBox x:Name="tbUsername" Grid.Row="3" Width="350" Height="40" HorizontalAlignment="Center"
+                 Padding="10" BorderBrush="Black" BorderThickness="2" />
+        <Label Grid.Row="4" Content="Contraseña" FontSize="18" Foreground="Black"
+               HorizontalAlignment="Left" Margin="30,20,0,5"/>
+        <PasswordBox x:Name="tbPassword" Grid.Row="5" Width="350" Height="40" HorizontalAlignment="Center"
+                     Padding="10" BorderBrush="Black" BorderThickness="2" />
+        <Button x:Name="btLogin" Grid.Row="6" Content="Iniciar Sesión" FontSize="20" FontWeight="Bold"
+                Foreground="White" Background="SteelBlue" Width="250" Height="50"
+                HorizontalAlignment="Center" Margin="0,30,0,0" Click="BtLogin_Click"
+                BorderThickness="0" >
+            <Button.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="10" ShadowDepth="2"/>
+            </Button.Effect>
+        </Button>
     </Grid>
 </Window>

@@ -53,7 +53,26 @@ namespace MelodiasDelMundo_Client.Views.RegisterEmployee
 
             try
             {
+                if (_service.MailAlreadyExist(tbMail.Text))
+                {
+                    _notificationDialog.ShowErrorNotification("El correo electrónico ya está en uso.");
+                    return;
+                }
+
+                if (_service.UserNameExist(tbUserName.Text))
+                {
+                    _notificationDialog.ShowErrorNotification("El nombre de usuario ya está en uso.");
+                    return;
+                }
+                if (_service.PhoneNumberExists(int.Parse(tbPhoneNumber.Text)))
+                {
+                    _notificationDialog.ShowErrorNotification("El telefono ya está en uso.");
+                    return;
+                }
                 _service.AddEmployee(employeeDataContract);
+
+                _notificationDialog.ShowSuccessNotification("Se agregó de forma correcta el empleado");
+
             }
             catch (EndpointNotFoundException ex)
             {
@@ -139,3 +158,5 @@ namespace MelodiasDelMundo_Client.Views.RegisterEmployee
         }
     }
 }
+
+
