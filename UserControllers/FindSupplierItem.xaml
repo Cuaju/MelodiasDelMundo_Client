@@ -5,25 +5,41 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MelodiasDelMundo_Client.UserControllers"
              mc:Ignorable="d" 
-             d:DesignHeight="50" d:DesignWidth="800">
+             d:DesignHeight="100" d:DesignWidth="800">
     <Border Background="Transparent" CornerRadius="5" BorderBrush="#555555" BorderThickness=".5" Margin="5">
         <Border.Effect>
             <DropShadowEffect Color="Black" Direction="315" ShadowDepth="2" Opacity="0.5" />
         </Border.Effect>
-        <Grid Width="900" MaxWidth="900" MinHeight="50">
+        <Grid Width="900" MaxWidth="900" MinHeight="100">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="20*" />
+                <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="60*" />
-                <ColumnDefinition Width="40*" />
-                <ColumnDefinition Width="20*" />
-                <ColumnDefinition Width="20*" />
+                <ColumnDefinition Width="30*" />
+                <ColumnDefinition Width="15*" />
+                <ColumnDefinition Width="15*" />
             </Grid.ColumnDefinitions>
             
-            <TextBlock Grid.Column="1" Text="{Binding Name}" Margin="10 0 0 0" TextWrapping="Wrap"
-                       VerticalAlignment="Center" HorizontalAlignment="Left" Width="376" />
-            <Button x:Name="btEditSupplier" Grid.Column="2" Content="Edit Supplier" Width="200" Background="SpringGreen"
+            <TextBlock Grid.Column="1" Text="{Binding Name}" Margin="10 0 10 0" TextWrapping="Wrap"
+            VerticalAlignment="Top" HorizontalAlignment="Right" Width="376" />
+            
+            <TextBlock Grid.Column="1" Text="{Binding Phone}" Margin="10 0 10 0" TextWrapping="Wrap"
+           VerticalAlignment="Center" HorizontalAlignment="Right" Width="376" />
+            
+            <TextBlock Grid.Column="1" Text="{Binding Email}" Margin="10 0 10 10" TextWrapping="Wrap"
+           VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="376" />
+
+            <TextBlock Grid.Column="1" Text="Supplier: " Margin="10 0 10 0" TextWrapping="Wrap"
+            VerticalAlignment="Top" HorizontalAlignment="Left" Width="376" />
+
+            <TextBlock Grid.Column="1" Text="Phone: " Margin="10 10 0 0" TextWrapping="Wrap"
+            VerticalAlignment="Center" HorizontalAlignment="left" Width="376" />
+
+            <TextBlock Grid.Column="1" Text="Email: " Margin="10 0 10 10" TextWrapping="Wrap"
+            VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="376" />
+
+            <Button x:Name="btEditSupplier" Grid.Column="2" Content="Edit Supplier" Width="200" Background="SpringGreen" BorderBrush="SpringGreen"
                     Click="btEditSupplier_Click" />
-            <Button x:Name="btDeleteSupplier" Grid.Column="3" Content="Delete" Width="100" Background="IndianRed"
+            <Button x:Name="btDeleteSupplier" Grid.Column="3" Content="Delete" Width="100" Background="IndianRed" BorderBrush="IndianRed"
                     Click="btDeleteSupplier_Click" />
         </Grid>
     </Border>
