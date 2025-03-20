@@ -43,45 +43,45 @@
             </Grid.RowDefinitions>
 
             <TextBlock Text="Nombre:" Grid.Column="0" Grid.Row="0" Margin="5"/>
-            <TextBox x:Name="txtNombre" Grid.Column="1" Grid.Row="0" Margin="5" Width="250" IsReadOnly="True"/>
+            <TextBox x:Name="tbName" Grid.Column="1" Grid.Row="0" Margin="5" Width="250" IsReadOnly="True"/>
 
             <TextBlock Text="Código:" Grid.Column="0" Grid.Row="1" Margin="5"/>
-            <TextBox x:Name="txtCodigo" Grid.Column="1" Grid.Row="1" Margin="5" Width="250" IsReadOnly="True"/>
+            <TextBox x:Name="tbCode" Grid.Column="1" Grid.Row="1" Margin="5" Width="250" IsReadOnly="True"/>
 
             <TextBlock Text="Precio compra:" Grid.Column="0" Grid.Row="2" Margin="5"/>
-            <TextBox x:Name="txtPrecioCompra" Grid.Column="1" Grid.Row="2" Margin="5" Width="250" IsReadOnly="True"/>
+            <TextBox x:Name="tbPurchasePrice" Grid.Column="1" Grid.Row="2" Margin="5" Width="250" IsReadOnly="True"/>
 
             <TextBlock Text="Precio venta:" Grid.Column="0" Grid.Row="3" Margin="5"/>
-            <TextBox x:Name="txtPrecioVenta" Grid.Column="1" Grid.Row="3" Margin="5" Width="250" IsReadOnly="True"/>
+            <TextBox x:Name="tbSalePrice" Grid.Column="1" Grid.Row="3" Margin="5" Width="250" IsReadOnly="True"/>
 
             <TextBlock Text="Categoría:" Grid.Column="0" Grid.Row="4" Margin="5"/>
-            <TextBox x:Name="txtCategoria" Grid.Column="1" Grid.Row="4" Margin="5" Width="250" IsReadOnly="True"/>
+            <TextBox x:Name="tbCategory" Grid.Column="1" Grid.Row="4" Margin="5" Width="250" IsReadOnly="True"/>
 
             <TextBlock Text="Marca:" Grid.Column="0" Grid.Row="5" Margin="5"/>
-            <TextBox x:Name="txtMarca" Grid.Column="1" Grid.Row="5" Margin="5" Width="250" IsReadOnly="True"/>
+            <TextBox x:Name="tbBrand" Grid.Column="1" Grid.Row="5" Margin="5" Width="250" IsReadOnly="True"/>
 
             <TextBlock Text="Modelo:" Grid.Column="0" Grid.Row="6" Margin="5"/>
-            <TextBox x:Name="txtModelo" Grid.Column="1" Grid.Row="6" Margin="5" Width="250" IsReadOnly="True"/>
+            <TextBox x:Name="tbModel" Grid.Column="1" Grid.Row="6" Margin="5" Width="250" IsReadOnly="True"/>
 
             <TextBlock Text="Cantidad:" Grid.Column="0" Grid.Row="7" Margin="5"/>
-            <TextBox x:Name="txtCantidad" Grid.Column="1" Grid.Row="7" Margin="5" Width="250" IsReadOnly="True"/>
+            <TextBox x:Name="tbStock" Grid.Column="1" Grid.Row="7" Margin="5" Width="250" IsReadOnly="True"/>
 
             <TextBlock Text="Descripción:" Grid.Column="0" Grid.Row="8" Margin="5"/>
-            <TextBox x:Name="txtDescripcion" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="2" Margin="22,5,22,-46" TextWrapping="Wrap" AcceptsReturn="True" Width="450" MaxLength="400" IsReadOnly="True"/>
+            <TextBox x:Name="tbDescription" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="2" Margin="22,5,22,-46" TextWrapping="Wrap" AcceptsReturn="True" Width="450" MaxLength="400" IsReadOnly="True"/>
 
             <StackPanel Grid.Column="2" Grid.Row="0" Grid.RowSpan="7" HorizontalAlignment="Center" Margin="10">
                 <TextBlock Text="Foto:" HorizontalAlignment="Center" Margin="5"/>
-                <Image x:Name="imgVistaPrevia" Width="160" Height="140" Stretch="Uniform"
+                <Image x:Name="imgPreview" Width="160" Height="140" Stretch="Uniform"
                         HorizontalAlignment="Center" Margin="5"/>
                 <TextBlock Text="(Vista previa)" FontSize="10" HorizontalAlignment="Center"/>
             </StackPanel>
         </Grid>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
-            <Button x:Name="btnEliminar" Content="Eliminar" Width="150" Margin="10"
-                    Click="Eliminar_Click" Background="Red" Foreground="White" Height="40"/>
-            <Button x:Name="btnCancelar" Content="Cancelar" Width="150" Margin="10"
-                    Click="Cancelar_Click" Background="Gray" Foreground="White" Height="40" BorderBrush="Gray"/>
+            <Button x:Name="btDeleteProduct" Content="Eliminar producto" Width="150" Margin="10"
+                    Click="BtDeleteProduct_Click" Background="Red" Foreground="White" Height="40"/>
+            <Button x:Name="btCancel" Content="Cancelar" Width="150" Margin="10"
+                    Click="BtCancel_Click" Background="Gray" Foreground="White" Height="40" BorderBrush="Gray"/>
         </StackPanel>
     </Grid>
 </Window>

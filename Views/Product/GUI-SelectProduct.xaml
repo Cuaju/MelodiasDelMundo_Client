@@ -5,24 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MelodiasDelMundo_Client.Views.Product"
         mc:Ignorable="d"
-        Title="Gui_SelectProduct" Height="500" Width="700">
+        Title="Seleccionar Producto" Height="500" Width="700">
     <Grid>
-        <TextBox x:Name="txtBuscar" Width="300" Height="25" Margin="10,10,0,0" HorizontalAlignment="Left"/>
-        <Button x:Name="btnBuscar" Content="Buscar" Width="100" Height="25" Margin="320,10,0,0" HorizontalAlignment="Left"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
-        <Label Content="Código:" Margin="10,50,0,0" HorizontalAlignment="Left"/>
-        <TextBox x:Name="txtCodigo" Width="100" Height="25" Margin="70,50,0,0" HorizontalAlignment="Left"/>
+        <StackPanel Orientation="Horizontal" Margin="10" Grid.Row="0">
+            <Label Content="Buscar producto:" FontWeight="Bold" FontSize="16"/>
+            <TextBox x:Name="tbSearch" Width="300" Height="25" Margin="10,0"/>
+            <Button x:Name="btSearch" Content="Buscar" Width="100" Height="25" Background="Red" Foreground="White"/>
+        </StackPanel>
 
-        <Label Content="Categoría:" Margin="180,50,0,0" HorizontalAlignment="Left"/>
-        <ComboBox x:Name="cmbCategoria" Width="150" Height="25" Margin="250,50,0,0" HorizontalAlignment="Left"/>
+        <StackPanel Orientation="Horizontal" Margin="10,5,10,5" Grid.Row="1">
+            <Label Content="Código:" VerticalAlignment="Center"/>
+            <TextBox x:Name="tbCode" Width="100" Height="25" Margin="5,0,10,0"/>
 
-        <Label Content="Marca:" Margin="420,50,0,0" HorizontalAlignment="Left"/>
-        <ComboBox x:Name="cmbMarca" Width="150" Height="25" Margin="470,50,0,0" HorizontalAlignment="Left"/>
+            <Label Content="Categoría:" VerticalAlignment="Center"/>
+            <ComboBox x:Name="cbCategory" Width="150" Height="25" Margin="5,0,10,0"/>
 
-        <DataGrid x:Name="dgProductos" AutoGenerateColumns="False" Margin="10,90,10,50" Height="300"
-                  SelectionMode="Single" SelectionUnit="FullRow" IsReadOnly="True"
-                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                  ColumnWidth="*" GridLinesVisibility="None">
+            <Label Content="Marca:" VerticalAlignment="Center"/>
+            <ComboBox x:Name="cbBrand" Width="150" Height="25" Margin="5,0,10,0"/>
+        </StackPanel>
+
+        <DataGrid x:Name="dgProducts" AutoGenerateColumns="False" Margin="10" Grid.Row="2"
+              SelectionMode="Single" SelectionUnit="FullRow" IsReadOnly="True"
+              ColumnWidth="*" GridLinesVisibility="None">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Código" Binding="{Binding ProductCode}"/>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding ProductName}"/>
@@ -33,8 +44,11 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button x:Name="btnEliminar" Content="Eliminar" Width="100" Height="30" Margin="390,410,0,0" HorizontalAlignment="Left" Click="btnEliminar_Click"/>
-        <Button x:Name="btnEditar" Content="Editar" Width="100" Height="30" Margin="500,410,0,0" HorizontalAlignment="Left" Click="btnEditar_Click"/>
-        <Button x:Name="btnRegresar" Content="Regresar" Width="100" Height="30" Margin="610,410,0,0" HorizontalAlignment="Left" Click="btnRegresar_Click"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10" Grid.Row="3">
+            <Button x:Name="btDelete" Content="Eliminar" Width="100" Height="30" Margin="0,0,10,0" Click="BtDelete_Click"/>
+            <Button x:Name="btEdit" Content="Editar" Width="100" Height="30" Margin="0,0,10,0" Click="BtEdit_Click"/>
+            <Button x:Name="btBack" Content="Regresar" Width="100" Height="30" Click="BtBack_Click"/>
+        </StackPanel>
+
     </Grid>
 </Window>
