@@ -33,6 +33,51 @@ namespace MelodiasDelMundo_Client
             InitializeComponent();
             _service = new UsersManagerClient();
             _notificationDialog = new NotificationDialog();
+            NavigateToWindow(new Views.MainMenu.Menu());
+        }
+
+        public void NavigateToWindow(Window newWindow, double? newWidth = null, double? newHeight = null)
+        {
+            newWindow.Show();
+
+            if (newWidth != null && newHeight != null)
+            {
+                newWindow.Width = newWidth.Value;
+                newWindow.Height = newHeight.Value;
+                newWindow.SizeToContent = SizeToContent.Manual;  
+            }
+            else
+            {
+                newWindow.SizeToContent = SizeToContent.WidthAndHeight;
+            }
+
+            newWindow.WindowState = WindowState.Normal;
+            newWindow.WindowStyle = WindowStyle.SingleBorderWindow;
+            
+            this.Close();
+        }
+
+        public void NavigateToUserControll(UserControl control, double? newWidth = null, double? newHeight = null)
+        {
+            Content = null;
+
+            var container = new Grid();
+            container.Children.Add(control);
+            Content = container;
+
+            WindowState = WindowState.Normal;
+            WindowStyle = WindowStyle.SingleBorderWindow;
+
+            if (newWidth != null && newHeight != null)
+            {
+                Height = newHeight.Value;
+                Width = newWidth.Value;
+                SizeToContent = SizeToContent.Manual;
+            }
+            else
+            {
+                SizeToContent = SizeToContent.WidthAndHeight;
+            }
         }
 
         private void BtLogin_Click(object sender, RoutedEventArgs e)
