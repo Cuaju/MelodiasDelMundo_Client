@@ -95,7 +95,7 @@ namespace MelodiasDelMundo_Client
             {
                 if (_service.LogIn(username, password))
                 {
-                    EmployeeForm mainMenu = new EmployeeForm();
+                    DeleteEmployee mainMenu = new DeleteEmployee();
                     mainMenu.Show();
                     this.Close();
                 }

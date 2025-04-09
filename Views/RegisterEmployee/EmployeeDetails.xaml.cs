@@ -10,17 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using MelodiasDelMundo_Client.Views;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MelodiasDelMundo_Client.Views.DeleteEmployee
+namespace MelodiasDelMundo_Client.Views.RegisterEmployee
 {
     /// <summary>
-    /// Lógica de interacción para DeleteEmployee.xaml
+    /// Lógica de interacción para EmployeeDetails.xaml
     /// </summary>
-    public partial class DeleteEmployee : Window
+    public partial class EmployeeDetails : UserControl
     {
-        public DeleteEmployee()
+        public EmployeeDetails()
         {
             InitializeComponent();
         }
