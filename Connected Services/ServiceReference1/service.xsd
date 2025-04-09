@@ -170,10 +170,27 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="SearchProducts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="category" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchProductsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/MelodiasService" minOccurs="0" name="SearchProductsResult" nillable="true" type="q5:ArrayOfProductDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="RegisterSupplier">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/MelodiasService.DTOs" minOccurs="0" name="supplier" nillable="true" type="q5:SupplierDTO" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/MelodiasService.DTOs" minOccurs="0" name="supplier" nillable="true" type="q6:SupplierDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -187,7 +204,7 @@
   <xs:element name="EditSupplier">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/MelodiasService.DTOs" minOccurs="0" name="supplier" nillable="true" type="q6:SupplierDTO" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/MelodiasService.DTOs" minOccurs="0" name="supplier" nillable="true" type="q7:SupplierDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -208,7 +225,7 @@
   <xs:element name="GetSuppliersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/MelodiasService.DTOs" minOccurs="0" name="GetSuppliersResult" nillable="true" type="q7:ArrayOfSupplierDTO" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/MelodiasService.DTOs" minOccurs="0" name="GetSuppliersResult" nillable="true" type="q8:ArrayOfSupplierDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

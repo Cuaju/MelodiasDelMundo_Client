@@ -1,4 +1,5 @@
 ﻿using MelodiasDelMundo_Client.Views.MainMenu.Menus;
+using MelodiasDelMundo_Client.Views.Product;
 using MelodiasDelMundo_Client.Views.RegisterEmployee;
 using System;
 using System.Collections.Generic;
@@ -19,9 +20,9 @@ namespace MelodiasDelMundo_Client.Views.MainMenu
     /// <summary>
     /// Lógica de interacción para Menu.xaml
     /// </summary>
-    public partial class Menu : Window
+    public partial class MMenu : Window
     {
-        public Menu()
+        public MMenu()
         {
             InitializeComponent();
         }
@@ -35,8 +36,9 @@ namespace MelodiasDelMundo_Client.Views.MainMenu
 
         private void btProductsManagement_Click(object sender, RoutedEventArgs e)
         {
-            var mainWindow = (MainWindow)Application.Current.MainWindow;
-            mainWindow.NavigateToWindow(new Menus.ProductsMenu());
+            GUI_ProductManagement productManagementWindow = new GUI_ProductManagement();
+            productManagementWindow.Show();
+            this.Close();
         }
 
         private void btSalesManagement_Click(object sender, RoutedEventArgs e)
@@ -53,7 +55,9 @@ namespace MelodiasDelMundo_Client.Views.MainMenu
 
         private void btReports_Click(object sender, RoutedEventArgs e)
         {
-
+            GUI_ValidateInventory validateInventoryWindow = new GUI_ValidateInventory();
+            validateInventoryWindow.Show();
+            this.Close();
         }
 
         private void btLogout_MouseDown(object sender, MouseButtonEventArgs e)

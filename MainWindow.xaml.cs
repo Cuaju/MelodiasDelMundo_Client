@@ -33,7 +33,7 @@ namespace MelodiasDelMundo_Client
             InitializeComponent();
             _service = new UsersManagerClient();
             _notificationDialog = new NotificationDialog();
-            NavigateToWindow(new Views.MainMenu.Menu());
+            NavigateToWindow(new Views.MainMenu.MMenu());
         }
 
         public void NavigateToWindow(Window newWindow, double? newWidth = null, double? newHeight = null)

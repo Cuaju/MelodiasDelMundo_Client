@@ -1,0 +1,139 @@
+﻿<Window x:Class="MelodiasDelMundo_Client.Views.Product.GUI_ProductManagement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Gestión de Productos"
+        Height="600"
+        Width="900"
+        Background="#f4f4f4"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Gestión de Productos"
+                   FontSize="36"
+                   FontWeight="Bold"
+                   Foreground="#333"
+                   Margin="0 0 0 10"
+                   HorizontalAlignment="Center"
+                   Grid.Row="0"/>
+
+        <StackPanel Orientation="Horizontal" Margin="0,10,0,0" Grid.Row="1" HorizontalAlignment="Center">
+            <TextBox x:Name="tbSearch"
+                     Width="250"
+                     Margin="10"
+                     materialDesign:HintAssist.Hint="Buscar por nombre"
+                     Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+
+            <Button x:Name="btSearch"
+                    Content="Buscar"
+                    Style="{StaticResource MaterialDesignRaisedButton}"
+                    Margin="10,0"
+                    Click="BtSearch_Click"
+                    Background="#E53935"
+                    Foreground="White" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="0,10" Grid.Row="2" HorizontalAlignment="Center">
+            <TextBox x:Name="tbCode"
+                     Width="150"
+                     Margin="10"
+                     materialDesign:HintAssist.Hint="Código"
+                     Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+
+            <ComboBox x:Name="cbCategory"
+                      Width="150"
+                      Margin="10"
+                      materialDesign:HintAssist.Hint="Categoría"
+                      SelectedIndex="0">
+                <ComboBoxItem Content="Seleccionar"/>
+                <ComboBoxItem Content="Guitarras"/>
+                <ComboBoxItem Content="Pianos"/>
+                <ComboBoxItem Content="Baterías"/>
+                <ComboBoxItem Content="Vientos"/>
+            </ComboBox>
+
+            <ComboBox x:Name="cbBrand"
+                      Width="150"
+                      Margin="10"
+                      materialDesign:HintAssist.Hint="Marca"
+                      SelectedIndex="0">
+                <ComboBoxItem Content="Seleccionar"/>
+                <ComboBoxItem Content="Fender"/>
+                <ComboBoxItem Content="Yamaha"/>
+                <ComboBoxItem Content="Gibson"/>
+                <ComboBoxItem Content="Roland"/>
+            </ComboBox>
+        </StackPanel>
+
+        <DataGrid x:Name="dgProducts"
+                  Grid.Row="3"
+                  Margin="0,20,0,10"
+                  AutoGenerateColumns="False"
+                  SelectionMode="Single"
+                  SelectionUnit="FullRow"
+                  IsReadOnly="True"
+                  Background="White"
+                  Foreground="Black"
+                  RowBackground="#FAFAFA"
+                  AlternatingRowBackground="#EEEEEE"
+                  ColumnHeaderHeight="40"
+                  FontSize="14"
+                  GridLinesVisibility="None"
+                  BorderThickness="1"
+                  BorderBrush="#DDD">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Código" Binding="{Binding ProductCode}" Width="*"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding ProductName}" Width="*"/>
+                <DataGridTextColumn Header="Categoría" Binding="{Binding Category}" Width="*"/>
+                <DataGridTextColumn Header="Marca" Binding="{Binding Brand}" Width="*"/>
+                <DataGridTextColumn Header="Precio Venta" Binding="{Binding SalePrice}" Width="*"/>
+                <DataGridTextColumn Header="Stock" Binding="{Binding Stock}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <Button x:Name="btRegister"
+                    Content="Registrar"
+                    Width="120"
+                    Margin="10"
+                    Click="BtRegister_Click"
+                    Style="{StaticResource MaterialDesignRaisedButton}" />
+
+            <Button x:Name="btDelete"
+                    Content="Eliminar"
+                    Width="120"
+                    Margin="10"
+                    Click="BtDelete_Click"
+                    Background="#D32F2F"
+                    Foreground="White"
+                    Style="{StaticResource MaterialDesignRaisedButton}" />
+
+            <Button x:Name="btEdit"
+                    Content="Editar"
+                    Width="120"
+                    Margin="10"
+                    Click="BtEdit_Click"
+                    Style="{StaticResource MaterialDesignRaisedButton}" />
+
+            <Button x:Name="btBack"
+                    Content="Regresar"
+                    Width="120"
+                    Margin="10"
+                    Click="BtBack_Click"
+                    Background="#9E9E9E"
+                    Foreground="White"
+                    Style="{StaticResource MaterialDesignRaisedButton}" />
+        </StackPanel>
+    </Grid>
+</Window>

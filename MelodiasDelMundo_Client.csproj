@@ -117,8 +117,11 @@
     <Compile Include="Views\Product\GUI-RegisterProduct.xaml.cs">
       <DependentUpon>GUI-RegisterProduct.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Product\GUI-SelectProduct.xaml.cs">
-      <DependentUpon>GUI-SelectProduct.xaml</DependentUpon>
+    <Compile Include="Views\Product\GUI-ProductManagement.xaml.cs">
+      <DependentUpon>GUI-ProductManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Product\GUI-ValidateInventory.xaml.cs">
+      <DependentUpon>GUI-ValidateInventory.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RegisterEmployee\RegisterEmployee.xaml.cs">
       <DependentUpon>RegisterEmployee.xaml</DependentUpon>
@@ -197,7 +200,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Product\GUI-SelectProduct.xaml">
+    <Page Include="Views\Product\GUI-ProductManagement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Product\GUI-ValidateInventory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

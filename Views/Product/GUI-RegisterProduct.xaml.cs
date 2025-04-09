@@ -108,6 +108,8 @@ namespace MelodiasDelMundo_Client.Views.Product
 
         private void BtCancel_Click(object sender, RoutedEventArgs e)
         {
+            GUI_ProductManagement productManagementWindow = new GUI_ProductManagement();
+            productManagementWindow.Show();
             this.Close();
         }
 

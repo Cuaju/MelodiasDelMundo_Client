@@ -128,6 +128,12 @@
   <wsdl:message name="IProductsManager_DeleteProduct_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteProductResponse" />
   </wsdl:message>
+  <wsdl:message name="IProductsManager_SearchProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchProducts" />
+  </wsdl:message>
+  <wsdl:message name="IProductsManager_SearchProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchProductsResponse" />
+  </wsdl:message>
   <wsdl:message name="ISuppliersManager_RegisterSupplier_InputMessage">
     <wsdl:part name="parameters" element="tns:RegisterSupplier" />
   </wsdl:message>
@@ -214,6 +220,10 @@
     <wsdl:operation name="DeleteProduct">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductsManager/DeleteProduct" message="tns:IProductsManager_DeleteProduct_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductsManager/DeleteProductResponse" message="tns:IProductsManager_DeleteProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductsManager/SearchProducts" message="tns:IProductsManager_SearchProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductsManager/SearchProductsResponse" message="tns:IProductsManager_SearchProducts_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ISuppliersManager">
@@ -352,6 +362,15 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteProduct">
       <soap12:operation soapAction="http://tempuri.org/IProductsManager/DeleteProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchProducts">
+      <soap12:operation soapAction="http://tempuri.org/IProductsManager/SearchProducts" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
