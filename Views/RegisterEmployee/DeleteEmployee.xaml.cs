@@ -38,24 +38,24 @@ using System.Windows.Shapes;
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                // Accede a tbName.Text en el hilo de la UI
-                string userName = tbName.Text;
+            //try
+            //{
+            //    // Accede a tbName.Text en el hilo de la UI
+            //    string userName = tbName.Text;
 
-                // Luego haz las llamadas al servidor en segundo plano
-              //  int id = await Task.Run(() => _service.GetIdEmployeeByUserName(userName));
-                EmployeeDataContract employeeData = await Task.Run(() => _service.GetEmployeeDetailsWithoutPassword(2));
-                Console.WriteLine("empleado en cliente "+employeeData.userName);
+            //    // Luego haz las llamadas al servidor en segundo plano
+            //  //  int id = await Task.Run(() => _service.GetIdEmployeeByUserName(userName));
+            // //   EmployeeDataContract employeeData = await Task.Run(() => _service.GetEmployeeDetailsWithoutPassword(2));
+            //    Console.WriteLine("empleado en cliente "+employeeData.userName);
 
-                // Actualiza la colección observable
-                _employees.Clear();
-                _employees.Add(employeeData);
-            }
-            catch (Exception ex)
-            {
-                _notificationDialog.ShowErrorNotification("Error al obtener el empleado: " + ex.Message);
-            }
+            //    // Actualiza la colección observable
+            //    _employees.Clear();
+            //    _employees.Add(employeeData);
+            //}
+            //catch (Exception ex)
+            //{
+            //    _notificationDialog.ShowErrorNotification("Error al obtener el empleado: " + ex.Message);
+            //}
         }
 
 
