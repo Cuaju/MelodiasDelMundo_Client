@@ -625,6 +625,12 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/PhoneNumberExists", ReplyAction="http://tempuri.org/IUsersManager/PhoneNumberExistsResponse")]
         System.Threading.Tasks.Task<bool> PhoneNumberExistsAsync(int number);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/GetEmployeeDetailsWithoutPassword", ReplyAction="http://tempuri.org/IUsersManager/GetEmployeeDetailsWithoutPasswordResponse")]
+        MelodiasDelMundo_Client.ServiceReference1.EmployeeDataContract GetEmployeeDetailsWithoutPassword(int idEmployee);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/GetEmployeeDetailsWithoutPassword", ReplyAction="http://tempuri.org/IUsersManager/GetEmployeeDetailsWithoutPasswordResponse")]
+        System.Threading.Tasks.Task<MelodiasDelMundo_Client.ServiceReference1.EmployeeDataContract> GetEmployeeDetailsWithoutPasswordAsync(int idEmployee);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -708,6 +714,14 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> PhoneNumberExistsAsync(int number) {
             return base.Channel.PhoneNumberExistsAsync(number);
+        }
+        
+        public MelodiasDelMundo_Client.ServiceReference1.EmployeeDataContract GetEmployeeDetailsWithoutPassword(int idEmployee) {
+            return base.Channel.GetEmployeeDetailsWithoutPassword(idEmployee);
+        }
+        
+        public System.Threading.Tasks.Task<MelodiasDelMundo_Client.ServiceReference1.EmployeeDataContract> GetEmployeeDetailsWithoutPasswordAsync(int idEmployee) {
+            return base.Channel.GetEmployeeDetailsWithoutPasswordAsync(idEmployee);
         }
     }
     

@@ -90,6 +90,12 @@
       <DependentUpon>FindSupplierItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utils\NotificationDialog.cs" />
+    <Compile Include="Views\DeleteEmployee\DeleteEmployee.xaml.cs">
+      <DependentUpon>DeleteEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DeleteEmployee\EmployeeDetails.xaml.cs">
+      <DependentUpon>EmployeeDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainMenu\MainMenu2.xaml.cs">
       <DependentUpon>MainMenu2.xaml</DependentUpon>
     </Compile>

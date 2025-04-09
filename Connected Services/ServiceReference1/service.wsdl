@@ -98,6 +98,12 @@
   <wsdl:message name="IUsersManager_PhoneNumberExists_OutputMessage">
     <wsdl:part name="parameters" element="tns:PhoneNumberExistsResponse" />
   </wsdl:message>
+  <wsdl:message name="IUsersManager_GetEmployeeDetailsWithoutPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeDetailsWithoutPassword" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_GetEmployeeDetailsWithoutPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeDetailsWithoutPasswordResponse" />
+  </wsdl:message>
   <wsdl:message name="IProductsManager_RegisterProduct_InputMessage">
     <wsdl:part name="parameters" element="tns:RegisterProduct" />
   </wsdl:message>
@@ -198,6 +204,10 @@
     <wsdl:operation name="PhoneNumberExists">
       <wsdl:input wsaw:Action="http://tempuri.org/IUsersManager/PhoneNumberExists" message="tns:IUsersManager_PhoneNumberExists_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUsersManager/PhoneNumberExistsResponse" message="tns:IUsersManager_PhoneNumberExists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeDetailsWithoutPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsersManager/GetEmployeeDetailsWithoutPassword" message="tns:IUsersManager_GetEmployeeDetailsWithoutPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsersManager/GetEmployeeDetailsWithoutPasswordResponse" message="tns:IUsersManager_GetEmployeeDetailsWithoutPassword_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IProductsManager">
@@ -312,6 +322,15 @@
     </wsdl:operation>
     <wsdl:operation name="PhoneNumberExists">
       <soap12:operation soapAction="http://tempuri.org/IUsersManager/PhoneNumberExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeDetailsWithoutPassword">
+      <soap12:operation soapAction="http://tempuri.org/IUsersManager/GetEmployeeDetailsWithoutPassword" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
