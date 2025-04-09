@@ -90,6 +90,24 @@
       <DependentUpon>FindSupplierItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utils\NotificationDialog.cs" />
+    <Compile Include="Views\MainMenu\MainMenu2.xaml.cs">
+      <DependentUpon>MainMenu2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainMenu\Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainMenu\Menus\ProductsMenu.xaml.cs">
+      <DependentUpon>ProductsMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainMenu\Menus\SalesMenu.xaml.cs">
+      <DependentUpon>SalesMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainMenu\Menus\SuppliersMenu.xaml.cs">
+      <DependentUpon>SuppliersMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainMenu\Menus\UsersMenu.xaml.cs">
+      <DependentUpon>UsersMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Product\GUI-DeleteProduct.xaml.cs">
       <DependentUpon>GUI-DeleteProduct.xaml</DependentUpon>
     </Compile>
@@ -99,8 +117,11 @@
     <Compile Include="Views\Product\GUI-RegisterProduct.xaml.cs">
       <DependentUpon>GUI-RegisterProduct.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Product\GUI-SelectProduct.xaml.cs">
-      <DependentUpon>GUI-SelectProduct.xaml</DependentUpon>
+    <Compile Include="Views\Product\GUI-ProductManagement.xaml.cs">
+      <DependentUpon>GUI-ProductManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Product\GUI-ValidateInventory.xaml.cs">
+      <DependentUpon>GUI-ValidateInventory.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RegisterEmployee\DeleteEmployee.xaml.cs">
       <DependentUpon>DeleteEmployee.xaml</DependentUpon>
@@ -149,7 +170,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+
     <Page Include="Views\Product\GUI-EditProduct.xaml">
+=======
+    <Page Include="Views\MainMenu\MainMenu2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainMenu\Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainMenu\Menus\ProductsMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainMenu\Menus\SalesMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainMenu\Menus\SuppliersMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainMenu\Menus\UsersMenu.xaml">
+
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -166,6 +211,12 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RegisterEmployee\EmployeeDetails.xaml">
+=======
+    <Page Include="Views\Product\GUI-ProductManagement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Product\GUI-ValidateInventory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

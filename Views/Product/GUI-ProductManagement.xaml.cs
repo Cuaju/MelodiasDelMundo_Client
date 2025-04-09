@@ -1,5 +1,7 @@
-﻿using MelodiasDelMundo_Client.ServiceReference1;
+﻿using MaterialDesignThemes.Wpf;
+using MelodiasDelMundo_Client.ServiceReference1;
 using MelodiasDelMundo_Client.Utils;
+using MelodiasDelMundo_Client.Views.MainMenu;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,13 +19,13 @@ using System.Windows.Shapes;
 
 namespace MelodiasDelMundo_Client.Views.Product
 {
-    public partial class GUI_SelectProduct : Window
+    public partial class GUI_ProductManagement : Window
     {
         private ProductsManagerClient _service;
         private List<ProductDataContract> _products;
         private NotificationDialog _notificationDialog;
 
-        public GUI_SelectProduct()
+        public GUI_ProductManagement()
         {
             InitializeComponent();
             _service = new ProductsManagerClient();
@@ -128,7 +130,57 @@ namespace MelodiasDelMundo_Client.Views.Product
 
         private void BtBack_Click(object sender, RoutedEventArgs e)
         {
+            MMenu menuWindow = new MMenu();
+            menuWindow.Show();
             this.Close();
+        }
+
+        private void BtRegister_Click(object sender, RoutedEventArgs e)
+        {
+            GUI_RegisterProduct registerProductWindow = new GUI_RegisterProduct();
+            registerProductWindow.Show();
+            this.Close();
+        }
+
+        private void BtSearch_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string name = tbSearch.Text.Trim();
+                string code = tbCode.Text.Trim();
+                string category = ((ComboBoxItem)cbCategory.SelectedItem).Content.ToString();
+                string brand = ((ComboBoxItem)cbBrand.SelectedItem).Content.ToString();
+
+                if (category == "Seleccionar") category = "";
+                if (brand == "Seleccionar") brand = "";
+
+                if (string.IsNullOrWhiteSpace(name) &&
+                    string.IsNullOrWhiteSpace(code) &&
+                    string.IsNullOrWhiteSpace(category) &&
+                    string.IsNullOrWhiteSpace(brand))
+                {
+                    _notificationDialog.ShowWarningNotification("Por favor especifique al menos un criterio de búsqueda.");
+                    return;
+                }
+
+                var filteredProducts = _products.Where(p =>
+                    (string.IsNullOrWhiteSpace(name) || p.ProductName.IndexOf(name, StringComparison.OrdinalIgnoreCase) >= 0) &&
+                    (string.IsNullOrWhiteSpace(code) || p.ProductCode.IndexOf(code, StringComparison.OrdinalIgnoreCase) >= 0) &&
+                    (string.IsNullOrWhiteSpace(category) || p.Category == category) &&
+                    (string.IsNullOrWhiteSpace(brand) || p.Brand == brand)).ToList();
+
+                if (filteredProducts.Count == 0)
+                {
+                    _notificationDialog.ShowWarningNotification("No existe un producto con esas especificaciones.");
+                    return;
+                }
+
+                dgProducts.ItemsSource = filteredProducts;
+            }
+            catch (Exception ex)
+            {
+                _notificationDialog.ShowErrorNotification("Error inesperado: " + ex.Message);
+            }
         }
     }
 }

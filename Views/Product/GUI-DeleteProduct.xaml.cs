@@ -57,7 +57,7 @@ namespace MelodiasDelMundo_Client.Views.Product
                     if (success)
                     {
                         _notificationDialog.ShowSuccessNotification("El producto se ha eliminado correctamente.");
-                        GUI_SelectProduct selectProductWindow = new GUI_SelectProduct();
+                        GUI_ProductManagement selectProductWindow = new GUI_ProductManagement();
                         selectProductWindow.Show();
                         this.Close();
                     }
@@ -87,7 +87,7 @@ namespace MelodiasDelMundo_Client.Views.Product
 
         private void BtCancel_Click(object sender, RoutedEventArgs e)
         {
-            GUI_SelectProduct vSelectProduct = new GUI_SelectProduct();
+            GUI_ProductManagement vSelectProduct = new GUI_ProductManagement();
             vSelectProduct.Show();
             this.Close();
         }
