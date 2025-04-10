@@ -1,5 +1,6 @@
 ﻿using MelodiasDelMundo_Client.ServiceReference1;
 using MelodiasDelMundo_Client.Utils;
+using MelodiasDelMundo_Client.Views.MainMenu;
 using MelodiasDelMundo_Client.Views.Product;
 using System;
 using System.Collections.Generic;
@@ -92,6 +93,8 @@ namespace MelodiasDelMundo_Client.Views.Product
 
         private void BtBack_Click(object sender, RoutedEventArgs e)
         {
+            MMenu mainW = new MMenu();
+            mainW.Show();
             this.Close();
         }
 
