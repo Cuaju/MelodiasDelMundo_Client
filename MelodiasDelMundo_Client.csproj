@@ -74,6 +74,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\ProductFound.cs" />
     <Compile Include="Classes\SupplierFound.cs" />
     <Compile Include="Connected Services\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -86,8 +87,17 @@
     <Compile Include="UserControllers\EditSupplierDialog.xaml.cs">
       <DependentUpon>EditSupplierDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControllers\FindProductItem.xaml.cs">
+      <DependentUpon>FindProductItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControllers\FindSupplierItem.xaml.cs">
       <DependentUpon>FindSupplierItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControllers\FindSupplierPurchaseItem.xaml.cs">
+      <DependentUpon>FindSupplierPurchaseItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControllers\SelectQuantityDialog.xaml.cs">
+      <DependentUpon>SelectQuantityDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utils\NotificationDialog.cs" />
     <Compile Include="Views\MainMenu\MainMenu2.xaml.cs">
@@ -132,6 +142,9 @@
     <Compile Include="Views\RegisterEmployee\RegisterEmployee.xaml.cs">
       <DependentUpon>RegisterEmployee.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Suppliers\GUI-RegisterPurchase.xaml.cs">
+      <DependentUpon>GUI-RegisterPurchase.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Suppliers\GUI-RegisterSupplier.xaml.cs">
       <DependentUpon>GUI-RegisterSupplier.xaml</DependentUpon>
     </Compile>
@@ -158,7 +171,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControllers\FindProductItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControllers\FindSupplierItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControllers\FindSupplierPurchaseItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControllers\SelectQuantityDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -215,6 +240,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RegisterEmployee\RegisterEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Suppliers\GUI-RegisterPurchase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
