@@ -62,7 +62,14 @@ namespace MelodiasDelMundo_Client.Views.MainMenu
 
         private void btLogout_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            var loginWindow = new MainWindow();
+            loginWindow.Show();
+            this.Close();
         }
+
+
+
+
+
     }
 }

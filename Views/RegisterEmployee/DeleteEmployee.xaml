@@ -5,22 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MelodiasDelMundo_Client.Views.RegisterEmployee"
         mc:Ignorable="d"
-        Title="Eliminar Empleados" Height="500" Width="600">
+        Title="Eliminar Empleados" Height="500" Width="600"
+        WindowStartupLocation="CenterScreen">
 
-    <StackPanel Margin="10">
-        <TextBox Name="tbName" TextWrapping="Wrap" Text="..." Width="120" Margin="0,0,0,10"/>
-        <Button Content="Buscar" Click="Button_Click" Margin="0,0,0,20"/>
-
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Height="350">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10" VerticalAlignment="Center">
+            <Label Content="Nombre del empleado:" VerticalAlignment="Center"/>
+            <TextBox x:Name="tbName" Width="200" Margin="10,0,0,0"/>
+            <Button Content="Buscar" Click="Button_Click" Margin="10,0,0,0"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" Height="300" VerticalScrollBarVisibility="Auto" Margin="0,0,0,10">
             <ItemsControl x:Name="EmployeeList">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <local:EmployeeDetails DataContext="{Binding}" />
                     </DataTemplate>
-
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
         </ScrollViewer>
-    </StackPanel>
+        <Button Content="Regresar"
+                Grid.Row="3"
+                Width="100"
+                Height="30"
+                HorizontalAlignment="Left"
+                Click="BtnRegresar_Click"/>
+    </Grid>
 </Window>
-

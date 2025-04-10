@@ -1,4 +1,5 @@
-﻿using MelodiasDelMundo_Client.Views.RegisterEmployee;
+﻿using MelodiasDelMundo_Client.Views.Product;
+using MelodiasDelMundo_Client.Views.RegisterEmployee;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,11 +28,16 @@ namespace MelodiasDelMundo_Client.Views.MainMenu.Menus
 
         private void btSearchUser_Click(object sender, RoutedEventArgs e)
         {
-
+            var deleteWindow = new SearchEmployee(this);
+            deleteWindow.Show();
+            this.Hide();
         }
 
         private void btDeleteUser_Click(object sender, RoutedEventArgs e)
         {
+            var deleteWindow = new DeleteEmployee(this);
+            deleteWindow.Show();
+            this.Hide(); 
 
         }
 
@@ -42,8 +48,12 @@ namespace MelodiasDelMundo_Client.Views.MainMenu.Menus
 
         private void btRegisterUser_Click(object sender, RoutedEventArgs e)
         {
+            var deleteWindow = new EmployeeForm(this);
+            deleteWindow.Show();
+            this.Hide();
 
         }
+
 
         private void btLogout_MouseDown(object sender, MouseButtonEventArgs e)
         {

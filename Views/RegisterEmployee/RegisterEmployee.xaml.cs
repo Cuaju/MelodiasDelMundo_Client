@@ -24,11 +24,13 @@ namespace MelodiasDelMundo_Client.Views.RegisterEmployee
     {
         private UsersManagerClient _service;
         private NotificationDialog _notificationDialog;
+        private Window _ventanaAnterior;
 
-        public EmployeeForm()
+        public EmployeeForm(Window ventanaAnterior)
         {
             InitializeComponent();
             _service = new UsersManagerClient();
+            _ventanaAnterior = ventanaAnterior;
             _notificationDialog = new NotificationDialog();
         }
 
@@ -155,6 +157,12 @@ namespace MelodiasDelMundo_Client.Views.RegisterEmployee
             tbPostalCode.Text = "";
             tbUserName.Text = "";
             pbPassword.Password = "";
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            _ventanaAnterior.Show();
+            this.Close();
         }
     }
 }
