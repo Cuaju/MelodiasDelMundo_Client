@@ -1,6 +1,7 @@
 ﻿using MelodiasDelMundo_Client.Views.MainMenu.Menus;
 using MelodiasDelMundo_Client.Views.Product;
 using MelodiasDelMundo_Client.Views.RegisterEmployee;
+using MelodiasDelMundo_Client.Views.Sale;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,9 +44,11 @@ namespace MelodiasDelMundo_Client.Views.MainMenu
 
         private void btSalesManagement_Click(object sender, RoutedEventArgs e)
         {
-            var mainWindow = (MainWindow)Application.Current.MainWindow;
-            mainWindow.NavigateToWindow(new Menus.SalesMenu());
+            GUI_SalesManagement saleManagementWindow = new GUI_SalesManagement();
+            saleManagementWindow.Show();
+            this.Close();
         }
+
 
         private void btSuppliersManagement_Click(object sender, RoutedEventArgs e)
         {
