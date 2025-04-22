@@ -33,7 +33,6 @@ namespace MelodiasDelMundo_Client
             InitializeComponent();
             _service = new UsersManagerClient();
             _notificationDialog = new NotificationDialog();
-            NavigateToWindow(new Views.MainMenu.MMenu());
         }
 
         public void NavigateToWindow(Window newWindow, double? newWidth = null, double? newHeight = null)
@@ -95,8 +94,7 @@ namespace MelodiasDelMundo_Client
             {
                 if (_service.LogIn(username, password))
                 {
-                    DeleteEmployee mainMenu = new DeleteEmployee();
-                    mainMenu.Show();
+                    NavigateToWindow(new Views.MainMenu.MMenu());
                     this.Close();
                 }
                 else
