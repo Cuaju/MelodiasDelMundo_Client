@@ -580,6 +580,115 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PurchaseDTO", Namespace="http://schemas.datacontract.org/2004/07/MelodiasService.DTOs")]
+    [System.SerializableAttribute()]
+    public partial class PurchaseDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime PurchaseDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PurchaseIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SupplierIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal TotalCostField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductId {
+            get {
+                return this.ProductIdField;
+            }
+            set {
+                if ((this.ProductIdField.Equals(value) != true)) {
+                    this.ProductIdField = value;
+                    this.RaisePropertyChanged("ProductId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime PurchaseDate {
+            get {
+                return this.PurchaseDateField;
+            }
+            set {
+                if ((this.PurchaseDateField.Equals(value) != true)) {
+                    this.PurchaseDateField = value;
+                    this.RaisePropertyChanged("PurchaseDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PurchaseId {
+            get {
+                return this.PurchaseIdField;
+            }
+            set {
+                if ((this.PurchaseIdField.Equals(value) != true)) {
+                    this.PurchaseIdField = value;
+                    this.RaisePropertyChanged("PurchaseId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SupplierId {
+            get {
+                return this.SupplierIdField;
+            }
+            set {
+                if ((this.SupplierIdField.Equals(value) != true)) {
+                    this.SupplierIdField = value;
+                    this.RaisePropertyChanged("SupplierId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal TotalCost {
+            get {
+                return this.TotalCostField;
+            }
+            set {
+                if ((this.TotalCostField.Equals(value) != true)) {
+                    this.TotalCostField = value;
+                    this.RaisePropertyChanged("TotalCost");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IUsersManager")]
     public interface IUsersManager {
@@ -741,6 +850,12 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductsManager/GetProducts", ReplyAction="http://tempuri.org/IProductsManager/GetProductsResponse")]
         System.Threading.Tasks.Task<MelodiasDelMundo_Client.ServiceReference1.ProductDataContract[]> GetProductsAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductsManager/GetProductsSearch", ReplyAction="http://tempuri.org/IProductsManager/GetProductsSearchResponse")]
+        MelodiasDelMundo_Client.ServiceReference1.ProductDataContract[] GetProductsSearch(string search);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductsManager/GetProductsSearch", ReplyAction="http://tempuri.org/IProductsManager/GetProductsSearchResponse")]
+        System.Threading.Tasks.Task<MelodiasDelMundo_Client.ServiceReference1.ProductDataContract[]> GetProductsSearchAsync(string search);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductsManager/EditProduct", ReplyAction="http://tempuri.org/IProductsManager/EditProductResponse")]
         bool EditProduct(MelodiasDelMundo_Client.ServiceReference1.ProductDataContract product);
         
@@ -801,6 +916,14 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
         
         public System.Threading.Tasks.Task<MelodiasDelMundo_Client.ServiceReference1.ProductDataContract[]> GetProductsAsync() {
             return base.Channel.GetProductsAsync();
+        }
+        
+        public MelodiasDelMundo_Client.ServiceReference1.ProductDataContract[] GetProductsSearch(string search) {
+            return base.Channel.GetProductsSearch(search);
+        }
+        
+        public System.Threading.Tasks.Task<MelodiasDelMundo_Client.ServiceReference1.ProductDataContract[]> GetProductsSearchAsync(string search) {
+            return base.Channel.GetProductsSearchAsync(search);
         }
         
         public bool EditProduct(MelodiasDelMundo_Client.ServiceReference1.ProductDataContract product) {
@@ -867,6 +990,12 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISuppliersManager/DeleteSupplier", ReplyAction="http://tempuri.org/ISuppliersManager/DeleteSupplierResponse")]
         System.Threading.Tasks.Task<bool> DeleteSupplierAsync(int supplierId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISuppliersManager/RegisterPurchase", ReplyAction="http://tempuri.org/ISuppliersManager/RegisterPurchaseResponse")]
+        bool RegisterPurchase(MelodiasDelMundo_Client.ServiceReference1.PurchaseDTO purchase);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISuppliersManager/RegisterPurchase", ReplyAction="http://tempuri.org/ISuppliersManager/RegisterPurchaseResponse")]
+        System.Threading.Tasks.Task<bool> RegisterPurchaseAsync(MelodiasDelMundo_Client.ServiceReference1.PurchaseDTO purchase);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -942,6 +1071,14 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> DeleteSupplierAsync(int supplierId) {
             return base.Channel.DeleteSupplierAsync(supplierId);
+        }
+        
+        public bool RegisterPurchase(MelodiasDelMundo_Client.ServiceReference1.PurchaseDTO purchase) {
+            return base.Channel.RegisterPurchase(purchase);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RegisterPurchaseAsync(MelodiasDelMundo_Client.ServiceReference1.PurchaseDTO purchase) {
+            return base.Channel.RegisterPurchaseAsync(purchase);
         }
     }
 }

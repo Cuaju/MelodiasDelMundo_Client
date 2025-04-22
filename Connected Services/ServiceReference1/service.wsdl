@@ -116,6 +116,12 @@
   <wsdl:message name="IProductsManager_GetProducts_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetProductsResponse" />
   </wsdl:message>
+  <wsdl:message name="IProductsManager_GetProductsSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsSearch" />
+  </wsdl:message>
+  <wsdl:message name="IProductsManager_GetProductsSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsSearchResponse" />
+  </wsdl:message>
   <wsdl:message name="IProductsManager_EditProduct_InputMessage">
     <wsdl:part name="parameters" element="tns:EditProduct" />
   </wsdl:message>
@@ -170,6 +176,12 @@
   <wsdl:message name="ISuppliersManager_DeleteSupplier_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteSupplierResponse" />
   </wsdl:message>
+  <wsdl:message name="ISuppliersManager_RegisterPurchase_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterPurchase" />
+  </wsdl:message>
+  <wsdl:message name="ISuppliersManager_RegisterPurchase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterPurchaseResponse" />
+  </wsdl:message>
   <wsdl:portType name="IUsersManager">
     <wsdl:operation name="LogIn">
       <wsdl:input wsaw:Action="http://tempuri.org/IUsersManager/LogIn" message="tns:IUsersManager_LogIn_InputMessage" />
@@ -213,6 +225,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IProductsManager/GetProducts" message="tns:IProductsManager_GetProducts_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductsManager/GetProductsResponse" message="tns:IProductsManager_GetProducts_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetProductsSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductsManager/GetProductsSearch" message="tns:IProductsManager_GetProductsSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductsManager/GetProductsSearchResponse" message="tns:IProductsManager_GetProductsSearch_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="EditProduct">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductsManager/EditProduct" message="tns:IProductsManager_EditProduct_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductsManager/EditProductResponse" message="tns:IProductsManager_EditProduct_OutputMessage" />
@@ -250,6 +266,10 @@
     <wsdl:operation name="DeleteSupplier">
       <wsdl:input wsaw:Action="http://tempuri.org/ISuppliersManager/DeleteSupplier" message="tns:ISuppliersManager_DeleteSupplier_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISuppliersManager/DeleteSupplierResponse" message="tns:ISuppliersManager_DeleteSupplier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterPurchase">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuppliersManager/RegisterPurchase" message="tns:ISuppliersManager_RegisterPurchase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuppliersManager/RegisterPurchaseResponse" message="tns:ISuppliersManager_RegisterPurchase_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IUsersManager" type="tns:IUsersManager">
@@ -351,6 +371,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetProductsSearch">
+      <soap12:operation soapAction="http://tempuri.org/IProductsManager/GetProductsSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="EditProduct">
       <soap12:operation soapAction="http://tempuri.org/IProductsManager/EditProduct" style="document" />
       <wsdl:input>
@@ -430,6 +459,15 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteSupplier">
       <soap12:operation soapAction="http://tempuri.org/ISuppliersManager/DeleteSupplier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterPurchase">
+      <soap12:operation soapAction="http://tempuri.org/ISuppliersManager/RegisterPurchase" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
