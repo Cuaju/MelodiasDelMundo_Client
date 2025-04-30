@@ -259,7 +259,13 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Sale\GUI_EditSale.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\RegisterEmployee\SearchEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Suppliers\GUI-RegisterPurchase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
