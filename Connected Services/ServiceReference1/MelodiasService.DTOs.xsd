@@ -19,14 +19,4 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfSupplierDTO" nillable="true" type="tns:ArrayOfSupplierDTO" />
-  <xs:complexType name="PurchaseDTO">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="ProductId" type="xs:int" />
-      <xs:element minOccurs="0" name="PurchaseDate" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="PurchaseId" type="xs:int" />
-      <xs:element minOccurs="0" name="SupplierId" type="xs:int" />
-      <xs:element minOccurs="0" name="TotalCost" type="xs:decimal" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="PurchaseDTO" nillable="true" type="tns:PurchaseDTO" />
 </xs:schema>

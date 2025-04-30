@@ -81,6 +81,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Models\SaleDetailDataContract.cs" />
     <Compile Include="UserControllers\DeleteSupplierDialog.xaml.cs">
       <DependentUpon>DeleteSupplierDialog.xaml</DependentUpon>
     </Compile>
@@ -145,16 +146,21 @@
     <Compile Include="Views\RegisterEmployee\RegisterEmployee.xaml.cs">
       <DependentUpon>RegisterEmployee.xaml</DependentUpon>
     </Compile>
+
+    <Compile Include="Views\Sale\GUI_EditSale.xaml.cs">
+      <DependentUpon>GUI_EditSale.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RegisterEmployee\SearchEmployee.xaml.cs">
       <DependentUpon>SearchEmployee.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Suppliers\GUI-RegisterPurchase.xaml.cs">
       <DependentUpon>GUI-RegisterPurchase.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Suppliers\GUI-RegisterSupplier.xaml.cs">
-      <DependentUpon>GUI-RegisterSupplier.xaml</DependentUpon>
+    <Compile Include="Views\Sale\GUI_RegisterSale.xaml.cs">
+      <DependentUpon>GUI_RegisterSale.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Suppliers\GUI-SelectSupplier.xaml.cs">
-      <DependentUpon>GUI-SelectSupplier.xaml</DependentUpon>
+    <Compile Include="Views\Sale\GUI_SalesManagement.xaml.cs">
+      <DependentUpon>GUI_SalesManagement.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -252,16 +258,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Sale\GUI_EditSale.xaml">
     <Page Include="Views\RegisterEmployee\SearchEmployee.xaml">
     <Page Include="Views\Suppliers\GUI-RegisterPurchase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Suppliers\GUI-RegisterSupplier.xaml">
+    <Page Include="Views\Sale\GUI_RegisterSale.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Suppliers\GUI-SelectSupplier.xaml">
+    <Page Include="Views\Sale\GUI_SalesManagement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -284,10 +291,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\ServiceReference1\MelodiasDelMundo_Client.ServiceReference1.EmployeeDataContract.datasource">
+    <None Include="Connected Services\ServiceReference1\MelodiasDelMundo_Client.ServiceReference1.ProductDataContract.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference1\MelodiasDelMundo_Client.ServiceReference1.ProductDataContract.datasource">
+    <None Include="Connected Services\ServiceReference1\MelodiasDelMundo_Client.ServiceReference1.SaleDataContract.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference1\MelodiasDelMundo_Client.ServiceReference1.SupplierDTO.datasource">
