@@ -137,14 +137,24 @@
     <Compile Include="Views\RegisterEmployee\DeleteEmployee.xaml.cs">
       <DependentUpon>DeleteEmployee.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\RegisterEmployee\Employee.xaml.cs">
+      <DependentUpon>Employee.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RegisterEmployee\EmployeeDetails.xaml.cs">
       <DependentUpon>EmployeeDetails.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RegisterEmployee\RegisterEmployee.xaml.cs">
       <DependentUpon>RegisterEmployee.xaml</DependentUpon>
     </Compile>
+
     <Compile Include="Views\Sale\GUI_EditSale.xaml.cs">
       <DependentUpon>GUI_EditSale.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegisterEmployee\SearchEmployee.xaml.cs">
+      <DependentUpon>SearchEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Suppliers\GUI-RegisterPurchase.xaml.cs">
+      <DependentUpon>GUI-RegisterPurchase.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Sale\GUI_RegisterSale.xaml.cs">
       <DependentUpon>GUI_RegisterSale.xaml</DependentUpon>
@@ -228,6 +238,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\RegisterEmployee\Employee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\RegisterEmployee\EmployeeDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -245,6 +259,8 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Sale\GUI_EditSale.xaml">
+    <Page Include="Views\RegisterEmployee\SearchEmployee.xaml">
+    <Page Include="Views\Suppliers\GUI-RegisterPurchase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

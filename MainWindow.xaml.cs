@@ -82,7 +82,9 @@ namespace MelodiasDelMundo_Client
             {
                 if (_service.LogIn(username, password))
                 {
-                    NavigateToWindow(new Views.MainMenu.MMenu()); // ← Navega al menú original después de login
+                    NavigateToWindow(new Views.MainMenu.MMenu());
+                    this.Close();
+
                 }
                 else
                 {

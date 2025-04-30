@@ -7,11 +7,17 @@
         Title="Registro de Empleado" Height="650" Width="800" Background="#F3F4F6" WindowStartupLocation="CenterScreen">
 
     <Grid>
-        <Border Width="600" Padding="20" Background="White" BorderBrush="#ccc" BorderThickness="1" >
+        <Border Width="600" Padding="20" Background="White" BorderBrush="#ccc" BorderThickness="1">
             <StackPanel>
+                <Button Content="Regresar" Width="100" Height="30"
+                        Background="#EDF2F7" Foreground="#2D3748"
+                        BorderBrush="#CBD5E0" BorderThickness="1"
+                        Click="BtnBack_Click" HorizontalAlignment="Left"
+                        Margin="0,0,0,20" FontWeight="SemiBold" />
+
                 <TextBlock Text="Registro de Empleado" FontSize="24" FontWeight="Bold" Foreground="#333" Margin="0,0,0,20" HorizontalAlignment="Center"/>
 
-                <StackPanel Orientation="Vertical" >
+                <StackPanel Orientation="Vertical">
                     <TextBlock Text="Nombre:" FontWeight="Bold" Foreground="#555"/>
                     <TextBox x:Name="tbName" Height="35" Padding="5" BorderBrush="#bbb" BorderThickness="1"/>
 
@@ -40,12 +46,12 @@
                     <PasswordBox x:Name="pbPassword" Height="35" Padding="5" BorderBrush="#bbb" BorderThickness="1"/>
                 </StackPanel>
 
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0" >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
                     <Button x:Name="btnCancel" Content="Cancelar" Width="120" Height="40" Background="#E53E3E" Foreground="White" BorderThickness="0" Click="BtnCancel_Click" />
                     <Button x:Name="btnAcept" Content="Registrar" Width="120" Height="40" Background="#38A169" Foreground="White" BorderThickness="0" Click="BtnAcept_Click" />
                 </StackPanel>
+
             </StackPanel>
         </Border>
     </Grid>
 </Window>
-
