@@ -146,7 +146,6 @@
     <Compile Include="Views\RegisterEmployee\RegisterEmployee.xaml.cs">
       <DependentUpon>RegisterEmployee.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="Views\Sale\GUI_EditSale.xaml.cs">
       <DependentUpon>GUI_EditSale.xaml</DependentUpon>
     </Compile>
@@ -269,7 +268,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RegisterEmployee\SearchEmployee.xaml">
-    <SubType>Designer</SubType>
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Suppliers\GUI-RegisterPurchase.xaml">
@@ -311,10 +310,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\ServiceReference1\MelodiasDelMundo_Client.ServiceReference1.ProductDataContract.datasource">
+    <None Include="Connected Services\ServiceReference1\MelodiasDelMundo_Client.ServiceReference1.EmployeeDataContract.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference1\MelodiasDelMundo_Client.ServiceReference1.SaleDataContract.datasource">
+    <None Include="Connected Services\ServiceReference1\MelodiasDelMundo_Client.ServiceReference1.ProductDataContract.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference1\MelodiasDelMundo_Client.ServiceReference1.SupplierDTO.datasource">
@@ -326,11 +325,11 @@
     <None Include="Connected Services\ServiceReference1\MelodiasService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference1\service.wsdl" />
-    <None Include="Connected Services\ServiceReference1\service.xsd">
+    <None Include="Connected Services\ServiceReference1\service1.wsdl" />
+    <None Include="Connected Services\ServiceReference1\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference1\service1.xsd">
+    <None Include="Connected Services\ServiceReference1\service2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
