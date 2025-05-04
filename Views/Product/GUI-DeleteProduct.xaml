@@ -79,7 +79,7 @@
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
             <Button x:Name="btDeleteProduct" Content="Eliminar producto" Width="150" Margin="10"
-                    Click="BtDeleteProduct_Click" Background="Red" Foreground="White" Height="40"/>
+                    Click="BtDeleteProduct_Click" Background="Red" BorderBrush="Red" Foreground="White" Height="40"/>
             <Button x:Name="btCancel" Content="Cancelar" Width="150" Margin="10"
                     Click="BtCancel_Click" Background="Gray" Foreground="White" Height="40" BorderBrush="Gray"/>
         </StackPanel>

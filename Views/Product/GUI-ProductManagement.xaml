@@ -9,6 +9,7 @@
         Height="600"
         Width="900"
         Background="#f4f4f4"
+        WindowState="Maximized"
         WindowStartupLocation="CenterScreen">
 
     <Grid Margin="20">
@@ -40,7 +41,8 @@
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     Margin="10,0"
                     Click="BtSearch_Click"
-                    Background="#E53935"
+                    Background="Gray"
+                    BorderBrush="Gray"
                     Foreground="White" />
         </StackPanel>
 
@@ -108,6 +110,9 @@
                     Width="120"
                     Margin="10"
                     Click="BtRegister_Click"
+                    Background="Green"
+                    BorderBrush="Green"
+                    Foreground="White"
                     Style="{StaticResource MaterialDesignRaisedButton}" />
 
             <Button x:Name="btDelete"
@@ -115,7 +120,8 @@
                     Width="120"
                     Margin="10"
                     Click="BtDelete_Click"
-                    Background="#D32F2F"
+                    Background="Red"
+                    BorderBrush="Red"
                     Foreground="White"
                     Style="{StaticResource MaterialDesignRaisedButton}" />
 
@@ -124,6 +130,9 @@
                     Width="120"
                     Margin="10"
                     Click="BtEdit_Click"
+                    Background="CadetBlue"
+                    BorderBrush="CadetBlue"
+                    Foreground="White"
                     Style="{StaticResource MaterialDesignRaisedButton}" />
 
             <Button x:Name="btBack"
@@ -131,7 +140,8 @@
                     Width="120"
                     Margin="10"
                     Click="BtBack_Click"
-                    Background="#9E9E9E"
+                    Background="Gray"
+                    BorderBrush="Gray"
                     Foreground="White"
                     Style="{StaticResource MaterialDesignRaisedButton}" />
         </StackPanel>

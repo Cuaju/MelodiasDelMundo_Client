@@ -85,6 +85,7 @@
                         Click="BtValidate_Click"
                         Style="{StaticResource MaterialDesignRaisedButton}"
                         Background="#4CAF50"
+                        BorderBrush="#4CAF50"
                         Foreground="White"/>
 
                 <Button x:Name="btBack"
@@ -94,6 +95,7 @@
                         Click="BtBack_Click"
                         Style="{StaticResource MaterialDesignRaisedButton}"
                         Background="#9E9E9E"
+                        BorderBrush="#9E9E9E"
                         Foreground="White"/>
             </StackPanel>
         </Grid>
