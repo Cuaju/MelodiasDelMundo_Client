@@ -146,21 +146,11 @@
     <Compile Include="Views\RegisterEmployee\RegisterEmployee.xaml.cs">
       <DependentUpon>RegisterEmployee.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="Views\Sale\GUI_EditSale.xaml.cs">
       <DependentUpon>GUI_EditSale.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RegisterEmployee\SearchEmployee.xaml.cs">
       <DependentUpon>SearchEmployee.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Suppliers\GUI-RegisterPurchase.xaml.cs">
-      <DependentUpon>GUI-RegisterPurchase.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Suppliers\GUI-RegisterSupplier.xaml.cs">
-      <DependentUpon>GUI-RegisterSupplier.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Suppliers\GUI-SelectSupplier.xaml.cs">
-      <DependentUpon>GUI-SelectSupplier.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Sale\GUI_RegisterSale.xaml.cs">
       <DependentUpon>GUI_RegisterSale.xaml</DependentUpon>
@@ -269,18 +259,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RegisterEmployee\SearchEmployee.xaml">
-    <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Suppliers\GUI-RegisterPurchase.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Suppliers\GUI-RegisterSupplier.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Suppliers\GUI-SelectSupplier.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -311,6 +289,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Connected Services\ServiceReference1\MelodiasDelMundo_Client.ServiceReference1.EmployeeDataContract1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference1\MelodiasDelMundo_Client.ServiceReference1.ProductDataContract.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -331,6 +312,10 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServiceReference1\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\service2.wsdl" />
+    <None Include="Connected Services\ServiceReference1\service3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />

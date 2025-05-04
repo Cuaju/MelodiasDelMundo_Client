@@ -1,0 +1,642 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="ServiceImplementation" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IUsersManager_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="60000">
+          </wsrm:InactivityTimeout>
+          <wsrm:AcknowledgementInterval Milliseconds="200">
+          </wsrm:AcknowledgementInterval>
+        </wsrm:RMAssertion>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IProductsManager_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="60000">
+          </wsrm:InactivityTimeout>
+          <wsrm:AcknowledgementInterval Milliseconds="200">
+          </wsrm:AcknowledgementInterval>
+        </wsrm:RMAssertion>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_ISuppliersManager_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="60000">
+          </wsrm:InactivityTimeout>
+          <wsrm:AcknowledgementInterval Milliseconds="200">
+          </wsrm:AcknowledgementInterval>
+        </wsrm:RMAssertion>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_ISalesManager_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="60000">
+          </wsrm:InactivityTimeout>
+          <wsrm:AcknowledgementInterval Milliseconds="200">
+          </wsrm:AcknowledgementInterval>
+        </wsrm:RMAssertion>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/MelodiasService" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/MelodiasService.DTOs" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUsersManager_LogIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogIn" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_LogIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogInResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_AddEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddEmployee" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_AddEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_DeleteEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEmployee" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_DeleteEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_GetIdEmployeeByUserName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdEmployeeByUserName" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_GetIdEmployeeByUserName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdEmployeeByUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_UserNameExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserNameExist" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_UserNameExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserNameExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_MailAlreadyExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:MailAlreadyExist" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_MailAlreadyExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MailAlreadyExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_PhoneNumberExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:PhoneNumberExists" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_PhoneNumberExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PhoneNumberExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_GetEmployeeDetailsWithoutPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeDetailsWithoutPassword" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_GetEmployeeDetailsWithoutPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeDetailsWithoutPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductsManager_RegisterProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterProduct" />
+  </wsdl:message>
+  <wsdl:message name="IProductsManager_RegisterProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductsManager_GetProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProducts" />
+  </wsdl:message>
+  <wsdl:message name="IProductsManager_GetProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductsManager_GetProductsSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsSearch" />
+  </wsdl:message>
+  <wsdl:message name="IProductsManager_GetProductsSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductsManager_EditProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditProduct" />
+  </wsdl:message>
+  <wsdl:message name="IProductsManager_EditProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductsManager_ExistsProductByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExistsProductByName" />
+  </wsdl:message>
+  <wsdl:message name="IProductsManager_ExistsProductByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExistsProductByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductsManager_DeleteProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProduct" />
+  </wsdl:message>
+  <wsdl:message name="IProductsManager_DeleteProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductsManager_SearchProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchProducts" />
+  </wsdl:message>
+  <wsdl:message name="IProductsManager_SearchProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuppliersManager_RegisterSupplier_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterSupplier" />
+  </wsdl:message>
+  <wsdl:message name="ISuppliersManager_RegisterSupplier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuppliersManager_EditSupplier_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditSupplier" />
+  </wsdl:message>
+  <wsdl:message name="ISuppliersManager_EditSupplier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuppliersManager_GetSuppliers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSuppliers" />
+  </wsdl:message>
+  <wsdl:message name="ISuppliersManager_GetSuppliers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSuppliersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuppliersManager_IsSupplierNameTaken_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsSupplierNameTaken" />
+  </wsdl:message>
+  <wsdl:message name="ISuppliersManager_IsSupplierNameTaken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsSupplierNameTakenResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuppliersManager_IsSupplierEmailTaken_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsSupplierEmailTaken" />
+  </wsdl:message>
+  <wsdl:message name="ISuppliersManager_IsSupplierEmailTaken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsSupplierEmailTakenResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuppliersManager_DeleteSupplier_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSupplier" />
+  </wsdl:message>
+  <wsdl:message name="ISuppliersManager_DeleteSupplier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuppliersManager_RegisterPurchase_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterPurchase" />
+  </wsdl:message>
+  <wsdl:message name="ISuppliersManager_RegisterPurchase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterPurchaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesManager_GetSales_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSales" />
+  </wsdl:message>
+  <wsdl:message name="ISalesManager_GetSales_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesManager_RegisterSale_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterSale" />
+  </wsdl:message>
+  <wsdl:message name="ISalesManager_RegisterSale_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesManager_EditSale_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditSale" />
+  </wsdl:message>
+  <wsdl:message name="ISalesManager_EditSale_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesManager_CancelSale_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelSale" />
+  </wsdl:message>
+  <wsdl:message name="ISalesManager_CancelSale_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesManager_GetSaleById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSaleById" />
+  </wsdl:message>
+  <wsdl:message name="ISalesManager_GetSaleById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSaleByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IUsersManager">
+    <wsdl:operation name="LogIn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsersManager/LogIn" message="tns:IUsersManager_LogIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsersManager/LogInResponse" message="tns:IUsersManager_LogIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsersManager/AddEmployee" message="tns:IUsersManager_AddEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsersManager/AddEmployeeResponse" message="tns:IUsersManager_AddEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsersManager/DeleteEmployee" message="tns:IUsersManager_DeleteEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsersManager/DeleteEmployeeResponse" message="tns:IUsersManager_DeleteEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIdEmployeeByUserName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsersManager/GetIdEmployeeByUserName" message="tns:IUsersManager_GetIdEmployeeByUserName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsersManager/GetIdEmployeeByUserNameResponse" message="tns:IUsersManager_GetIdEmployeeByUserName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserNameExist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsersManager/UserNameExist" message="tns:IUsersManager_UserNameExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsersManager/UserNameExistResponse" message="tns:IUsersManager_UserNameExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MailAlreadyExist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsersManager/MailAlreadyExist" message="tns:IUsersManager_MailAlreadyExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsersManager/MailAlreadyExistResponse" message="tns:IUsersManager_MailAlreadyExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PhoneNumberExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsersManager/PhoneNumberExists" message="tns:IUsersManager_PhoneNumberExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsersManager/PhoneNumberExistsResponse" message="tns:IUsersManager_PhoneNumberExists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeDetailsWithoutPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsersManager/GetEmployeeDetailsWithoutPassword" message="tns:IUsersManager_GetEmployeeDetailsWithoutPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsersManager/GetEmployeeDetailsWithoutPasswordResponse" message="tns:IUsersManager_GetEmployeeDetailsWithoutPassword_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IProductsManager">
+    <wsdl:operation name="RegisterProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductsManager/RegisterProduct" message="tns:IProductsManager_RegisterProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductsManager/RegisterProductResponse" message="tns:IProductsManager_RegisterProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductsManager/GetProducts" message="tns:IProductsManager_GetProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductsManager/GetProductsResponse" message="tns:IProductsManager_GetProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductsManager/GetProductsSearch" message="tns:IProductsManager_GetProductsSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductsManager/GetProductsSearchResponse" message="tns:IProductsManager_GetProductsSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductsManager/EditProduct" message="tns:IProductsManager_EditProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductsManager/EditProductResponse" message="tns:IProductsManager_EditProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExistsProductByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductsManager/ExistsProductByName" message="tns:IProductsManager_ExistsProductByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductsManager/ExistsProductByNameResponse" message="tns:IProductsManager_ExistsProductByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductsManager/DeleteProduct" message="tns:IProductsManager_DeleteProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductsManager/DeleteProductResponse" message="tns:IProductsManager_DeleteProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductsManager/SearchProducts" message="tns:IProductsManager_SearchProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductsManager/SearchProductsResponse" message="tns:IProductsManager_SearchProducts_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ISuppliersManager">
+    <wsdl:operation name="RegisterSupplier">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuppliersManager/RegisterSupplier" message="tns:ISuppliersManager_RegisterSupplier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuppliersManager/RegisterSupplierResponse" message="tns:ISuppliersManager_RegisterSupplier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditSupplier">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuppliersManager/EditSupplier" message="tns:ISuppliersManager_EditSupplier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuppliersManager/EditSupplierResponse" message="tns:ISuppliersManager_EditSupplier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSuppliers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuppliersManager/GetSuppliers" message="tns:ISuppliersManager_GetSuppliers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuppliersManager/GetSuppliersResponse" message="tns:ISuppliersManager_GetSuppliers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsSupplierNameTaken">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuppliersManager/IsSupplierNameTaken" message="tns:ISuppliersManager_IsSupplierNameTaken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuppliersManager/IsSupplierNameTakenResponse" message="tns:ISuppliersManager_IsSupplierNameTaken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsSupplierEmailTaken">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuppliersManager/IsSupplierEmailTaken" message="tns:ISuppliersManager_IsSupplierEmailTaken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuppliersManager/IsSupplierEmailTakenResponse" message="tns:ISuppliersManager_IsSupplierEmailTaken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSupplier">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuppliersManager/DeleteSupplier" message="tns:ISuppliersManager_DeleteSupplier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuppliersManager/DeleteSupplierResponse" message="tns:ISuppliersManager_DeleteSupplier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterPurchase">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuppliersManager/RegisterPurchase" message="tns:ISuppliersManager_RegisterPurchase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuppliersManager/RegisterPurchaseResponse" message="tns:ISuppliersManager_RegisterPurchase_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ISalesManager">
+    <wsdl:operation name="GetSales">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalesManager/GetSales" message="tns:ISalesManager_GetSales_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalesManager/GetSalesResponse" message="tns:ISalesManager_GetSales_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterSale">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalesManager/RegisterSale" message="tns:ISalesManager_RegisterSale_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalesManager/RegisterSaleResponse" message="tns:ISalesManager_RegisterSale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditSale">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalesManager/EditSale" message="tns:ISalesManager_EditSale_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalesManager/EditSaleResponse" message="tns:ISalesManager_EditSale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelSale">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalesManager/CancelSale" message="tns:ISalesManager_CancelSale_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalesManager/CancelSaleResponse" message="tns:ISalesManager_CancelSale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalesManager/GetSaleById" message="tns:ISalesManager_GetSaleById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalesManager/GetSaleByIdResponse" message="tns:ISalesManager_GetSaleById_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IUsersManager" type="tns:IUsersManager">
+    <wsp:PolicyReference URI="#NetTcpBinding_IUsersManager_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="LogIn">
+      <soap12:operation soapAction="http://tempuri.org/IUsersManager/LogIn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployee">
+      <soap12:operation soapAction="http://tempuri.org/IUsersManager/AddEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmployee">
+      <soap12:operation soapAction="http://tempuri.org/IUsersManager/DeleteEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIdEmployeeByUserName">
+      <soap12:operation soapAction="http://tempuri.org/IUsersManager/GetIdEmployeeByUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserNameExist">
+      <soap12:operation soapAction="http://tempuri.org/IUsersManager/UserNameExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MailAlreadyExist">
+      <soap12:operation soapAction="http://tempuri.org/IUsersManager/MailAlreadyExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PhoneNumberExists">
+      <soap12:operation soapAction="http://tempuri.org/IUsersManager/PhoneNumberExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeDetailsWithoutPassword">
+      <soap12:operation soapAction="http://tempuri.org/IUsersManager/GetEmployeeDetailsWithoutPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IProductsManager" type="tns:IProductsManager">
+    <wsp:PolicyReference URI="#NetTcpBinding_IProductsManager_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="RegisterProduct">
+      <soap12:operation soapAction="http://tempuri.org/IProductsManager/RegisterProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <soap12:operation soapAction="http://tempuri.org/IProductsManager/GetProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsSearch">
+      <soap12:operation soapAction="http://tempuri.org/IProductsManager/GetProductsSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditProduct">
+      <soap12:operation soapAction="http://tempuri.org/IProductsManager/EditProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExistsProductByName">
+      <soap12:operation soapAction="http://tempuri.org/IProductsManager/ExistsProductByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <soap12:operation soapAction="http://tempuri.org/IProductsManager/DeleteProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchProducts">
+      <soap12:operation soapAction="http://tempuri.org/IProductsManager/SearchProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_ISuppliersManager" type="tns:ISuppliersManager">
+    <wsp:PolicyReference URI="#NetTcpBinding_ISuppliersManager_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="RegisterSupplier">
+      <soap12:operation soapAction="http://tempuri.org/ISuppliersManager/RegisterSupplier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditSupplier">
+      <soap12:operation soapAction="http://tempuri.org/ISuppliersManager/EditSupplier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSuppliers">
+      <soap12:operation soapAction="http://tempuri.org/ISuppliersManager/GetSuppliers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSupplierNameTaken">
+      <soap12:operation soapAction="http://tempuri.org/ISuppliersManager/IsSupplierNameTaken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSupplierEmailTaken">
+      <soap12:operation soapAction="http://tempuri.org/ISuppliersManager/IsSupplierEmailTaken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSupplier">
+      <soap12:operation soapAction="http://tempuri.org/ISuppliersManager/DeleteSupplier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterPurchase">
+      <soap12:operation soapAction="http://tempuri.org/ISuppliersManager/RegisterPurchase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_ISalesManager" type="tns:ISalesManager">
+    <wsp:PolicyReference URI="#NetTcpBinding_ISalesManager_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetSales">
+      <soap12:operation soapAction="http://tempuri.org/ISalesManager/GetSales" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterSale">
+      <soap12:operation soapAction="http://tempuri.org/ISalesManager/RegisterSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditSale">
+      <soap12:operation soapAction="http://tempuri.org/ISalesManager/EditSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelSale">
+      <soap12:operation soapAction="http://tempuri.org/ISalesManager/CancelSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleById">
+      <soap12:operation soapAction="http://tempuri.org/ISalesManager/GetSaleById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceImplementation">
+    <wsdl:port name="NetTcpBinding_IUsersManager" binding="tns:NetTcpBinding_IUsersManager">
+      <soap12:address location="net.tcp://localhost:8001/ServiceImplementation/Service" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8001/ServiceImplementation/Service</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IProductsManager" binding="tns:NetTcpBinding_IProductsManager">
+      <soap12:address location="net.tcp://localhost:8001/ServiceImplementation/Service" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8001/ServiceImplementation/Service</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_ISuppliersManager" binding="tns:NetTcpBinding_ISuppliersManager">
+      <soap12:address location="net.tcp://localhost:8001/ServiceImplementation/Service" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8001/ServiceImplementation/Service</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_ISalesManager" binding="tns:NetTcpBinding_ISalesManager">
+      <soap12:address location="net.tcp://localhost:8001/ServiceImplementation/Service" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8001/ServiceImplementation/Service</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -22,8 +22,8 @@
     <MetadataSource Address="net.tcp://localhost:8001/ServiceImplementation/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="84cfc8ae-66ec-4a09-9fa5-2dd3d7abee5a" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
-    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="14a0e094-23ab-496c-8c1a-54032b8872eb" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
+    <MetadataFile FileName="service2.wsdl" MetadataType="Wsdl" ID="270412d9-2bd3-4beb-90c2-ea24303aac51" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
+    <MetadataFile FileName="service3.xsd" MetadataType="Schema" ID="caf31568-6560-4506-8234-a3801077d761" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="ac5d52c1-ea35-47f0-a6fd-d418c7225639" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
     <MetadataFile FileName="MelodiasService.xsd" MetadataType="Schema" ID="12681150-0e2c-4836-b283-30b77c146558" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
     <MetadataFile FileName="MelodiasService.DTOs.xsd" MetadataType="Schema" ID="3908cd77-c4f0-407c-bb56-ebce669c2c09" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
