@@ -38,4 +38,37 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfProductDataContract" nillable="true" type="tns:ArrayOfProductDataContract" />
+  <xs:complexType name="ArrayOfSaleDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SaleDataContract" nillable="true" type="tns:SaleDataContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSaleDataContract" nillable="true" type="tns:ArrayOfSaleDataContract" />
+  <xs:complexType name="SaleDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsCancelled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SaleDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SaleDetails" nillable="true" type="tns:ArrayOfSaleDetailDataContract" />
+      <xs:element minOccurs="0" name="SaleId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SaleDataContract" nillable="true" type="tns:SaleDataContract" />
+  <xs:complexType name="ArrayOfSaleDetailDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SaleDetailDataContract" nillable="true" type="tns:SaleDetailDataContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSaleDetailDataContract" nillable="true" type="tns:ArrayOfSaleDetailDataContract" />
+  <xs:complexType name="SaleDetailDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="SaleDetailId" type="xs:int" />
+      <xs:element minOccurs="0" name="Subtotal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UnitPrice" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SaleDetailDataContract" nillable="true" type="tns:SaleDetailDataContract" />
 </xs:schema>

@@ -48,6 +48,22 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_ISalesManager_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="60000">
+          </wsrm:InactivityTimeout>
+          <wsrm:AcknowledgementInterval Milliseconds="200">
+          </wsrm:AcknowledgementInterval>
+        </wsrm:RMAssertion>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import namespace="http://tempuri.org/" />
@@ -140,12 +156,6 @@
   <wsdl:message name="IProductsManager_DeleteProduct_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteProductResponse" />
   </wsdl:message>
-  <wsdl:message name="IProductsManager_SearchProducts_InputMessage">
-    <wsdl:part name="parameters" element="tns:SearchProducts" />
-  </wsdl:message>
-  <wsdl:message name="IProductsManager_SearchProducts_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SearchProductsResponse" />
-  </wsdl:message>
   <wsdl:message name="ISuppliersManager_RegisterSupplier_InputMessage">
     <wsdl:part name="parameters" element="tns:RegisterSupplier" />
   </wsdl:message>
@@ -181,12 +191,6 @@
   </wsdl:message>
   <wsdl:message name="ISuppliersManager_DeleteSupplier_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteSupplierResponse" />
-  </wsdl:message>
-  <wsdl:message name="ISuppliersManager_RegisterPurchase_InputMessage">
-    <wsdl:part name="parameters" element="tns:RegisterPurchase" />
-  </wsdl:message>
-  <wsdl:message name="ISuppliersManager_RegisterPurchase_OutputMessage">
-    <wsdl:part name="parameters" element="tns:RegisterPurchaseResponse" />
   </wsdl:message>
   <wsdl:portType name="IUsersManager">
     <wsdl:operation name="LogIn">
@@ -247,10 +251,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IProductsManager/DeleteProduct" message="tns:IProductsManager_DeleteProduct_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductsManager/DeleteProductResponse" message="tns:IProductsManager_DeleteProduct_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="SearchProducts">
-      <wsdl:input wsaw:Action="http://tempuri.org/IProductsManager/SearchProducts" message="tns:IProductsManager_SearchProducts_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IProductsManager/SearchProductsResponse" message="tns:IProductsManager_SearchProducts_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ISuppliersManager">
     <wsdl:operation name="RegisterSupplier">
@@ -280,6 +280,28 @@
     <wsdl:operation name="RegisterPurchase">
       <wsdl:input wsaw:Action="http://tempuri.org/ISuppliersManager/RegisterPurchase" message="tns:ISuppliersManager_RegisterPurchase_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISuppliersManager/RegisterPurchaseResponse" message="tns:ISuppliersManager_RegisterPurchase_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ISalesManager">
+    <wsdl:operation name="GetSales">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalesManager/GetSales" message="tns:ISalesManager_GetSales_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalesManager/GetSalesResponse" message="tns:ISalesManager_GetSales_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterSale">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalesManager/RegisterSale" message="tns:ISalesManager_RegisterSale_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalesManager/RegisterSaleResponse" message="tns:ISalesManager_RegisterSale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditSale">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalesManager/EditSale" message="tns:ISalesManager_EditSale_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalesManager/EditSaleResponse" message="tns:ISalesManager_EditSale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelSale">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalesManager/CancelSale" message="tns:ISalesManager_CancelSale_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalesManager/CancelSaleResponse" message="tns:ISalesManager_CancelSale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalesManager/GetSaleById" message="tns:ISalesManager_GetSaleById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalesManager/GetSaleByIdResponse" message="tns:ISalesManager_GetSaleById_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IUsersManager" type="tns:IUsersManager">
@@ -417,15 +439,6 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SearchProducts">
-      <soap12:operation soapAction="http://tempuri.org/IProductsManager/SearchProducts" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="NetTcpBinding_ISuppliersManager" type="tns:ISuppliersManager">
     <wsp:PolicyReference URI="#NetTcpBinding_ISuppliersManager_policy">
@@ -495,23 +508,79 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_ISalesManager" type="tns:ISalesManager">
+    <wsp:PolicyReference URI="#NetTcpBinding_ISalesManager_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetSales">
+      <soap12:operation soapAction="http://tempuri.org/ISalesManager/GetSales" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterSale">
+      <soap12:operation soapAction="http://tempuri.org/ISalesManager/RegisterSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditSale">
+      <soap12:operation soapAction="http://tempuri.org/ISalesManager/EditSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelSale">
+      <soap12:operation soapAction="http://tempuri.org/ISalesManager/CancelSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleById">
+      <soap12:operation soapAction="http://tempuri.org/ISalesManager/GetSaleById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="ServiceImplementation">
     <wsdl:port name="NetTcpBinding_IUsersManager" binding="tns:NetTcpBinding_IUsersManager">
-      <soap12:address location="net.tcp://localhost:8001/ServiceImplementation/Service" />
+      <soap12:address location="net.tcp://localhost:8001/ServiceImplementation/Users" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:8001/ServiceImplementation/Service</wsa10:Address>
+        <wsa10:Address>net.tcp://localhost:8001/ServiceImplementation/Users</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IProductsManager" binding="tns:NetTcpBinding_IProductsManager">
-      <soap12:address location="net.tcp://localhost:8001/ServiceImplementation/Service" />
+      <soap12:address location="net.tcp://localhost:8001/ServiceImplementation/Products" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:8001/ServiceImplementation/Service</wsa10:Address>
+        <wsa10:Address>net.tcp://localhost:8001/ServiceImplementation/Products</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_ISuppliersManager" binding="tns:NetTcpBinding_ISuppliersManager">
-      <soap12:address location="net.tcp://localhost:8001/ServiceImplementation/Service" />
+      <soap12:address location="net.tcp://localhost:8001/ServiceImplementation/Suppliers" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:8001/ServiceImplementation/Service</wsa10:Address>
+        <wsa10:Address>net.tcp://localhost:8001/ServiceImplementation/Suppliers</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_ISalesManager" binding="tns:NetTcpBinding_ISalesManager">
+      <soap12:address location="net.tcp://localhost:8001/ServiceImplementation/Sales" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8001/ServiceImplementation/Sales</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>

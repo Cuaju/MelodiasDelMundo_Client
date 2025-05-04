@@ -1,0 +1,82 @@
+﻿<Window x:Class="MelodiasDelMundo_Client.Views.Sale.GUI_RegisterSale"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Registrar Venta"
+        Height="500"
+        Width="700"
+        Background="#f4f4f4"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Registrar Venta"
+                   FontSize="28"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   Margin="0 0 0 20" />
+
+        <!-- Cliente y producto -->
+        <StackPanel Orientation="Vertical" Grid.Row="1" Margin="0,0,0,20">
+            <TextBox x:Name="tbCustomerName"
+                     Width="300"
+                     Margin="0,0,0,10"
+                     materialDesign:HintAssist.Hint="Nombre del Cliente"
+                     Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+
+            <StackPanel Orientation="Horizontal">
+                <ComboBox x:Name="cbProducts"
+                          Width="300"
+                          Margin="0,0,10,0"
+                          materialDesign:HintAssist.Hint="Producto" />
+
+                <TextBox x:Name="tbQuantity"
+                         Width="100"
+                         materialDesign:HintAssist.Hint="Cantidad"
+                         Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+                <Button Content="Agregar"
+                        Margin="10 0 0 0"
+                        Width="100"
+                        Click="BtAddProduct_Click"
+                        Style="{StaticResource MaterialDesignRaisedButton}" />
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Lista de productos seleccionados -->
+        <DataGrid x:Name="dgSaleDetails"
+                  Grid.Row="2"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  IsReadOnly="True"
+                  Margin="0,0,0,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Producto" Binding="{Binding ProductName}" Width="*"/>
+                <DataGridTextColumn Header="Precio Unitario" Binding="{Binding UnitPrice}" Width="*"/>
+                <DataGridTextColumn Header="Cantidad" Binding="{Binding Quantity}" Width="*"/>
+                <DataGridTextColumn Header="Subtotal" Binding="{Binding Subtotal}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Botones -->
+        <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center">
+            <Button Content="Registrar Venta"
+                    Width="150"
+                    Margin="10"
+                    Click="BtRegister_Click"
+                    Style="{StaticResource MaterialDesignRaisedButton}" />
+            <Button Content="Cancelar"
+                    Width="150"
+                    Margin="10"
+                    Click="BtCancel_Click"
+                    Background="#D32F2F"
+                    Foreground="White"
+                    Style="{StaticResource MaterialDesignRaisedButton}" />
+        </StackPanel>
+    </Grid>
+</Window>

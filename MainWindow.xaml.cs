@@ -1,21 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using MelodiasDelMundo_Client.ServiceReference1;
 using MelodiasDelMundo_Client.Utils;
-using MelodiasDelMundo_Client.Views;
 using MelodiasDelMundo_Client.Views.RegisterEmployee;
 
 namespace MelodiasDelMundo_Client
@@ -33,7 +21,6 @@ namespace MelodiasDelMundo_Client
             InitializeComponent();
             _service = new UsersManagerClient();
             _notificationDialog = new NotificationDialog();
-            NavigateToWindow(new Views.MainMenu.MMenu());
         }
 
         public void NavigateToWindow(Window newWindow, double? newWidth = null, double? newHeight = null)
@@ -44,7 +31,7 @@ namespace MelodiasDelMundo_Client
             {
                 newWindow.Width = newWidth.Value;
                 newWindow.Height = newHeight.Value;
-                newWindow.SizeToContent = SizeToContent.Manual;  
+                newWindow.SizeToContent = SizeToContent.Manual;
             }
             else
             {
@@ -53,7 +40,7 @@ namespace MelodiasDelMundo_Client
 
             newWindow.WindowState = WindowState.Normal;
             newWindow.WindowStyle = WindowStyle.SingleBorderWindow;
-            
+
             this.Close();
         }
 
@@ -95,9 +82,9 @@ namespace MelodiasDelMundo_Client
             {
                 if (_service.LogIn(username, password))
                 {
-                    DeleteEmployee mainMenu = new DeleteEmployee();
-                    mainMenu.Show();
+                    NavigateToWindow(new Views.MainMenu.MMenu());
                     this.Close();
+
                 }
                 else
                 {

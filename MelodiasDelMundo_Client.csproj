@@ -74,20 +74,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\ProductFound.cs" />
     <Compile Include="Classes\SupplierFound.cs" />
     <Compile Include="Connected Services\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Models\SaleDetailDataContract.cs" />
     <Compile Include="UserControllers\DeleteSupplierDialog.xaml.cs">
       <DependentUpon>DeleteSupplierDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControllers\EditSupplierDialog.xaml.cs">
       <DependentUpon>EditSupplierDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControllers\FindProductItem.xaml.cs">
+      <DependentUpon>FindProductItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControllers\FindSupplierItem.xaml.cs">
       <DependentUpon>FindSupplierItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControllers\FindSupplierPurchaseItem.xaml.cs">
+      <DependentUpon>FindSupplierPurchaseItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControllers\SelectQuantityDialog.xaml.cs">
+      <DependentUpon>SelectQuantityDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utils\NotificationDialog.cs" />
     <Compile Include="Views\MainMenu\MainMenu2.xaml.cs">
@@ -126,17 +137,36 @@
     <Compile Include="Views\RegisterEmployee\DeleteEmployee.xaml.cs">
       <DependentUpon>DeleteEmployee.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\RegisterEmployee\Employee.xaml.cs">
+      <DependentUpon>Employee.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RegisterEmployee\EmployeeDetails.xaml.cs">
       <DependentUpon>EmployeeDetails.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RegisterEmployee\RegisterEmployee.xaml.cs">
       <DependentUpon>RegisterEmployee.xaml</DependentUpon>
     </Compile>
+
+    <Compile Include="Views\Sale\GUI_EditSale.xaml.cs">
+      <DependentUpon>GUI_EditSale.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegisterEmployee\SearchEmployee.xaml.cs">
+      <DependentUpon>SearchEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Suppliers\GUI-RegisterPurchase.xaml.cs">
+      <DependentUpon>GUI-RegisterPurchase.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Suppliers\GUI-RegisterSupplier.xaml.cs">
       <DependentUpon>GUI-RegisterSupplier.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Suppliers\GUI-SelectSupplier.xaml.cs">
       <DependentUpon>GUI-SelectSupplier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sale\GUI_RegisterSale.xaml.cs">
+      <DependentUpon>GUI_RegisterSale.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sale\GUI_SalesManagement.xaml.cs">
+      <DependentUpon>GUI_SalesManagement.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -158,7 +188,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControllers\FindProductItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControllers\FindSupplierItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControllers\FindSupplierPurchaseItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControllers\SelectQuantityDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -202,6 +244,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\RegisterEmployee\Employee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\RegisterEmployee\EmployeeDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -218,11 +264,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Sale\GUI_EditSale.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RegisterEmployee\SearchEmployee.xaml">
+    <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Suppliers\GUI-RegisterPurchase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Suppliers\GUI-RegisterSupplier.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Suppliers\GUI-SelectSupplier.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Sale\GUI_RegisterSale.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Sale\GUI_SalesManagement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -245,10 +311,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\ServiceReference1\MelodiasDelMundo_Client.ServiceReference1.EmployeeDataContract.datasource">
+    <None Include="Connected Services\ServiceReference1\MelodiasDelMundo_Client.ServiceReference1.ProductDataContract.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference1\MelodiasDelMundo_Client.ServiceReference1.ProductDataContract.datasource">
+    <None Include="Connected Services\ServiceReference1\MelodiasDelMundo_Client.ServiceReference1.SaleDataContract.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference1\MelodiasDelMundo_Client.ServiceReference1.SupplierDTO.datasource">
