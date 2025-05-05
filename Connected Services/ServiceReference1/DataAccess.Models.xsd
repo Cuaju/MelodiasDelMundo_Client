@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DataAccess.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DataAccess.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfSalesByCategoryReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesByCategoryReport" nillable="true" type="tns:SalesByCategoryReport" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSalesByCategoryReport" nillable="true" type="tns:ArrayOfSalesByCategoryReport" />
+  <xs:complexType name="SalesByCategoryReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Percentage" type="xs:double" />
+      <xs:element minOccurs="0" name="QuantitySold" type="xs:int" />
+      <xs:element minOccurs="0" name="SalesCount" type="xs:int" />
+      <xs:element minOccurs="0" name="TopProduct" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalRevenue" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SalesByCategoryReport" nillable="true" type="tns:SalesByCategoryReport" />
+</xs:schema>

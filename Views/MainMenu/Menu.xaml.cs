@@ -58,8 +58,8 @@ namespace MelodiasDelMundo_Client.Views.MainMenu
 
         private void btReports_Click(object sender, RoutedEventArgs e)
         {
-            GUI_ValidateInventory validateInventoryWindow = new GUI_ValidateInventory();
-            validateInventoryWindow.Show();
+            GUI_ReportesMenu reportesMenu= new GUI_ReportesMenu();
+            reportesMenu.Show();
             this.Close();
         }
 

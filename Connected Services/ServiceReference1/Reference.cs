@@ -425,6 +425,131 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SalesByCategoryReport", Namespace="http://schemas.datacontract.org/2004/07/DataAccess.Models")]
+    [System.SerializableAttribute()]
+    public partial class SalesByCategoryReport : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CategoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double PercentageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int QuantitySoldField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SalesCountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TopProductField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal TotalRevenueField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Category {
+            get {
+                return this.CategoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CategoryField, value) != true)) {
+                    this.CategoryField = value;
+                    this.RaisePropertyChanged("Category");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Percentage {
+            get {
+                return this.PercentageField;
+            }
+            set {
+                if ((this.PercentageField.Equals(value) != true)) {
+                    this.PercentageField = value;
+                    this.RaisePropertyChanged("Percentage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int QuantitySold {
+            get {
+                return this.QuantitySoldField;
+            }
+            set {
+                if ((this.QuantitySoldField.Equals(value) != true)) {
+                    this.QuantitySoldField = value;
+                    this.RaisePropertyChanged("QuantitySold");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SalesCount {
+            get {
+                return this.SalesCountField;
+            }
+            set {
+                if ((this.SalesCountField.Equals(value) != true)) {
+                    this.SalesCountField = value;
+                    this.RaisePropertyChanged("SalesCount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TopProduct {
+            get {
+                return this.TopProductField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TopProductField, value) != true)) {
+                    this.TopProductField = value;
+                    this.RaisePropertyChanged("TopProduct");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal TotalRevenue {
+            get {
+                return this.TotalRevenueField;
+            }
+            set {
+                if ((this.TotalRevenueField.Equals(value) != true)) {
+                    this.TotalRevenueField = value;
+                    this.RaisePropertyChanged("TotalRevenue");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SupplierDTO", Namespace="http://schemas.datacontract.org/2004/07/MelodiasService.DTOs")]
     [System.SerializableAttribute()]
     public partial class SupplierDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -1113,6 +1238,12 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductsManager/SearchProducts", ReplyAction="http://tempuri.org/IProductsManager/SearchProductsResponse")]
         System.Threading.Tasks.Task<MelodiasDelMundo_Client.ServiceReference1.ProductDataContract[]> SearchProductsAsync(string name, string code, string category, string brand);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductsManager/GetSalesByCategoryReport", ReplyAction="http://tempuri.org/IProductsManager/GetSalesByCategoryReportResponse")]
+        MelodiasDelMundo_Client.ServiceReference1.SalesByCategoryReport[] GetSalesByCategoryReport(System.DateTime startDate, System.DateTime endDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductsManager/GetSalesByCategoryReport", ReplyAction="http://tempuri.org/IProductsManager/GetSalesByCategoryReportResponse")]
+        System.Threading.Tasks.Task<MelodiasDelMundo_Client.ServiceReference1.SalesByCategoryReport[]> GetSalesByCategoryReportAsync(System.DateTime startDate, System.DateTime endDate);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1196,6 +1327,14 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
         
         public System.Threading.Tasks.Task<MelodiasDelMundo_Client.ServiceReference1.ProductDataContract[]> SearchProductsAsync(string name, string code, string category, string brand) {
             return base.Channel.SearchProductsAsync(name, code, category, brand);
+        }
+        
+        public MelodiasDelMundo_Client.ServiceReference1.SalesByCategoryReport[] GetSalesByCategoryReport(System.DateTime startDate, System.DateTime endDate) {
+            return base.Channel.GetSalesByCategoryReport(startDate, endDate);
+        }
+        
+        public System.Threading.Tasks.Task<MelodiasDelMundo_Client.ServiceReference1.SalesByCategoryReport[]> GetSalesByCategoryReportAsync(System.DateTime startDate, System.DateTime endDate) {
+            return base.Channel.GetSalesByCategoryReportAsync(startDate, endDate);
         }
     }
     
