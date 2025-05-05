@@ -13,5 +13,9 @@ namespace MelodiasDelMundo_Client
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
+        }
     }
 }

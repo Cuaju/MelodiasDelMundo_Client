@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import namespace="http://schemas.datacontract.org/2004/07/MelodiasService" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/DataAccess.Models" />
   <xs:import namespace="http://schemas.datacontract.org/2004/07/MelodiasService.DTOs" />
   <xs:element name="LogIn">
     <xs:complexType>
@@ -215,10 +216,25 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetSalesByCategoryReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesByCategoryReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DataAccess.Models" minOccurs="0" name="GetSalesByCategoryReportResult" nillable="true" type="q8:ArrayOfSalesByCategoryReport" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="RegisterSupplier">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/MelodiasService.DTOs" minOccurs="0" name="supplier" nillable="true" type="q8:SupplierDTO" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/MelodiasService.DTOs" minOccurs="0" name="supplier" nillable="true" type="q9:SupplierDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -232,7 +248,7 @@
   <xs:element name="EditSupplier">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/MelodiasService.DTOs" minOccurs="0" name="supplier" nillable="true" type="q9:SupplierDTO" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/MelodiasService.DTOs" minOccurs="0" name="supplier" nillable="true" type="q10:SupplierDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -253,7 +269,7 @@
   <xs:element name="GetSuppliersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/MelodiasService.DTOs" minOccurs="0" name="GetSuppliersResult" nillable="true" type="q10:ArrayOfSupplierDTO" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/MelodiasService.DTOs" minOccurs="0" name="GetSuppliersResult" nillable="true" type="q11:ArrayOfSupplierDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -302,7 +318,7 @@
   <xs:element name="RegisterPurchase">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/MelodiasService.DTOs" minOccurs="0" name="purchase" nillable="true" type="q11:PurchaseDTO" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/MelodiasService.DTOs" minOccurs="0" name="purchase" nillable="true" type="q12:PurchaseDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -324,14 +340,14 @@
   <xs:element name="GetSalesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/MelodiasService" minOccurs="0" name="GetSalesResult" nillable="true" type="q12:ArrayOfSaleDataContract" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/MelodiasService" minOccurs="0" name="GetSalesResult" nillable="true" type="q13:ArrayOfSaleDataContract" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="RegisterSale">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/MelodiasService" minOccurs="0" name="sale" nillable="true" type="q13:SaleDataContract" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/MelodiasService" minOccurs="0" name="sale" nillable="true" type="q14:SaleDataContract" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -345,7 +361,7 @@
   <xs:element name="EditSale">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/MelodiasService" minOccurs="0" name="sale" nillable="true" type="q14:SaleDataContract" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/MelodiasService" minOccurs="0" name="sale" nillable="true" type="q15:SaleDataContract" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -380,7 +396,7 @@
   <xs:element name="GetSaleByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/MelodiasService" minOccurs="0" name="GetSaleByIdResult" nillable="true" type="q15:SaleDataContract" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/MelodiasService" minOccurs="0" name="GetSaleByIdResult" nillable="true" type="q16:SaleDataContract" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

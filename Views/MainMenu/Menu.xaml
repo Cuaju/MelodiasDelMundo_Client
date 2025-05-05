@@ -27,7 +27,7 @@
                 <Button.Content>
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <TextBlock FontFamily="Segoe UI Symbol" Text="&#xE125;" FontSize="90" Foreground="AliceBlue" TextAlignment="Center" />
-                        <TextBlock Text="Users" FontSize="40" Foreground="White" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Usuarios" FontSize="40" Foreground="White" HorizontalAlignment="Center"/>
                     </StackPanel>
                 </Button.Content>
             </Button>
@@ -36,7 +36,7 @@
                 <Button.Content>
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <TextBlock FontFamily="Segoe UI Symbol" Text="&#xE14D;" FontSize="90" Foreground="AliceBlue" TextAlignment="Center"/>
-                        <TextBlock Text="Products" FontSize="40" Foreground="White" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Productos" FontSize="35" Foreground="White" HorizontalAlignment="Center"/>
                     </StackPanel>
                 </Button.Content>
             </Button>
@@ -45,7 +45,7 @@
                 <Button.Content>
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <TextBlock FontFamily="Segoe UI Symbol" Text="&#x1F4B0;" FontSize="90" Foreground="AliceBlue" TextAlignment="Center"/>
-                        <TextBlock Text="Sales" FontSize="40" Foreground="White" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Ventas" FontSize="40" Foreground="White" HorizontalAlignment="Center"/>
                     </StackPanel>
                 </Button.Content>
             </Button>
@@ -54,7 +54,7 @@
                 <Button.Content>
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <TextBlock FontFamily="Segoe UI Symbol" Text="&#x1F69A;" FontSize="90" Foreground="AliceBlue" TextAlignment="Center"/>
-                        <TextBlock Text="Suppliers" FontSize="40" Foreground="White" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Proveedores" FontSize="30" Foreground="White" HorizontalAlignment="Center"/>
                     </StackPanel>
                 </Button.Content>
             </Button>
@@ -63,7 +63,7 @@
                 <Button.Content>
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <TextBlock FontFamily="Segoe UI Symbol" Text="&#x1F4DD;" FontSize="90" Foreground="AliceBlue" TextAlignment="Center"/>
-                        <TextBlock Text="Reports" FontSize="40" Foreground="White" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Reportes" FontSize="40" Foreground="White" HorizontalAlignment="Center"/>
                     </StackPanel>
                 </Button.Content>
             </Button>

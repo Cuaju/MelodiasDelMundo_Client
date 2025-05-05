@@ -26,6 +26,7 @@
     <MetadataFile FileName="service3.xsd" MetadataType="Schema" ID="caf31568-6560-4506-8234-a3801077d761" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="ac5d52c1-ea35-47f0-a6fd-d418c7225639" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
     <MetadataFile FileName="MelodiasService.xsd" MetadataType="Schema" ID="12681150-0e2c-4836-b283-30b77c146558" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
+    <MetadataFile FileName="DataAccess.Models.xsd" MetadataType="Schema" ID="44fcbcb4-d364-40ad-9f04-12d5520fa133" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
     <MetadataFile FileName="MelodiasService.DTOs.xsd" MetadataType="Schema" ID="3908cd77-c4f0-407c-bb56-ebce669c2c09" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
   </Metadata>
   <Extensions>
