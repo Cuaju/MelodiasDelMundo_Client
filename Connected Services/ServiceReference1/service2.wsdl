@@ -71,8 +71,15 @@
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/MelodiasService" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/DataAccess.Models" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/MelodiasService.DTOs" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/DataAccess.DAO" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IUsersManager_EditEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditEmployee" />
+  </wsdl:message>
+  <wsdl:message name="IUsersManager_EditEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditEmployeeResponse" />
+  </wsdl:message>
   <wsdl:message name="IUsersManager_LogIn_InputMessage">
     <wsdl:part name="parameters" element="tns:LogIn" />
   </wsdl:message>
@@ -211,6 +218,12 @@
   <wsdl:message name="ISuppliersManager_RegisterPurchase_OutputMessage">
     <wsdl:part name="parameters" element="tns:RegisterPurchaseResponse" />
   </wsdl:message>
+  <wsdl:message name="ISalesManager_GetEarningsReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEarningsReport" />
+  </wsdl:message>
+  <wsdl:message name="ISalesManager_GetEarningsReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEarningsReportResponse" />
+  </wsdl:message>
   <wsdl:message name="ISalesManager_GetSales_InputMessage">
     <wsdl:part name="parameters" element="tns:GetSales" />
   </wsdl:message>
@@ -242,6 +255,10 @@
     <wsdl:part name="parameters" element="tns:GetSaleByIdResponse" />
   </wsdl:message>
   <wsdl:portType name="IUsersManager">
+    <wsdl:operation name="EditEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsersManager/EditEmployee" message="tns:IUsersManager_EditEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsersManager/EditEmployeeResponse" message="tns:IUsersManager_EditEmployee_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="LogIn">
       <wsdl:input wsaw:Action="http://tempuri.org/IUsersManager/LogIn" message="tns:IUsersManager_LogIn_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUsersManager/LogInResponse" message="tns:IUsersManager_LogIn_OutputMessage" />
@@ -340,6 +357,10 @@
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ISalesManager">
+    <wsdl:operation name="GetEarningsReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalesManager/GetEarningsReport" message="tns:ISalesManager_GetEarningsReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalesManager/GetEarningsReportResponse" message="tns:ISalesManager_GetEarningsReport_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetSales">
       <wsdl:input wsaw:Action="http://tempuri.org/ISalesManager/GetSales" message="tns:ISalesManager_GetSales_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISalesManager/GetSalesResponse" message="tns:ISalesManager_GetSales_OutputMessage" />
@@ -365,6 +386,15 @@
     <wsp:PolicyReference URI="#NetTcpBinding_IUsersManager_policy">
     </wsp:PolicyReference>
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="EditEmployee">
+      <soap12:operation soapAction="http://tempuri.org/IUsersManager/EditEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="LogIn">
       <soap12:operation soapAction="http://tempuri.org/IUsersManager/LogIn" style="document" />
       <wsdl:input>
@@ -587,6 +617,15 @@
     <wsp:PolicyReference URI="#NetTcpBinding_ISalesManager_policy">
     </wsp:PolicyReference>
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetEarningsReport">
+      <soap12:operation soapAction="http://tempuri.org/ISalesManager/GetEarningsReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetSales">
       <soap12:operation soapAction="http://tempuri.org/ISalesManager/GetSales" style="document" />
       <wsdl:input>

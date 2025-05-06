@@ -43,7 +43,9 @@ namespace MelodiasDelMundo_Client.Views.MainMenu.Menus
 
         private void btEditUser_Click(object sender, RoutedEventArgs e)
         {
-
+            var deleteWindow = new EditEmployee(this);
+            deleteWindow.Show();
+            this.Hide();
         }
 
         private void btRegisterUser_Click(object sender, RoutedEventArgs e)
