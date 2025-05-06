@@ -27,7 +27,9 @@ namespace MelodiasDelMundo_Client.Views.MainMenu.Menus
 
         private void BtReporteVentasProducto_Click(object sender, RoutedEventArgs e)
         {
-            
+            var ventana = new GUI_ReporteVentasProducto();
+            ventana.Show();
+            this.Close();
         }
 
         private void BtReporteVentasCategoria_Click(object sender, RoutedEventArgs e)

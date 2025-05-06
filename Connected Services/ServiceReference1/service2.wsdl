@@ -169,6 +169,12 @@
   <wsdl:message name="IProductsManager_GetSalesByCategoryReport_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetSalesByCategoryReportResponse" />
   </wsdl:message>
+  <wsdl:message name="IProductsManager_GetSalesByProductReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesByProductReport" />
+  </wsdl:message>
+  <wsdl:message name="IProductsManager_GetSalesByProductReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesByProductReportResponse" />
+  </wsdl:message>
   <wsdl:message name="ISuppliersManager_RegisterSupplier_InputMessage">
     <wsdl:part name="parameters" element="tns:RegisterSupplier" />
   </wsdl:message>
@@ -307,6 +313,10 @@
     <wsdl:operation name="GetSalesByCategoryReport">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductsManager/GetSalesByCategoryReport" message="tns:IProductsManager_GetSalesByCategoryReport_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductsManager/GetSalesByCategoryReportResponse" message="tns:IProductsManager_GetSalesByCategoryReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesByProductReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductsManager/GetSalesByProductReport" message="tns:IProductsManager_GetSalesByProductReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductsManager/GetSalesByProductReportResponse" message="tns:IProductsManager_GetSalesByProductReport_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ISuppliersManager">
@@ -507,6 +517,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetSalesByCategoryReport">
       <soap12:operation soapAction="http://tempuri.org/IProductsManager/GetSalesByCategoryReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesByProductReport">
+      <soap12:operation soapAction="http://tempuri.org/IProductsManager/GetSalesByProductReport" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

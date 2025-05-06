@@ -105,6 +105,7 @@
     </Compile>
     <Compile Include="Utils\NotificationDialog.cs" />
     <Compile Include="Utils\SalesByCategoryReportGenerator.cs" />
+    <Compile Include="Utils\SalesByProductReportGenerator.cs" />
     <Compile Include="Views\MainMenu\MainMenu2.xaml.cs">
       <DependentUpon>MainMenu2.xaml</DependentUpon>
     </Compile>
@@ -156,6 +157,9 @@
     <Compile Include="Views\Report\GUI-ReporteVentasCategoria.xaml.cs">
       <DependentUpon>GUI-ReporteVentasCategoria.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Report\GUI-ReporteVentasProducto.xaml.cs">
+      <DependentUpon>GUI-ReporteVentasProducto.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Sale\GUI_EditSale.xaml.cs">
       <DependentUpon>GUI_EditSale.xaml</DependentUpon>
     </Compile>
@@ -167,6 +171,15 @@
     </Compile>
     <Compile Include="Views\Sale\GUI_SalesManagement.xaml.cs">
       <DependentUpon>GUI_SalesManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Suppliers\GUI-RegisterPurchase.xaml.cs">
+      <DependentUpon>GUI-RegisterPurchase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Suppliers\GUI-RegisterSupplier.xaml.cs">
+      <DependentUpon>GUI-RegisterSupplier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Suppliers\GUI-SelectSupplier.xaml.cs">
+      <DependentUpon>GUI-SelectSupplier.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -272,6 +285,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Report\GUI-ReporteVentasProducto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Sale\GUI_EditSale.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -287,6 +304,18 @@
     <Page Include="Views\Sale\GUI_SalesManagement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Suppliers\GUI-RegisterPurchase.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Suppliers\GUI-RegisterSupplier.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Suppliers\GUI-SelectSupplier.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -320,6 +349,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference1\MelodiasDelMundo_Client.ServiceReference1.SalesByCategoryReport.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\MelodiasDelMundo_Client.ServiceReference1.SalesByProductReport.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference1\MelodiasDelMundo_Client.ServiceReference1.SupplierDTO.datasource">
