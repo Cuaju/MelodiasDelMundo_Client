@@ -46,8 +46,8 @@
     <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Xaml.Behaviors.Wpf.1.1.39\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
     </Reference>
-    <Reference Include="QuestPDF, Version=2025.4.2.0, Culture=neutral, PublicKeyToken=0f3c2b2315ff52c8, processorArchitecture=MSIL">
-      <HintPath>packages\QuestPDF.2025.4.2\lib\netstandard2.0\QuestPDF.dll</HintPath>
+    <Reference Include="QuestPDF, Version=2025.4.3.0, Culture=neutral, PublicKeyToken=0f3c2b2315ff52c8, processorArchitecture=MSIL">
+      <HintPath>packages\QuestPDF.2025.4.3\lib\netstandard2.0\QuestPDF.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -377,7 +377,7 @@
       <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('packages\MaterialDesignThemes.5.2.1\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\MaterialDesignThemes.5.2.1\build\MaterialDesignThemes.targets'))" />
-    <Error Condition="!Exists('packages\QuestPDF.2025.4.2\build\net4\QuestPDF.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\QuestPDF.2025.4.2\build\net4\QuestPDF.targets'))" />
+    <Error Condition="!Exists('packages\QuestPDF.2025.4.3\build\net4\QuestPDF.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\QuestPDF.2025.4.3\build\net4\QuestPDF.targets'))" />
   </Target>
-  <Import Project="packages\QuestPDF.2025.4.2\build\net4\QuestPDF.targets" Condition="Exists('packages\QuestPDF.2025.4.2\build\net4\QuestPDF.targets')" />
+  <Import Project="packages\QuestPDF.2025.4.3\build\net4\QuestPDF.targets" Condition="Exists('packages\QuestPDF.2025.4.3\build\net4\QuestPDF.targets')" />
 </Project>
