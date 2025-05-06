@@ -28,6 +28,7 @@
     <MetadataFile FileName="MelodiasService.xsd" MetadataType="Schema" ID="12681150-0e2c-4836-b283-30b77c146558" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
     <MetadataFile FileName="DataAccess.Models.xsd" MetadataType="Schema" ID="44fcbcb4-d364-40ad-9f04-12d5520fa133" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
     <MetadataFile FileName="MelodiasService.DTOs.xsd" MetadataType="Schema" ID="3908cd77-c4f0-407c-bb56-ebce669c2c09" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
+    <MetadataFile FileName="DataAccess.DAO.xsd" MetadataType="Schema" ID="60893a22-5b7e-4e6c-98f4-ba4834fc29ae" SourceId="1" SourceUrl="net.tcp://localhost:8001/ServiceImplementation/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

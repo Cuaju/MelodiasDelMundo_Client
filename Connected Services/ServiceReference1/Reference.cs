@@ -816,6 +816,99 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EarningsReport", Namespace="http://schemas.datacontract.org/2004/07/DataAccess.DAO")]
+    [System.SerializableAttribute()]
+    public partial class EarningsReport : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal GrossEarningsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal NetEarningsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TotalItemsSoldField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TotalSalesField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal GrossEarnings {
+            get {
+                return this.GrossEarningsField;
+            }
+            set {
+                if ((this.GrossEarningsField.Equals(value) != true)) {
+                    this.GrossEarningsField = value;
+                    this.RaisePropertyChanged("GrossEarnings");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal NetEarnings {
+            get {
+                return this.NetEarningsField;
+            }
+            set {
+                if ((this.NetEarningsField.Equals(value) != true)) {
+                    this.NetEarningsField = value;
+                    this.RaisePropertyChanged("NetEarnings");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TotalItemsSold {
+            get {
+                return this.TotalItemsSoldField;
+            }
+            set {
+                if ((this.TotalItemsSoldField.Equals(value) != true)) {
+                    this.TotalItemsSoldField = value;
+                    this.RaisePropertyChanged("TotalItemsSold");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TotalSales {
+            get {
+                return this.TotalSalesField;
+            }
+            set {
+                if ((this.TotalSalesField.Equals(value) != true)) {
+                    this.TotalSalesField = value;
+                    this.RaisePropertyChanged("TotalSales");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SaleDataContract", Namespace="http://schemas.datacontract.org/2004/07/MelodiasService")]
     [System.SerializableAttribute()]
     public partial class SaleDataContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -1052,6 +1145,12 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IUsersManager")]
     public interface IUsersManager {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/EditEmployee", ReplyAction="http://tempuri.org/IUsersManager/EditEmployeeResponse")]
+        bool EditEmployee(int idEmployee, MelodiasDelMundo_Client.ServiceReference1.EmployeeDataContract updatedEmployee);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/EditEmployee", ReplyAction="http://tempuri.org/IUsersManager/EditEmployeeResponse")]
+        System.Threading.Tasks.Task<bool> EditEmployeeAsync(int idEmployee, MelodiasDelMundo_Client.ServiceReference1.EmployeeDataContract updatedEmployee);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersManager/LogIn", ReplyAction="http://tempuri.org/IUsersManager/LogInResponse")]
         bool LogIn(string username, string password);
         
@@ -1126,6 +1225,14 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
         
         public UsersManagerClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public bool EditEmployee(int idEmployee, MelodiasDelMundo_Client.ServiceReference1.EmployeeDataContract updatedEmployee) {
+            return base.Channel.EditEmployee(idEmployee, updatedEmployee);
+        }
+        
+        public System.Threading.Tasks.Task<bool> EditEmployeeAsync(int idEmployee, MelodiasDelMundo_Client.ServiceReference1.EmployeeDataContract updatedEmployee) {
+            return base.Channel.EditEmployeeAsync(idEmployee, updatedEmployee);
         }
         
         public bool LogIn(string username, string password) {
@@ -1473,6 +1580,12 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.ISalesManager")]
     public interface ISalesManager {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalesManager/GetEarningsReport", ReplyAction="http://tempuri.org/ISalesManager/GetEarningsReportResponse")]
+        MelodiasDelMundo_Client.ServiceReference1.EarningsReport GetEarningsReport(System.DateTime startDate, System.DateTime endDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalesManager/GetEarningsReport", ReplyAction="http://tempuri.org/ISalesManager/GetEarningsReportResponse")]
+        System.Threading.Tasks.Task<MelodiasDelMundo_Client.ServiceReference1.EarningsReport> GetEarningsReportAsync(System.DateTime startDate, System.DateTime endDate);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalesManager/GetSales", ReplyAction="http://tempuri.org/ISalesManager/GetSalesResponse")]
         MelodiasDelMundo_Client.ServiceReference1.SaleDataContract[] GetSales(string customerName, System.Nullable<System.DateTime> date);
         
@@ -1529,6 +1642,14 @@ namespace MelodiasDelMundo_Client.ServiceReference1 {
         
         public SalesManagerClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public MelodiasDelMundo_Client.ServiceReference1.EarningsReport GetEarningsReport(System.DateTime startDate, System.DateTime endDate) {
+            return base.Channel.GetEarningsReport(startDate, endDate);
+        }
+        
+        public System.Threading.Tasks.Task<MelodiasDelMundo_Client.ServiceReference1.EarningsReport> GetEarningsReportAsync(System.DateTime startDate, System.DateTime endDate) {
+            return base.Channel.GetEarningsReportAsync(startDate, endDate);
         }
         
         public MelodiasDelMundo_Client.ServiceReference1.SaleDataContract[] GetSales(string customerName, System.Nullable<System.DateTime> date) {
