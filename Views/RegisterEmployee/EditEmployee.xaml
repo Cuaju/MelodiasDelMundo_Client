@@ -66,15 +66,25 @@
         </Border>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+            <Button Content="Regresar"
+            Width="120" Height="40"
+            Margin="0,0,10,0"
+            Background="#CCCCCC"
+            Foreground="#333"
+            FontWeight="SemiBold"
+            BorderBrush="#CCCCCC"
+            Click="BtnRegresar_Click"
+            Cursor="Hand"/>
+
             <Button Content="Guardar Cambios"
-                    Width="180" Height="40"
-                    Margin="0,0,10,0"
-                    Background="#007ACC"
-                    Foreground="White"
-                    FontWeight="SemiBold"
-                    BorderBrush="#007ACC"
-                    Click="BtnGuardar_Click"
-                    Cursor="Hand"/>
+            Width="180" Height="40"
+            Background="#007ACC"
+            Foreground="White"
+            FontWeight="SemiBold"
+            BorderBrush="#007ACC"
+            Click="BtnGuardar_Click"
+            Cursor="Hand"/>
         </StackPanel>
+
     </Grid>
 </Window>

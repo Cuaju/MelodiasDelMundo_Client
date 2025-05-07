@@ -1,5 +1,6 @@
 ﻿using MelodiasDelMundo_Client.ServiceReference1;
 using MelodiasDelMundo_Client.Utils;
+using MelodiasDelMundo_Client.Views.MainMenu.Menus;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -109,6 +110,12 @@ namespace MelodiasDelMundo_Client.Views.RegisterEmployee
             {
                 _notificationDialog.ShowErrorNotification("Error al guardar los cambios");
             }
+        }
+        private void BtnRegresar_Click(object sender, RoutedEventArgs e)
+        {
+            UsersMenu reportesMenu = new UsersMenu();
+            reportesMenu.Show();
+            this.Close();
         }
 
 
