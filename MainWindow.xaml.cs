@@ -82,6 +82,7 @@ namespace MelodiasDelMundo_Client
             {
                 if (_service.LogIn(username, password))
                 {
+                    SesionEmpleado.Instancia.IdEmpleado = _service.GetIdEmployeeByUserName(username);
                     NavigateToWindow(new Views.MainMenu.MMenu());
                     this.Close();
 
