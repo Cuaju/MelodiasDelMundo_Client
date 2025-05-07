@@ -8,7 +8,7 @@
         Background="#ECEFF1">
 
     <Grid Margin="20">
-        <StackPanel>
+        <StackPanel Margin="26,0,-26,0">
             <TextBlock Text="📊 Panel de Reportes"
                        FontSize="30"
                        FontWeight="Bold"
@@ -99,6 +99,28 @@
                     Effect="{DynamicResource ShadowEffect}">
                 <StackPanel MouseLeftButtonUp="BtReporteGanancias_Click">
                     <TextBlock Text="💰 Reporte de Ganancias"
+                               FontSize="18"
+                               FontWeight="Bold"
+                               Foreground="#37474F"
+                               TextAlignment="Center"
+                               Margin="0,0,0,10"/>
+                    <TextBlock Text="Obtén un resumen de las ganancias obtenidas."
+                               FontSize="13"
+                               Foreground="#607D8B"
+                               TextAlignment="Center"/>
+                </StackPanel>
+            </Border>
+
+            <Border Background="LightGray"
+                    CornerRadius="15"
+                    x:Name="btGoBack"
+                    Padding="20"
+                    BorderBrush="#CFD8DC"
+                    BorderThickness="1"
+                    Cursor="Hand"
+                    Effect="{DynamicResource ShadowEffect}" Width="180" Height="66">
+                <StackPanel MouseLeftButtonUp="StackPanel_MouseLeftButtonUp">
+                    <TextBlock Text="⬅️ Regresar"
                                FontSize="18"
                                FontWeight="Bold"
                                Foreground="#37474F"

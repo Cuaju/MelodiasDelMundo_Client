@@ -51,5 +51,12 @@ namespace MelodiasDelMundo_Client.Views.MainMenu.Menus
             ventana.Show();
             this.Close();
         }
+
+        private void StackPanel_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            var ventana = new MMenu();
+            ventana.Show();
+            this.Close();
+        }
     }
 }

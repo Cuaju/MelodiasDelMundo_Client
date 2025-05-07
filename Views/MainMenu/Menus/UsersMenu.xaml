@@ -26,7 +26,7 @@
                 <Button.Content>
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <TextBlock FontFamily="Segoe UI Symbol" Text="&#x2795;" FontSize="90" Foreground="AliceBlue" TextAlignment="Center" />
-                        <TextBlock Text="Register user" FontSize="30" Foreground="White" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Registrar empleado" FontSize="20" Foreground="White" HorizontalAlignment="Center"/>
                     </StackPanel>
                 </Button.Content>
             </Button>
@@ -35,7 +35,7 @@
                 <Button.Content>
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <TextBlock FontFamily="Segoe UI Symbol" Text="&#x270F;" FontSize="90" Foreground="AliceBlue" TextAlignment="Center"/>
-                        <TextBlock Text="Edit user" FontSize="30" Foreground="White" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Editar empleado" FontSize="20" Foreground="White" HorizontalAlignment="Center"/>
                     </StackPanel>
                 </Button.Content>
             </Button>
@@ -44,7 +44,7 @@
                 <Button.Content>
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <TextBlock FontFamily="Segoe UI Symbol" Text="&#128465;" FontSize="90" Foreground="AliceBlue" TextAlignment="Center"/>
-                        <TextBlock Text="Delete user" FontSize="30" Foreground="White" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Eliminar empleado" FontSize="20" Foreground="White" HorizontalAlignment="Center"/>
                     </StackPanel>
                 </Button.Content>
             </Button>
@@ -53,7 +53,7 @@
                 <Button.Content>
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <TextBlock FontFamily="Segoe UI Symbol" Text="&#x1F50D;" FontSize="90" Foreground="AliceBlue" TextAlignment="Center"/>
-                        <TextBlock Text="Search User" FontSize="30" Foreground="White" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Buscar empleado" FontSize="20" Foreground="White" HorizontalAlignment="Center"/>
                     </StackPanel>
                 </Button.Content>
             </Button>
@@ -61,7 +61,7 @@
         </Grid>
         <Button Background="#195ecf" Height="800" Width="1200" Grid.Row="0"/>
         <StackPanel Orientation="Horizontal">
-            <Label Content="Usuarios" Foreground="AliceBlue" FontSize="60" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0 0 0"/>
+            <Label Content="Empleados" Foreground="AliceBlue" FontSize="60" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0 0 0"/>
             <TextBlock x:Name="btLogout" FontFamily="Segoe UI Symbol" Text="&#xe248;" Margin="800 0 0 0" FontSize="90" Foreground="AliceBlue" MouseDown="btLogout_MouseDown" />
         </StackPanel>
         <Button Background="#195ecf" Height="800" Width="1200" Grid.Row="2"/>

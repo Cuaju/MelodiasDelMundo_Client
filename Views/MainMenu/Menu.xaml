@@ -71,7 +71,7 @@
         </Grid>
         <Button Background="#195ecf" Height="800" Width="1200" Grid.Row="0"/>
         <StackPanel Orientation="Horizontal">
-            <Label Content="Melodias del mundo" Foreground="AliceBlue" FontSize="60" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0 0 0"/>
+            <Label Content="Melodías del Mundo" Foreground="AliceBlue" FontSize="60" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0 0 0"/>
             <TextBlock x:Name="btLogout" FontFamily="Segoe UI Symbol" Text="&#xe248;" Margin="500 0 0 0" FontSize="90" Foreground="AliceBlue" MouseDown="btLogout_MouseDown" />
         </StackPanel>
         <Button Background="#195ecf" Height="800" Width="1200" Grid.Row="2"/>

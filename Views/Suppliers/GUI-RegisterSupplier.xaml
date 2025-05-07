@@ -19,46 +19,46 @@
             <RowDefinition Height="20*"/>
         </Grid.RowDefinitions>
 
-        <Label Content="Register Supplier" FontSize="45" HorizontalAlignment="Left" Margin="30 0 0 0"/>
+        <Label Content="Registrar PRoveedor" FontSize="45" HorizontalAlignment="Left" Margin="30 0 0 0"/>
 
         <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Left" Margin="30 0 0 0">
-            <Label Content="Name: " FontSize="20" />
+            <Label Content="Nombre: " FontSize="20" />
             <TextBox x:Name="tbName" Width="250" Height="80" />
         </StackPanel>
 
         <StackPanel Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Left" Margin="30 0 0 0">
-            <Label Content="Adress: " FontSize="20" />
+            <Label Content="Direccion: " FontSize="20" />
             <TextBox x:Name="tbAdrress" Width="250" Height="80" />
         </StackPanel>
 
         <StackPanel Grid.Row="3" Orientation="Vertical" HorizontalAlignment="Left" Margin="30 0 0 0">
-            <Label Content="Postal code: " FontSize="20" />
+            <Label Content="Código Postal: " FontSize="20" />
             <TextBox x:Name="tbPostalCode" Width="250" Height="80" />
         </StackPanel>
 
         <StackPanel Grid.Row="4" Orientation="Vertical" HorizontalAlignment="Left" Margin="30 0 0 0">
-            <Label Content="City: " FontSize="20" />
+            <Label Content="Ciudad: " FontSize="20" />
             <TextBox x:Name="tbCity" Width="250" Height="80" />
         </StackPanel>
 
         <StackPanel Grid.Row="5" Orientation="Vertical" HorizontalAlignment="Left" Margin="30 0 0 0">
-            <Label Content="Country: " FontSize="20" />
+            <Label Content="País: " FontSize="20" />
             <TextBox x:Name="tbCountry" Width="250" Height="80" />
         </StackPanel>
 
         <StackPanel Grid.Row="6" Orientation="Vertical" HorizontalAlignment="Left" Margin="30 0 0 0">
-            <Label Content="Phone number: " FontSize="20" />
+            <Label Content="Número Celular: " FontSize="20" />
             <TextBox x:Name="tbPhone" Width="250" Height="80" />
         </StackPanel>
 
         <StackPanel Grid.Row="7" Orientation="Vertical" HorizontalAlignment="Left" Margin="30 0 0 0">
-            <Label Content="Email: " FontSize="20" />
+            <Label Content="Correo electrónico: " FontSize="20" />
             <TextBox x:Name="tbEmail" Width="250" Height="80" />
         </StackPanel>
 
         <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Left" Margin="30 0 0 0">
-            <Button x:Name="btRegister" Content="Register" FontSize="25" Width="250" Height="70" HorizontalAlignment="Left" Background="Lime" Click="btRegister_Click" />
-            <Button x:Name="btCancel" Content="Cancel" FontSize="25" Width="250" Height="70" HorizontalAlignment="Left" Margin="50 0 0 0" Click="btCancel_Click" />
+            <Button x:Name="btRegister" Content="Registrar" FontSize="25" Width="250" Height="70" HorizontalAlignment="Left" Background="Lime" Click="btRegister_Click" />
+            <Button x:Name="btCancel" Content="Cancelar" FontSize="25" Width="250" Height="70" HorizontalAlignment="Left" Margin="50 0 0 0" Click="btCancel_Click" />
         </StackPanel>
     </Grid>
 </UserControl>
