@@ -17,4 +17,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SalesByCategoryReport" nillable="true" type="tns:SalesByCategoryReport" />
+  <xs:complexType name="ArrayOfSalesByProductReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesByProductReport" nillable="true" type="tns:SalesByProductReport" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSalesByProductReport" nillable="true" type="tns:ArrayOfSalesByProductReport" />
+  <xs:complexType name="SalesByProductReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QuantitySold" type="xs:int" />
+      <xs:element minOccurs="0" name="SalesCount" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalRevenue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UnitPrice" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SalesByProductReport" nillable="true" type="tns:SalesByProductReport" />
 </xs:schema>

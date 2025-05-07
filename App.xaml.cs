@@ -12,7 +12,7 @@ namespace MelodiasDelMundo_Client
     /// Lógica de interacción para App.xaml
     /// </summary>
     public partial class App : Application
-    {
+    {   
         public App()
         {
             QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
