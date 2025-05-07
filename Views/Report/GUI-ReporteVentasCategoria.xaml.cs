@@ -1,6 +1,7 @@
 ﻿using MelodiasDelMundo_Client.ServiceReference1;
 using MelodiasDelMundo_Client.Utils;
 using MelodiasDelMundo_Client.Views.MainMenu;
+using MelodiasDelMundo_Client.Views.MainMenu.Menus;
 using System;
 using System.Linq;
 using System.ServiceModel;
@@ -64,8 +65,8 @@ namespace MelodiasDelMundo_Client.Views.Report
 
         private void BtBack_Click(object sender, RoutedEventArgs e)
         {
-            MMenu menuWindow = new MMenu();
-            menuWindow.Show();
+            GUI_ReportesMenu reportesMenu = new GUI_ReportesMenu();
+            reportesMenu.Show();
             this.Close();
         }
     }
