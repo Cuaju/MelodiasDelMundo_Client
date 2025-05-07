@@ -184,13 +184,10 @@
     </Compile>
     <Compile Include="Views\Suppliers\GUI-SelectSupplier.xaml.cs">
       <DependentUpon>GUI-SelectSupplier.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Sale\ReportSales.xaml.cs">
       <DependentUpon>ReportSales.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -199,6 +196,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="UserControllers\DeleteSupplierDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
