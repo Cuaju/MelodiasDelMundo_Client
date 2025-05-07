@@ -1,6 +1,7 @@
 ﻿using MelodiasDelMundo_Client.ServiceReference1;
 using MelodiasDelMundo_Client.Utils;
 using MelodiasDelMundo_Client.Views.MainMenu;
+using MelodiasDelMundo_Client.Views.MainMenu.Menus;
 using QuestPDF.Fluent;
 using QuestPDF.Infrastructure;
 using System;
@@ -72,7 +73,8 @@ namespace MelodiasDelMundo_Client.Views.Sale
 
         private void BtBack_Click(object sender, RoutedEventArgs e)
         {
-            new MMenu().Show();
+            GUI_ReportesMenu reportesMenu = new GUI_ReportesMenu();
+            reportesMenu.Show();
             this.Close();
         }
     }

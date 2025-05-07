@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Menú de Reportes"
         Height="550" Width="700"
+        WindowState="Maximized"
         WindowStartupLocation="CenterScreen"
         Background="#ECEFF1">
 

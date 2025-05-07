@@ -46,8 +46,9 @@ namespace MelodiasDelMundo_Client.Views.MainMenu.Menus
 
         private void btLogout_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            var mainWindow = (MainWindow)Application.Current.MainWindow;
-            mainWindow.NavigateToUserControll(new MainMenu2());
+            MMenu mainMenu = new MMenu();
+            mainMenu.Show();
+            this.Close();
         }
     }
 }

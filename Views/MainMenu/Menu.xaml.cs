@@ -52,8 +52,9 @@ namespace MelodiasDelMundo_Client.Views.MainMenu
 
         private void btSuppliersManagement_Click(object sender, RoutedEventArgs e)
         {
-            var mainWindow = (MainWindow)Application.Current.MainWindow;
-            mainWindow.NavigateToWindow(new Menus.SuppliersMenu());
+            SuppliersMenu mainMenu = new SuppliersMenu();
+            mainMenu.Show();
+            this.Close();
         }
 
         private void btReports_Click(object sender, RoutedEventArgs e)

@@ -1,4 +1,5 @@
 ﻿using MelodiasDelMundo_Client.Views.Report;
+using MelodiasDelMundo_Client.Views.Sale;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,7 +47,9 @@ namespace MelodiasDelMundo_Client.Views.MainMenu.Menus
 
         private void BtReporteGanancias_Click(object sender, RoutedEventArgs e)
         {
-            
+            var ventana = new ReportSales();
+            ventana.Show();
+            this.Close();
         }
     }
 }
