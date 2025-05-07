@@ -1,5 +1,6 @@
 ﻿using MelodiasDelMundo_Client.ServiceReference1;
 using MelodiasDelMundo_Client.Utils;
+using MelodiasDelMundo_Client.Views.MainMenu.Menus;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -105,7 +106,12 @@ namespace MelodiasDelMundo_Client.Views.Suppliers
 
         private void btCancel_Click(object sender, RoutedEventArgs e)
         {
+            var host = Window.GetWindow(this);
+            var menu = new SuppliersMenu();
 
+            Application.Current.MainWindow = menu;
+            menu.Show();
+            host?.Close(); ;
         }
     }
 }

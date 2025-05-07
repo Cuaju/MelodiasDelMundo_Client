@@ -2,6 +2,7 @@
 using MelodiasDelMundo_Client.ServiceReference1;
 using MelodiasDelMundo_Client.UserControllers;
 using MelodiasDelMundo_Client.Utils;
+using MelodiasDelMundo_Client.Views.MainMenu.Menus;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -306,6 +307,16 @@ namespace MelodiasDelMundo_Client.Views.Suppliers
                 var dialog = new NotificationDialog();
                 dialog.ShowWarningNotification("Debes seleccionar un producto y un proveedor para continuar");
             }
+        }
+
+        private void btGoBack_Click(object sender, RoutedEventArgs e)
+        {
+            var host = Window.GetWindow(this);
+            var menu = new SuppliersMenu();
+
+            Application.Current.MainWindow = menu;
+            menu.Show();
+            host?.Close(); ;
         }
     }
 }

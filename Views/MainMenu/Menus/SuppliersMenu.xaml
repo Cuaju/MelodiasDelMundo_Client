@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MelodiasDelMundo_Client.Views.MainMenu.Menus"
         mc:Ignorable="d"
         Title="SuppliersMenu" d:DesignHeight="850" d:DesignWidth="1200">
-    <Grid>
+    <Grid >
 
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
@@ -22,7 +22,7 @@
                 <ColumnDefinition Width="10*"/>
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="btRegisterSupplier" Grid.Column="0" Background="#150578" Height="300" Width="200" Click="btRegisterSupplier_Click">
+            <Button x:Name="btRegisterSupplier" Grid.Column="0" Background="#2ecc71 " Height="300" Width="200" Click="btRegisterSupplier_Click">
                 <Button.Content>
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <TextBlock FontFamily="Segoe UI Symbol" Text="&#x2795;" FontSize="90" Foreground="AliceBlue" TextAlignment="Center" />
@@ -31,7 +31,7 @@
                 </Button.Content>
             </Button>
 
-            <Button x:Name="btEditSupplier" Grid.Column="1" Background="#150578" Height="300" Width="200" Click="btEditSupplier_Click">
+            <Button x:Name="btEditSupplier" Grid.Column="1" Background="#2ecc71 " Height="300" Width="200" Click="btEditSupplier_Click">
                 <Button.Content>
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <TextBlock FontFamily="Segoe UI Symbol" Text="&#x270F;" FontSize="90" Foreground="AliceBlue" TextAlignment="Center"/>
@@ -40,7 +40,7 @@
                 </Button.Content>
             </Button>
 
-            <Button x:Name="btDeleteSupplier" Grid.Column="2" Background="#150578" Height="300" Width="200" Click="btDeleteSupplier_Click">
+            <Button x:Name="btDeleteSupplier" Grid.Column="2" Background="#2ecc71 " Height="300" Width="200" Click="btDeleteSupplier_Click">
                 <Button.Content>
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <TextBlock FontFamily="Segoe UI Symbol" Text="&#128465;" FontSize="90" Foreground="AliceBlue" TextAlignment="Center"/>
@@ -49,21 +49,21 @@
                 </Button.Content>
             </Button>
 
-            <Button x:Name="btSearchSupplier" Grid.Column="3" Background="#150578" Height="300" Width="200" Click="btSearchSupplier_Click">
+            <Button x:Name="btSearchSupplier" Grid.Column="3" Background="#2ecc71 " Height="300" Width="200" Click="btSearchSupplier_Click">
                 <Button.Content>
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <TextBlock FontFamily="Segoe UI Symbol" Text="&#x1F50D;" FontSize="90" Foreground="AliceBlue" TextAlignment="Center"/>
-                        <TextBlock Text="Search Supplier" FontSize="30" Foreground="White" HorizontalAlignment="Center"/>
+                        <TextBlock FontFamily="Segoe UI Symbol" Text="&#x1f4b0;" FontSize="90" Foreground="AliceBlue" TextAlignment="Center"/>
+                        <TextBlock Text="Register Purchase" FontSize="30" Foreground="White" HorizontalAlignment="Center"/>
                     </StackPanel>
                 </Button.Content>
             </Button>
 
         </Grid>
-        <Button Background="#195ecf" Height="800" Width="1200" Grid.Row="0"/>
+        <Button Background="ForestGreen" Height="800" Width="1200" Grid.Row="0"/>
         <StackPanel Orientation="Horizontal">
             <Label Content="Suppliers" Foreground="AliceBlue" FontSize="60" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0 0 0"/>
             <TextBlock x:Name="btLogout" FontFamily="Segoe UI Symbol" Text="&#xe248;" Margin="800 0 0 0" FontSize="90" Foreground="AliceBlue" MouseDown="btLogout_MouseDown" />
         </StackPanel>
-        <Button Background="#195ecf" Height="800" Width="1200" Grid.Row="2"/>
+        <Button Background="ForestGreen" Height="800" Width="1200" Grid.Row="2"/>
     </Grid>
 </Window>

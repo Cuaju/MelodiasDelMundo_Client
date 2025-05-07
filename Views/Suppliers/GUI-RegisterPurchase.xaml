@@ -35,7 +35,9 @@
             </Button>
 
         </StackPanel>
-            
+
+        <Button x:Name="btGoBack" Background="Red" BorderBrush="MediumAquamarine" HorizontalAlignment="Right" Foreground="AliceBlue" Margin="0 0 200 0" Content="Go back" Grid.Row="2" Width="150" Height="60" Click="btGoBack_Click"/>
+
         <Button x:Name="btRegisterPurchase" Background="MediumAquamarine" BorderBrush="MediumAquamarine" HorizontalAlignment="Right" Foreground="AliceBlue" Margin="0 0 20 0" Content="Registrar Compra" Grid.Row="2" Width="150" Height="60" Click="btRegisterPurchase_Click"/>
         
         <Grid Grid.Row="1">
